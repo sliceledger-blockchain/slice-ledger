@@ -22,8 +22,8 @@ contract GovernanceToken_Test is CommonTest {
     /// @dev Tests that the constructor sets the correct initial state.
     function test_constructor_succeeds() external {
         assertEq(gov.owner(), owner);
-        assertEq(gov.name(), "Optimism");
-        assertEq(gov.symbol(), "OP");
+        assertEq(gov.name(), "Slice");
+        assertEq(gov.symbol(), "SLICE");
         assertEq(gov.decimals(), 18);
         assertEq(gov.totalSupply(), 0);
     }

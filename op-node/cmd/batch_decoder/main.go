@@ -18,7 +18,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Name = "batch-decoder"
-	app.Usage = "Optimism Batch Decoding Utility"
+	app.Usage = "slice Batch Decoding Utility"
 	app.Commands = []*cli.Command{
 		{
 			Name:  "fetch",

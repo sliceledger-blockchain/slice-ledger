@@ -88,10 +88,10 @@ var (
 		Usage:  "Address of the L1 standard bridge",
 		EnvVar: prefixEnvVar("BEDROCK_L1_STANDARD_BRIDGE"),
 	}
-	BedrockOptimismPortalAddress = cli.StringFlag{
+	BedrockSlicePortalAddress = cli.StringFlag{
 		Name:   "bedrock.portal-address",
 		Usage:  "Address of the portal",
-		EnvVar: prefixEnvVar("BEDROCK_OPTIMISM_PORTAL"),
+		EnvVar: prefixEnvVar("BEDROCK_SLICE_PORTAL"),
 	}
 
 	/* Optional Flags */
@@ -202,7 +202,7 @@ var requiredFlags = []cli.Flag{
 var optionalFlags = []cli.Flag{
 	BedrockFlag,
 	BedrockL1StandardBridgeAddress,
-	BedrockOptimismPortalAddress,
+	BedrockSlicePortalAddress,
 	DisableIndexer,
 	LogLevelFlag,
 	LogTerminalFlag,

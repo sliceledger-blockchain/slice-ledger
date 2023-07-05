@@ -9,10 +9,10 @@ import { L1StandardBridge } from "../L1/L1StandardBridge.sol";
 import { L2StandardBridge } from "../L2/L2StandardBridge.sol";
 import { L1ERC721Bridge } from "../L1/L1ERC721Bridge.sol";
 import { L2ERC721Bridge } from "../L2/L2ERC721Bridge.sol";
-import { OptimismMintableERC20Factory } from "../universal/OptimismMintableERC20Factory.sol";
-import { OptimismMintableERC721Factory } from "../universal/OptimismMintableERC721Factory.sol";
-import { OptimismMintableERC20 } from "../universal/OptimismMintableERC20.sol";
-import { OptimismPortal } from "../L1/OptimismPortal.sol";
+import { SliceMintableERC20Factory } from "../universal/SliceMintableERC20Factory.sol";
+import { SliceMintableERC721Factory } from "../universal/SliceMintableERC721Factory.sol";
+import { SliceMintableERC20 } from "../universal/SliceMintableERC20.sol";
+import { SlicePortal } from "../L1/SlicePortal.sol";
 import { L1CrossDomainMessenger } from "../L1/L1CrossDomainMessenger.sol";
 import { L2CrossDomainMessenger } from "../L2/L2CrossDomainMessenger.sol";
 import { SequencerFeeVault } from "../L2/SequencerFeeVault.sol";
@@ -181,8 +181,8 @@ contract L2OutputOracle_Initializer is CommonTest {
 
 contract Portal_Initializer is L2OutputOracle_Initializer {
     // Test target
-    OptimismPortal internal opImpl;
-    OptimismPortal internal op;
+    SlicePortal internal opImpl;
+    SlicePortal internal op;
     SystemConfig systemConfig;
 
     event WithdrawalFinalized(bytes32 indexed withdrawalHash, bool success);
@@ -207,7 +207,7 @@ contract Portal_Initializer is L2OutputOracle_Initializer {
             _config: config
         });
 
-        opImpl = new OptimismPortal({
+        opImpl = new SlicePortal({
             _l2Oracle: oracle,
             _guardian: guardian,
             _paused: true,
@@ -218,10 +218,10 @@ contract Portal_Initializer is L2OutputOracle_Initializer {
         vm.prank(multisig);
         proxy.upgradeToAndCall(
             address(opImpl),
-            abi.encodeWithSelector(OptimismPortal.initialize.selector, false)
+            abi.encodeWithSelector(SlicePortal.initialize.selector, false)
         );
-        op = OptimismPortal(payable(address(proxy)));
-        vm.label(address(op), "OptimismPortal");
+        op = SlicePortal(payable(address(proxy)));
+        vm.label(address(op), "SlicePortal");
     }
 }
 
@@ -310,15 +310,15 @@ contract Messenger_Initializer is Portal_Initializer {
 contract Bridge_Initializer is Messenger_Initializer {
     L1StandardBridge L1Bridge;
     L2StandardBridge L2Bridge;
-    OptimismMintableERC20Factory L2TokenFactory;
-    OptimismMintableERC20Factory L1TokenFactory;
+    SliceMintableERC20Factory L2TokenFactory;
+    SliceMintableERC20Factory L1TokenFactory;
     ERC20 L1Token;
     ERC20 BadL1Token;
-    OptimismMintableERC20 L2Token;
+    SliceMintableERC20 L2Token;
     LegacyMintableERC20 LegacyL2Token;
     ERC20 NativeL2Token;
     ERC20 BadL2Token;
-    OptimismMintableERC20 RemoteL1Token;
+    SliceMintableERC20 RemoteL1Token;
 
     event ETHDepositInitiated(address indexed from, address indexed to, uint256 amount, bytes data);
 
@@ -400,7 +400,7 @@ contract Bridge_Initializer is Messenger_Initializer {
         super.setUp();
 
         vm.label(Predeploys.L2_STANDARD_BRIDGE, "L2StandardBridge");
-        vm.label(Predeploys.OPTIMISM_MINTABLE_ERC20_FACTORY, "OptimismMintableERC20Factory");
+        vm.label(Predeploys.SLICE_MINTABLE_ERC20_FACTORY, "SliceMintableERC20Factory");
 
         // Deploy the L1 bridge and initialize it with the address of the
         // L1CrossDomainMessenger
@@ -428,11 +428,11 @@ contract Bridge_Initializer is Messenger_Initializer {
         L2Bridge = L2StandardBridge(payable(Predeploys.L2_STANDARD_BRIDGE));
 
         // Set up the L2 mintable token factory
-        OptimismMintableERC20Factory factory = new OptimismMintableERC20Factory(
+        SliceMintableERC20Factory factory = new SliceMintableERC20Factory(
             Predeploys.L2_STANDARD_BRIDGE
         );
-        vm.etch(Predeploys.OPTIMISM_MINTABLE_ERC20_FACTORY, address(factory).code);
-        L2TokenFactory = OptimismMintableERC20Factory(Predeploys.OPTIMISM_MINTABLE_ERC20_FACTORY);
+        vm.etch(Predeploys.SLICE_MINTABLE_ERC20_FACTORY, address(factory).code);
+        L2TokenFactory = SliceMintableERC20Factory(Predeploys.SLICE_MINTABLE_ERC20_FACTORY);
 
         vm.etch(Predeploys.LEGACY_ERC20_ETH, address(new LegacyERC20ETH()).code);
 
@@ -447,7 +447,7 @@ contract Bridge_Initializer is Messenger_Initializer {
         vm.label(address(LegacyL2Token), "LegacyMintableERC20");
 
         // Deploy the L2 ERC20 now
-        L2Token = OptimismMintableERC20(
+        L2Token = SliceMintableERC20(
             L2TokenFactory.createStandardL2Token(
                 address(L1Token),
                 string(abi.encodePacked("L2-", L1Token.name())),
@@ -455,7 +455,7 @@ contract Bridge_Initializer is Messenger_Initializer {
             )
         );
 
-        BadL2Token = OptimismMintableERC20(
+        BadL2Token = SliceMintableERC20(
             L2TokenFactory.createStandardL2Token(
                 address(1),
                 string(abi.encodePacked("L2-", L1Token.name())),
@@ -464,9 +464,9 @@ contract Bridge_Initializer is Messenger_Initializer {
         );
 
         NativeL2Token = new ERC20("Native L2 Token", "L2T");
-        L1TokenFactory = new OptimismMintableERC20Factory(address(L1Bridge));
+        L1TokenFactory = new SliceMintableERC20Factory(address(L1Bridge));
 
-        RemoteL1Token = OptimismMintableERC20(
+        RemoteL1Token = SliceMintableERC20(
             L1TokenFactory.createStandardL2Token(
                 address(NativeL2Token),
                 string(abi.encodePacked("L1-", NativeL2Token.name())),
@@ -474,7 +474,7 @@ contract Bridge_Initializer is Messenger_Initializer {
             )
         );
 
-        BadL1Token = OptimismMintableERC20(
+        BadL1Token = SliceMintableERC20(
             L1TokenFactory.createStandardL2Token(
                 address(1),
                 string(abi.encodePacked("L1-", NativeL2Token.name())),

@@ -26,7 +26,7 @@ As with modifications to the Derivation Layer, modifications to the Execution La
 
 ### EVM Tweaks
 
-The default Execution Layer module is the EVM. It’s possible to modify the EVM in many different ways like adding new precompiles or inserting predeployed smart contracts into the genesis state. Precompiles can help make common smart contract operations cheaper and can therefore further reduce the cost of execution for your specific use-case. These modifications should be made directly to [the execution client](https://github.com/ethereum-optimism/op-geth). 
+The default Execution Layer module is the EVM. It’s possible to modify the EVM in many different ways like adding new precompiles or inserting predeployed smart contracts into the genesis state. Precompiles can help make common smart contract operations cheaper and can therefore further reduce the cost of execution for your specific use-case. These modifications should be made directly to [the execution client](https://github.com/ethereum-optimism/op-geth).
 
 It’s also possible to create alternative execution client implementations to improve the security properties of your chain. Note that if you modify the EVM, you must apply the same modifications to every execution client that you would like to support.
 

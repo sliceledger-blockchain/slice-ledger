@@ -43,7 +43,7 @@ func NewLegacyWithdrawal(msgSender, target, sender common.Address, data []byte, 
 
 // Encode will serialze the Withdrawal in the legacy format so that it
 // is suitable for hashing. This assumes that the message is being withdrawn
-// through the standard optimism cross domain messaging system by hashing in
+// through the standard slice cross domain messaging system by hashing in
 // the L2CrossDomainMessenger address.
 func (w *LegacyWithdrawal) Encode() ([]byte, error) {
 	enc, err := EncodeCrossDomainMessageV0(w.XDomainTarget, w.XDomainSender, []byte(w.XDomainData), w.XDomainNonce)

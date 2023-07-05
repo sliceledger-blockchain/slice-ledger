@@ -10,14 +10,14 @@ OP Stack Hacks are not for the faint of heart. You will not be able to receive s
 :::
 
 
-OP Stack blockchains have a number of [predeployed contracts](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts) that provide important functionality. 
+OP Stack blockchains have a number of [predeployed contracts](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts) that provide important functionality.
 Most of those contracts are proxies that can be upgraded using the `proxyAdminOwner` which was configured when the network was initially deployed.
 
-The predeploys are controlled from a predeploy called [`ProxyAdmin`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/universal/ProxyAdmin.sol), whose address is `0x4200000000000000000000000000000000000018`. 
+The predeploys are controlled from a predeploy called [`ProxyAdmin`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/universal/ProxyAdmin.sol), whose address is `0x4200000000000000000000000000000000000018`.
 The function to call is [`upgrade(address,address)`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/universal/ProxyAdmin.sol#L211-L229).
 The first parameter is the proxy to upgrade, and the second is the address of a new implementation.
 
-For example, the legacy `L1BlockNumber` contract is at `0x420...013`. 
+For example, the legacy `L1BlockNumber` contract is at `0x420...013`.
 To disable this function, we'll set the implementation to `0x00...00`.
 We do this using the [Foundry](https://book.getfoundry.sh/) command `cast`.
 
@@ -51,10 +51,10 @@ We do this using the [Foundry](https://book.getfoundry.sh/) command `cast`.
 
    ```sh
    L1BLOCKNUM_IMPLEMENTATION=`cast call $L1BLOCKNUM "implementation()" | sed 's/000000000000000000000000//'`
-   echo $L1BLOCKNUM_IMPLEMENTATION 
+   echo $L1BLOCKNUM_IMPLEMENTATION
    ```
 
-1. Change the implementation to the zero address   
+1. Change the implementation to the zero address
 
    ```sh
    cast send --private-key $PRIVKEY $PROXY_ADMIN "upgrade(address,address)" $L1BLOCKNUM $ZERO_ADDR
@@ -67,7 +67,7 @@ We do this using the [Foundry](https://book.getfoundry.sh/) command `cast`.
    cast call $L1BLOCKNUM 'number()'
    ```
 
-1. Fix the predeploy by returning it to the previous implementation, and verify it works. 
+1. Fix the predeploy by returning it to the previous implementation, and verify it works.
 
 
    ```sh

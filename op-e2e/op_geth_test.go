@@ -19,7 +19,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// TestMissingGasLimit tests that op-geth cannot build a block without gas limit while optimism is active in the chain config.
+// TestMissingGasLimit tests that op-geth cannot build a block without gas limit while slice is active in the chain config.
 func TestMissingGasLimit(t *testing.T) {
 	InitParallel(t)
 	cfg := DefaultSystemConfig(t)

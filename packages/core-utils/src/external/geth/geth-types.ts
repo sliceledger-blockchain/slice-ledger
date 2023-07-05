@@ -65,18 +65,18 @@ export interface Genesis {
 }
 
 /**
- * Represents the chain config for an Optimism chain
+ * Represents the chain config for an Slice chain
  */
-export interface OptimismChainConfig extends ChainConfig {
-  optimism: {
+export interface SliceChainConfig extends ChainConfig {
+  slice: {
     baseFeeRecipient: string
     l1FeeRecipient: string
   }
 }
 
 /**
- * Represents the Genesis file format for an Optimism chain
+ * Represents the Genesis file format for an Slice chain
  */
-export interface OptimismGenesis extends Genesis {
-  config: OptimismChainConfig
+export interface SliceGenesis extends Genesis {
+  config: SliceChainConfig
 }

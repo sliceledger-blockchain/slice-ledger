@@ -26,8 +26,8 @@ contract PostSherlockL2 is SafeBuilder {
         address L2StandardBridge;
         address L2ToL1MessagePasser;
         address SequencerFeeVault;
-        address OptimismMintableERC20Factory;
-        address OptimismMintableERC721Factory;
+        address SliceMintableERC20Factory;
+        address SliceMintableERC721Factory;
     }
 
     /// @notice A mapping of chainid to a ContractSet of implementations.
@@ -46,8 +46,8 @@ contract PostSherlockL2 is SafeBuilder {
     string constant internal L2StandardBridge_Version = "1.1.0";
     string constant internal L2ToL1MessagePasser_Version = "1.0.0";
     string constant internal SequencerFeeVault_Version = "1.1.0";
-    string constant internal OptimismMintableERC20Factory_Version = "1.1.0";
-    string constant internal OptimismMintableERC721Factory_Version = "1.2.0";
+    string constant internal SliceMintableERC20Factory_Version = "1.1.0";
+    string constant internal SliceMintableERC721Factory_Version = "1.2.0";
 
     /// @notice Place the contract addresses in storage so they can be used when building calldata.
     function setUp() external {
@@ -61,8 +61,8 @@ contract PostSherlockL2 is SafeBuilder {
             L2StandardBridge: 0x26A77636eD9A97BBDE9740bed362bFCE5CaB8e10,
             L2ToL1MessagePasser: 0x50CcA47c1e06084459dc83c9E964F4a158cB28Ae,
             SequencerFeeVault: 0x9eE472aB07Aa92bAe20a9d3E2d29beD3248b9075,
-            OptimismMintableERC20Factory: 0x3F94732CFd48eE3597d7cEDfb853cfB2De31219c,
-            OptimismMintableERC721Factory: 0x13DcfC403eCEF3E8Eab66C00dC64e793dc40Be1d
+            SliceMintableERC20Factory: 0x3F94732CFd48eE3597d7cEDfb853cfB2De31219c,
+            SliceMintableERC721Factory: 0x13DcfC403eCEF3E8Eab66C00dC64e793dc40Be1d
         });
 
         proxies[OP_GOERLI] = ContractSet({
@@ -75,8 +75,8 @@ contract PostSherlockL2 is SafeBuilder {
             L2StandardBridge: Predeploys.L2_STANDARD_BRIDGE,
             L2ToL1MessagePasser: Predeploys.L2_TO_L1_MESSAGE_PASSER,
             SequencerFeeVault: Predeploys.SEQUENCER_FEE_WALLET,
-            OptimismMintableERC20Factory: Predeploys.OPTIMISM_MINTABLE_ERC20_FACTORY,
-            OptimismMintableERC721Factory: Predeploys.OPTIMISM_MINTABLE_ERC721_FACTORY
+            SliceMintableERC20Factory: Predeploys.SLICE_MINTABLE_ERC20_FACTORY,
+            SliceMintableERC721Factory: Predeploys.SLICE_MINTABLE_ERC721_FACTORY
         });
     }
 
@@ -92,8 +92,8 @@ contract PostSherlockL2 is SafeBuilder {
         require(_versionHash(prox.L2StandardBridge) == keccak256(bytes(L2StandardBridge_Version)), "L2StandardBridge");
         require(_versionHash(prox.L2ToL1MessagePasser) == keccak256(bytes(L2ToL1MessagePasser_Version)), "L2ToL1MessagePasser");
         require(_versionHash(prox.SequencerFeeVault) == keccak256(bytes(SequencerFeeVault_Version)), "SequencerFeeVault");
-        require(_versionHash(prox.OptimismMintableERC20Factory) == keccak256(bytes(OptimismMintableERC20Factory_Version)), "OptimismMintableERC20Factory");
-        require(_versionHash(prox.OptimismMintableERC721Factory) == keccak256(bytes(OptimismMintableERC721Factory_Version)), "OptimismMintableERC721Factory");
+        require(_versionHash(prox.SliceMintableERC20Factory) == keccak256(bytes(SliceMintableERC20Factory_Version)), "SliceMintableERC20Factory");
+        require(_versionHash(prox.SliceMintableERC721Factory) == keccak256(bytes(SliceMintableERC721Factory_Version)), "SliceMintableERC721Factory");
 
         // Check that the codehashes of all implementations match the proxies set implementations.
         ContractSet memory impl = getImplementations();
@@ -106,8 +106,8 @@ contract PostSherlockL2 is SafeBuilder {
         require(PROXY_ADMIN.getProxyImplementation(prox.L2StandardBridge).codehash == impl.L2StandardBridge.codehash);
         require(PROXY_ADMIN.getProxyImplementation(prox.L2ToL1MessagePasser).codehash == impl.L2ToL1MessagePasser.codehash);
         require(PROXY_ADMIN.getProxyImplementation(prox.SequencerFeeVault).codehash == impl.SequencerFeeVault.codehash);
-        require(PROXY_ADMIN.getProxyImplementation(prox.OptimismMintableERC20Factory).codehash == impl.OptimismMintableERC20Factory.codehash);
-        require(PROXY_ADMIN.getProxyImplementation(prox.OptimismMintableERC721Factory).codehash == impl.OptimismMintableERC721Factory.codehash);
+        require(PROXY_ADMIN.getProxyImplementation(prox.SliceMintableERC20Factory).codehash == impl.SliceMintableERC20Factory.codehash);
+        require(PROXY_ADMIN.getProxyImplementation(prox.SliceMintableERC721Factory).codehash == impl.SliceMintableERC721Factory.codehash);
     }
 
     /// @notice Test coverage of the logic. Should only run on goerli but other chains
@@ -239,23 +239,23 @@ contract PostSherlockL2 is SafeBuilder {
             )
         });
 
-        // Upgrade the OptimismMintableERC20Factory
+        // Upgrade the SliceMintableERC20Factory
         calls[9] = IMulticall3.Call3({
             target: _proxyAdmin,
             allowFailure: false,
             callData: abi.encodeCall(
                 ProxyAdmin.upgrade,
-                (payable(prox.OptimismMintableERC20Factory), impl.OptimismMintableERC20Factory)
+                (payable(prox.SliceMintableERC20Factory), impl.SliceMintableERC20Factory)
             )
         });
 
-        // Upgrade the OptimismMintableERC721Factory
+        // Upgrade the SliceMintableERC721Factory
         calls[10] = IMulticall3.Call3({
             target: _proxyAdmin,
             allowFailure: false,
             callData: abi.encodeCall(
                 ProxyAdmin.upgrade,
-                (payable(prox.OptimismMintableERC721Factory), impl.OptimismMintableERC721Factory)
+                (payable(prox.SliceMintableERC721Factory), impl.SliceMintableERC721Factory)
             )
         });
 

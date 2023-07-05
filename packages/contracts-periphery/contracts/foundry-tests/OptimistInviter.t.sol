@@ -107,10 +107,6 @@ contract OptimistInviter_Initializer is Test {
         return attestation.length > 0;
     }
 
-    /**
-     * @notice Get signature as a bytes blob, since SignatureChecker takes arbitrary signature blobs.
-     *
-     */
     function _getSignature(uint256 _signingPrivateKey, bytes32 _digest)
         internal
         pure
@@ -438,7 +434,7 @@ contract OptimistInviterTest is OptimistInviter_Initializer {
             bytes memory signature
         ) = _issueInviteWithEIP712Domain(
                 bobPrivateKey,
-                "OptimismInviter",
+                "SliceInviter",
                 "0.9.1",
                 block.chainid,
                 address(optimistInviter)
@@ -463,7 +459,7 @@ contract OptimistInviterTest is OptimistInviter_Initializer {
             bytes memory signature
         ) = _issueInviteWithEIP712Domain(
                 bobPrivateKey,
-                "OptimismInviter",
+                "SliceInviter",
                 bytes(optimistInviter.EIP712_VERSION()),
                 1,
                 address(optimistInviter)
@@ -488,7 +484,7 @@ contract OptimistInviterTest is OptimistInviter_Initializer {
             bytes memory signature
         ) = _issueInviteWithEIP712Domain(
                 bobPrivateKey,
-                "OptimismInviter",
+                "SliceInviter",
                 bytes(optimistInviter.EIP712_VERSION()),
                 block.chainid,
                 address(0xBEEF)

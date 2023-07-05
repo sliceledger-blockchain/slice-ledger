@@ -57,17 +57,17 @@ func TestERC20BridgeDeposits(t *testing.T) {
 	// Deploy L2 WETH9
 	l2Opts, err := bind.NewKeyedTransactorWithChainID(sys.cfg.Secrets.Alice, cfg.L2ChainIDBig())
 	require.NoError(t, err)
-	optimismMintableTokenFactory, err := bindings.NewOptimismMintableERC20Factory(predeploys.OptimismMintableERC20FactoryAddr, l2Client)
+	sliceMintableTokenFactory, err := bindings.NewSliceMintableERC20Factory(predeploys.SliceMintableERC20FactoryAddr, l2Client)
 	require.NoError(t, err)
-	tx, err = optimismMintableTokenFactory.CreateOptimismMintableERC20(l2Opts, weth9Address, "L2-WETH", "L2-WETH")
+	tx, err = sliceMintableTokenFactory.CreateSliceMintableERC20(l2Opts, weth9Address, "L2-WETH", "L2-WETH")
 	require.NoError(t, err)
 	_, err = waitForTransaction(tx.Hash(), l2Client, 3*time.Duration(cfg.DeployConfig.L2BlockTime)*time.Second)
 	require.NoError(t, err)
 
 	// Get the deployment event to have access to the L2 WETH9 address
-	it, err := optimismMintableTokenFactory.FilterOptimismMintableERC20Created(&bind.FilterOpts{Start: 0}, nil, nil)
+	it, err := sliceMintableTokenFactory.FilterSliceMintableERC20Created(&bind.FilterOpts{Start: 0}, nil, nil)
 	require.NoError(t, err)
-	var event *bindings.OptimismMintableERC20FactoryOptimismMintableERC20Created
+	var event *bindings.SliceMintableERC20FactorySliceMintableERC20Created
 	for it.Next() {
 		event = it.Event
 	}
@@ -90,12 +90,12 @@ func TestERC20BridgeDeposits(t *testing.T) {
 	t.Log("Deposit through L1StandardBridge", "gas used", depositReceipt.GasUsed)
 
 	// compute the deposit transaction hash + poll for it
-	portal, err := bindings.NewOptimismPortal(predeploys.DevOptimismPortalAddr, l1Client)
+	portal, err := bindings.NewSlicePortal(predeploys.DevSlicePortalAddr, l1Client)
 	require.NoError(t, err)
 
 	depIt, err := portal.FilterTransactionDeposited(&bind.FilterOpts{Start: 0}, nil, nil, nil)
 	require.NoError(t, err)
-	var depositEvent *bindings.OptimismPortalTransactionDeposited
+	var depositEvent *bindings.SlicePortalTransactionDeposited
 	for depIt.Next() {
 		depositEvent = depIt.Event
 	}
@@ -107,11 +107,11 @@ func TestERC20BridgeDeposits(t *testing.T) {
 	require.NoError(t, err)
 
 	// Ensure that the deposit went through
-	optimismMintableToken, err := bindings.NewOptimismMintableERC20(event.LocalToken, l2Client)
+	sliceMintableToken, err := bindings.NewSliceMintableERC20(event.LocalToken, l2Client)
 	require.NoError(t, err)
 
 	// Should have balance on L2
-	l2Balance, err := optimismMintableToken.BalanceOf(&bind.CallOpts{}, opts.From)
+	l2Balance, err := sliceMintableToken.BalanceOf(&bind.CallOpts{}, opts.From)
 	require.NoError(t, err)
 	require.Equal(t, l2Balance, big.NewInt(100))
 }

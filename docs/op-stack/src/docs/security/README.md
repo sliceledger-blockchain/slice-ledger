@@ -5,7 +5,7 @@ lang: en-US
 
 ::: warning 🚧 Work in Progress
 
-The OP Stack is a work in progress. Constantly pushing to improve the overall security and decentralization of the OP Stack is a top priority. 
+The OP Stack is a work in progress. Constantly pushing to improve the overall security and decentralization of the OP Stack is a top priority.
 
 :::
 
@@ -27,7 +27,7 @@ As with anything, modify the OP Stack at your own risk. There is no guarantee th
 
 ### Can I use fault proofs?
 
-**Not yet.** The OP Stack does not currently have a fault proof system. **Note that fault proofs do not meaningfully improve the security of a system if that system can be upgraded within the 7 day challenge window (”fast upgrade keys”)**. A system with fast upgrade keys is fully dependent on the upgrade keys for security. 
+**Not yet.** The OP Stack does not currently have a fault proof system. **Note that fault proofs do not meaningfully improve the security of a system if that system can be upgraded within the 7 day challenge window (”fast upgrade keys”)**. A system with fast upgrade keys is fully dependent on the upgrade keys for security.
 
 Fault proofs are a key milestone and top priority for the OP Stack. In the meantime, the OP Stack can be shipped with several other excellent security options for systems that want to improve security before fault proofs are available in production.
 

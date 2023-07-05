@@ -42,7 +42,7 @@ func BuildL2Genesis(config *DeployConfig, l1StartBlock *types.Block) (*core.Gene
 	}
 
 	// Set up the implementations
-	deployResults, err := immutables.BuildOptimism(immutable)
+	deployResults, err := immutables.BuildSlice(immutable)
 	if err != nil {
 		return nil, err
 	}

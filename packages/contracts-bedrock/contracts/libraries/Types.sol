@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 /// @title Types
-/// @notice Contains various types used throughout the Optimism contract system.
+/// @notice Contains various types used throughout the Slice contract system.
 library Types {
     /// @notice OutputProposal represents a commitment to the L2 state. The timestamp is the L1
     ///         timestamp that the output root is posted. This timestamp is used to verify that the

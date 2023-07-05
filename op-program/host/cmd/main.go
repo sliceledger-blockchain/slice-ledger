@@ -54,8 +54,8 @@ func run(args []string, action ConfigAction) error {
 	app.Version = VersionWithMeta
 	app.Flags = flags.Flags
 	app.Name = "op-program"
-	app.Usage = "Optimism Fault Proof Program"
-	app.Description = "The Optimism Fault Proof Program fault proof program that runs through the rollup state-transition to verify an L2 output from L1 inputs."
+	app.Usage = "Slice Fault Proof Program"
+	app.Description = "The Slice Fault Proof Program fault proof program that runs through the rollup state-transition to verify an L2 output from L1 inputs."
 	app.Action = func(ctx *cli.Context) error {
 		logger, err := setupLogging(ctx)
 		if err != nil {

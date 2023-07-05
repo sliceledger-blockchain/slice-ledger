@@ -88,7 +88,7 @@ func ProveWithdrawal(t *testing.T, cfg SystemConfig, l1Client *ethclient.Client,
 	ctx, cancel := context.WithTimeout(context.Background(), 40*time.Duration(cfg.DeployConfig.L1BlockTime)*time.Second)
 	defer cancel()
 
-	blockNumber, err := withdrawals.WaitForOutputRootPublished(ctx, l1Client, predeploys.DevOptimismPortalAddr, l2WithdrawalReceipt.BlockNumber)
+	blockNumber, err := withdrawals.WaitForOutputRootPublished(ctx, l1Client, predeploys.DevSlicePortalAddr, l2WithdrawalReceipt.BlockNumber)
 	require.Nil(t, err)
 
 	rpcClient, err := rpc.Dial(l2Node.WSEndpoint())
@@ -109,7 +109,7 @@ func ProveWithdrawal(t *testing.T, cfg SystemConfig, l1Client *ethclient.Client,
 	params, err := withdrawals.ProveWithdrawalParameters(context.Background(), proofCl, receiptCl, l2WithdrawalReceipt.TxHash, header, oracle)
 	require.Nil(t, err)
 
-	portal, err := bindings.NewOptimismPortal(predeploys.DevOptimismPortalAddr, l1Client)
+	portal, err := bindings.NewSlicePortal(predeploys.DevSlicePortalAddr, l1Client)
 	require.Nil(t, err)
 
 	opts, err := bind.NewKeyedTransactorWithChainID(ethPrivKey, cfg.L1ChainIDBig())
@@ -143,12 +143,12 @@ func FinalizeWithdrawal(t *testing.T, cfg SystemConfig, l1Client *ethclient.Clie
 	// Wait for finalization and then create the Finalized Withdrawal Transaction
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Duration(cfg.DeployConfig.L1BlockTime)*time.Second)
 	defer cancel()
-	err := withdrawals.WaitForFinalizationPeriod(ctx, l1Client, predeploys.DevOptimismPortalAddr, withdrawalReceipt.BlockNumber)
+	err := withdrawals.WaitForFinalizationPeriod(ctx, l1Client, predeploys.DevSlicePortalAddr, withdrawalReceipt.BlockNumber)
 	require.Nil(t, err)
 
 	opts, err := bind.NewKeyedTransactorWithChainID(privKey, cfg.L1ChainIDBig())
 	require.Nil(t, err)
-	portal, err := bindings.NewOptimismPortal(predeploys.DevOptimismPortalAddr, l1Client)
+	portal, err := bindings.NewSlicePortal(predeploys.DevSlicePortalAddr, l1Client)
 	require.Nil(t, err)
 	// Finalize withdrawal
 	tx, err := portal.FinalizeWithdrawalTransaction(

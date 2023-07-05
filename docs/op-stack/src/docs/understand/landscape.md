@@ -8,13 +8,13 @@ lang: en-US
 
 The OP Stack is best thought of as a collection of software components maintained by the Optimism Collective that either help to define new layers of the stack or fit in as modules within the stack.
 
-Because the OP Stack is a work in progress, the landscape of the different layers and modules is still evolving. 
-This page sketches out the different conceptual layers of the stack as they exist today and introduces some of the modules that fit into those layers. 
+Because the OP Stack is a work in progress, the landscape of the different layers and modules is still evolving.
+This page sketches out the different conceptual layers of the stack as they exist today and introduces some of the modules that fit into those layers.
 This doesn't include all of the modules or layers that may exist in the future, but gives a good overview of the landscape of the OP Stack today.
 
 If you’re interested in learning more about the latest *production* release of the OP Stack, the components of the stack that are highly tested and ready for real-world action, check out the page about the [Bedrock Release](../releases/bedrock.md).
 
-::: warning 
+::: warning
 
 Please note that not all of the modules described on this page already exist in a production state — these are explicitly marked as either “**in development**” or “**proposed**”
 
@@ -94,7 +94,7 @@ An Attestation-based Fault Proof mechanism uses an optimistic protocol to establ
 
 #### Fault Proof Optimistic Settlement (proposed)
 
-A Fault Proof Optimistic Settlement mechanism is mostly identical to the Attestation-based Fault Proof mechanism used today but it replaces the MultiSig challenger with a permissionless fault proving process. A correctly constructed fault proof should be able to invalidate any incorrect proposals during the allocated challenge period. This places a trust assumption on the correctness of the fault proof construction. At this time, work on the development of a Fault Proof  mechanism is well underway. 
+A Fault Proof Optimistic Settlement mechanism is mostly identical to the Attestation-based Fault Proof mechanism used today but it replaces the MultiSig challenger with a permissionless fault proving process. A correctly constructed fault proof should be able to invalidate any incorrect proposals during the allocated challenge period. This places a trust assumption on the correctness of the fault proof construction. At this time, work on the development of a Fault Proof  mechanism is well underway.
 
 #### Validity Proof Settlement (proposed)
 

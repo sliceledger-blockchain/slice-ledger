@@ -9,7 +9,7 @@ import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 /// @notice This contract extends the OpenZeppelin `Ownable` contract for L2 contracts to be owned
 ///         by contracts on either L1 or L2. Note that this contract is meant to be used with
 ///         systems that use the CrossDomainMessenger system. It will not work if the
-///         OptimismPortal is used directly.
+///         SlicePortal is used directly.
 abstract contract CrossDomainOwnable3 is Ownable {
     /// @notice If true, the contract uses the cross domain _checkOwner function override.
     ///         If false it uses the standard Ownable _checkOwner function.

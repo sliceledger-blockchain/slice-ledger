@@ -32,6 +32,6 @@ func TestSetup(t *testing.T) {
 	require.Contains(t, sd.L2Cfg.Alloc, dp.Addresses.Alice)
 	require.Equal(t, sd.L2Cfg.Alloc[dp.Addresses.Alice].Balance, Ether(1e12))
 
-	require.Contains(t, sd.L1Cfg.Alloc, predeploys.DevOptimismPortalAddr)
+	require.Contains(t, sd.L1Cfg.Alloc, predeploys.DevSlicePortalAddr)
 	require.Contains(t, sd.L2Cfg.Alloc, predeploys.L1BlockAddr)
 }

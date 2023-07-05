@@ -30,8 +30,8 @@ var (
 		"L2OutputOracleProxy",
 		"L1CrossDomainMessengerProxy",
 		"L1StandardBridgeProxy",
-		"OptimismPortalProxy",
-		"OptimismMintableERC20FactoryProxy",
+		"SlicePortalProxy",
+		"SliceMintableERC20FactoryProxy",
 	}
 	// portalMeteringSlot is the storage slot containing the metering params.
 	portalMeteringSlot = common.Hash{31: 0x01}
@@ -61,7 +61,7 @@ func init() {
 }
 
 // BuildL1DeveloperGenesis will create a L1 genesis block after creating
-// all of the state required for an Optimism network to function.
+// all of the state required for an Slice network to function.
 func BuildL1DeveloperGenesis(config *DeployConfig) (*core.Genesis, error) {
 	if config.L2OutputOracleStartingTimestamp != -1 {
 		return nil, errors.New("l2oo starting timestamp must be -1")
@@ -95,23 +95,23 @@ func BuildL1DeveloperGenesis(config *DeployConfig) (*core.Genesis, error) {
 		return nil, err
 	}
 
-	portalABI, err := bindings.OptimismPortalMetaData.GetAbi()
+	portalABI, err := bindings.SlicePortalMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
-	// Initialize the OptimismPortal without being paused
+	// Initialize the SlicePortal without being paused
 	data, err := portalABI.Pack("initialize", false)
 	if err != nil {
-		return nil, fmt.Errorf("cannot abi encode initialize for OptimismPortal: %w", err)
+		return nil, fmt.Errorf("cannot abi encode initialize for SlicePortal: %w", err)
 	}
 	if _, err := upgradeProxy(
 		backend,
 		opts,
-		depsByName["OptimismPortalProxy"].Address,
-		depsByName["OptimismPortal"].Address,
+		depsByName["SlicePortalProxy"].Address,
+		depsByName["SlicePortal"].Address,
 		data,
 	); err != nil {
-		return nil, fmt.Errorf("cannot upgrade OptimismPortalProxy: %w", err)
+		return nil, fmt.Errorf("cannot upgrade SlicePortalProxy: %w", err)
 	}
 
 	sysCfgABI, err := bindings.SystemConfigMetaData.GetAbi()
@@ -200,8 +200,8 @@ func BuildL1DeveloperGenesis(config *DeployConfig) (*core.Genesis, error) {
 	if lastUpgradeTx, err = upgradeProxy(
 		backend,
 		opts,
-		depsByName["OptimismMintableERC20FactoryProxy"].Address,
-		depsByName["OptimismMintableERC20Factory"].Address,
+		depsByName["SliceMintableERC20FactoryProxy"].Address,
+		depsByName["SliceMintableERC20Factory"].Address,
 		nil,
 	); err != nil {
 		return nil, err
@@ -276,7 +276,7 @@ func BuildL1DeveloperGenesis(config *DeployConfig) (*core.Genesis, error) {
 			key := common.BytesToHash(st.GetKey(iter.Key))
 			value := common.BytesToHash(data)
 
-			if depAddr == predeploys.DevOptimismPortalAddr && key == portalMeteringSlot {
+			if depAddr == predeploys.DevSlicePortalAddr && key == portalMeteringSlot {
 				// We need to manually set the block number in the resource
 				// metering storage slot to zero. Otherwise, deposits will
 				// revert.
@@ -327,10 +327,10 @@ func deployL1Contracts(config *DeployConfig, backend *backends.SimulatedBackend)
 			},
 		},
 		{
-			// The implementation of the OptimismPortal is deployed
+			// The implementation of the SlicePortal is deployed
 			// as being paused to prevent invalid usage of the network
 			// as only the proxy should be used
-			Name: "OptimismPortal",
+			Name: "SlicePortal",
 			Args: []interface{}{
 				predeploys.DevL2OutputOracleAddr,
 				config.PortalGuardian,
@@ -348,7 +348,7 @@ func deployL1Contracts(config *DeployConfig, backend *backends.SimulatedBackend)
 			Name: "L1ERC721Bridge",
 		},
 		{
-			Name: "OptimismMintableERC20Factory",
+			Name: "SliceMintableERC20Factory",
 		},
 		{
 			Name: "AddressManager",
@@ -395,8 +395,8 @@ func l1Deployer(backend *backends.SimulatedBackend, opts *bind.TransactOpts, dep
 			deployment.Args[5].(common.Address),
 			deployment.Args[6].(*big.Int),
 		)
-	case "OptimismPortal":
-		_, tx, _, err = bindings.DeployOptimismPortal(
+	case "SlicePortal":
+		_, tx, _, err = bindings.DeploySlicePortal(
 			opts,
 			backend,
 			deployment.Args[0].(common.Address),
@@ -408,7 +408,7 @@ func l1Deployer(backend *backends.SimulatedBackend, opts *bind.TransactOpts, dep
 		_, tx, _, err = bindings.DeployL1CrossDomainMessenger(
 			opts,
 			backend,
-			predeploys.DevOptimismPortalAddr,
+			predeploys.DevSlicePortalAddr,
 		)
 	case "L1StandardBridge":
 		_, tx, _, err = bindings.DeployL1StandardBridge(
@@ -416,8 +416,8 @@ func l1Deployer(backend *backends.SimulatedBackend, opts *bind.TransactOpts, dep
 			backend,
 			predeploys.DevL1CrossDomainMessengerAddr,
 		)
-	case "OptimismMintableERC20Factory":
-		_, tx, _, err = bindings.DeployOptimismMintableERC20Factory(
+	case "SliceMintableERC20Factory":
+		_, tx, _, err = bindings.DeploySliceMintableERC20Factory(
 			opts,
 			backend,
 			predeploys.DevL1StandardBridgeAddr,

@@ -8,9 +8,9 @@ import { Semver } from "../universal/Semver.sol";
 /// @custom:predeployed 0x4200000000000000000000000000000000000002
 /// @title DeployerWhitelist
 /// @notice DeployerWhitelist is a legacy contract that was originally used to act as a whitelist of
-///         addresses allowed to the Optimism network. The DeployerWhitelist has since been
+///         addresses allowed to the Slice network. The DeployerWhitelist has since been
 ///         disabled, but the code is kept in state for the sake of full backwards compatibility.
-///         As of the Bedrock upgrade, the DeployerWhitelist is completely unused by the Optimism
+///         As of the Bedrock upgrade, the DeployerWhitelist is completely unused by the Slice
 ///         system and could, in theory, be removed entirely.
 contract DeployerWhitelist is Semver {
     /// @notice Address of the owner of this contract. Note that when this address is set to

@@ -25,20 +25,20 @@ import (
 
 type L1Bindings struct {
 	// contract bindings
-	OptimismPortal *bindings.OptimismPortal
+	SlicePortal *bindings.SlicePortal
 
 	L2OutputOracle *bindings.L2OutputOracle
 }
 
 func NewL1Bindings(t Testing, l1Cl *ethclient.Client, deployments *e2eutils.DeploymentsL1) *L1Bindings {
-	optimismPortal, err := bindings.NewOptimismPortal(deployments.OptimismPortalProxy, l1Cl)
+	slicePortal, err := bindings.NewSlicePortal(deployments.SlicePortalProxy, l1Cl)
 	require.NoError(t, err)
 
 	l2OutputOracle, err := bindings.NewL2OutputOracle(deployments.L2OutputOracleProxy, l1Cl)
 	require.NoError(t, err)
 
 	return &L1Bindings{
-		OptimismPortal: optimismPortal,
+		SlicePortal: slicePortal,
 		L2OutputOracle: l2OutputOracle,
 	}
 }
@@ -327,7 +327,7 @@ func (s *CrossLayerUser) ActDeposit(t Testing) {
 		depositGas = gas
 	}
 
-	tx, err := s.L1.env.Bindings.OptimismPortal.DepositTransaction(&s.L1.txOpts, toAddr, depositTransferValue, depositGas, isCreation, s.L2.txCallData)
+	tx, err := s.L1.env.Bindings.SlicePortal.DepositTransaction(&s.L1.txOpts, toAddr, depositTransferValue, depositGas, isCreation, s.L2.txCallData)
 	require.NoError(t, err, "failed to create deposit tx")
 
 	// Send the actual tx (since tx opts don't send by default)
@@ -413,7 +413,7 @@ func (s *CrossLayerUser) ProveWithdrawal(t Testing, l2TxHash common.Hash) common
 	require.NoError(t, err)
 
 	// Create the prove tx
-	tx, err := s.L1.env.Bindings.OptimismPortal.ProveWithdrawalTransaction(
+	tx, err := s.L1.env.Bindings.SlicePortal.ProveWithdrawalTransaction(
 		&s.L1.txOpts,
 		bindings.TypesWithdrawalTransaction{
 			Nonce:    params.Nonce,
@@ -484,7 +484,7 @@ func (s *CrossLayerUser) CompleteWithdrawal(t Testing, l2TxHash common.Hash) com
 	require.NoError(t, err)
 
 	// Create the withdrawal tx
-	tx, err := s.L1.env.Bindings.OptimismPortal.FinalizeWithdrawalTransaction(
+	tx, err := s.L1.env.Bindings.SlicePortal.FinalizeWithdrawalTransaction(
 		&s.L1.txOpts,
 		bindings.TypesWithdrawalTransaction{
 			Nonce:    params.Nonce,

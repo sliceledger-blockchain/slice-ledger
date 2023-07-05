@@ -141,7 +141,7 @@ func TestHardhatGetDeployments(t *testing.T) {
 	)
 	require.Nil(t, err)
 
-	deployment, err := hh.GetDeployment("OptimismPortal")
+	deployment, err := hh.GetDeployment("SlicePortal")
 	require.Nil(t, err)
 	require.NotNil(t, deployment)
 }

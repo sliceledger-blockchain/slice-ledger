@@ -82,9 +82,9 @@ func WaitForFinalizationPeriod(ctx context.Context, client *ethclient.Client, po
 }
 
 func createL2OOCaller(ctx context.Context, client *ethclient.Client, portalAddr common.Address) (*bindings.L2OutputOracleCaller, error) {
-	portal, err := bindings.NewOptimismPortalCaller(portalAddr, client)
+	portal, err := bindings.NewSlicePortalCaller(portalAddr, client)
 	if err != nil {
-		return nil, fmt.Errorf("create OptimismPortalCaller: %w", err)
+		return nil, fmt.Errorf("create SlicePortalCaller: %w", err)
 	}
 	l2OOAddress, err := portal.L2ORACLE(&bind.CallOpts{Context: ctx})
 	if err != nil {

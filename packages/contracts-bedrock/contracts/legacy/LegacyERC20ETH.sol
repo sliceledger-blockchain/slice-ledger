@@ -2,7 +2,7 @@
 pragma solidity 0.8.15;
 
 import { Predeploys } from "../libraries/Predeploys.sol";
-import { OptimismMintableERC20 } from "../universal/OptimismMintableERC20.sol";
+import { SliceMintableERC20 } from "../universal/SliceMintableERC20.sol";
 
 /// @custom:legacy
 /// @custom:proxied
@@ -12,10 +12,10 @@ import { OptimismMintableERC20 } from "../universal/OptimismMintableERC20.sol";
 ///         All ETH balances held within this contract were migrated to the state trie as part of
 ///         the Bedrock upgrade. Functions within this contract that mutate state were already
 ///         disabled as part of the EVM equivalence upgrade.
-contract LegacyERC20ETH is OptimismMintableERC20 {
-    /// @notice Initializes the contract as an Optimism Mintable ERC20.
+contract LegacyERC20ETH is SliceMintableERC20 {
+    /// @notice Initializes the contract as an Slice Mintable ERC20.
     constructor()
-        OptimismMintableERC20(Predeploys.L2_STANDARD_BRIDGE, address(0), "Ether", "ETH")
+        SliceMintableERC20(Predeploys.L2_STANDARD_BRIDGE, address(0), "Ether", "ETH")
     {}
 
     /// @notice Returns the ETH balance of the target account. Overrides the base behavior of the

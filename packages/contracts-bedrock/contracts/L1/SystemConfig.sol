@@ -8,7 +8,7 @@ import { Semver } from "../universal/Semver.sol";
 import { ResourceMetering } from "./ResourceMetering.sol";
 
 /// @title SystemConfig
-/// @notice The SystemConfig contract is used to manage configuration of an Optimism network.
+/// @notice The SystemConfig contract is used to manage configuration of an Slice network.
 ///         All configuration is stored on L1 and picked up by L2 as part of the derviation of
 ///         the L2 chain.
 contract SystemConfig is OwnableUpgradeable, Semver {
@@ -49,7 +49,7 @@ contract SystemConfig is OwnableUpgradeable, Semver {
     uint64 public gasLimit;
 
     /// @notice The configuration for the deposit fee market.
-    ///         Used by the OptimismPortal to meter the cost of buying L2 gas on L1.
+    ///         Used by the SlicePortal to meter the cost of buying L2 gas on L1.
     ///         Set as internal with a getter so that the struct is returned instead of a tuple.
     ResourceMetering.ResourceConfig internal _resourceConfig;
 

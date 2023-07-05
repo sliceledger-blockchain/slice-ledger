@@ -2,7 +2,7 @@
 pragma solidity 0.8.15;
 
 import { Predeploys } from "../libraries/Predeploys.sol";
-import { OptimismPortal } from "./OptimismPortal.sol";
+import { SlicePortal } from "./SlicePortal.sol";
 import { CrossDomainMessenger } from "../universal/CrossDomainMessenger.sol";
 import { Semver } from "../universal/Semver.sol";
 
@@ -12,13 +12,13 @@ import { Semver } from "../universal/Semver.sol";
 ///         for sending and receiving data on the L1 side. Users are encouraged to use this
 ///         interface instead of interacting with lower-level contracts directly.
 contract L1CrossDomainMessenger is CrossDomainMessenger, Semver {
-    /// @notice Address of the OptimismPortal.
-    OptimismPortal public immutable PORTAL;
+    /// @notice Address of the SlicePortal.
+    SlicePortal public immutable PORTAL;
 
     /// @custom:semver 1.4.1
     /// @notice Constructs the L1CrossDomainMessenger contract.
-    /// @param _portal Address of the OptimismPortal contract on this network.
-    constructor(OptimismPortal _portal)
+    /// @param _portal Address of the SlicePortal contract on this network.
+    constructor(SlicePortal _portal)
         Semver(1, 4, 1)
         CrossDomainMessenger(Predeploys.L2_CROSS_DOMAIN_MESSENGER)
     {

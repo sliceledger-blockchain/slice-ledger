@@ -25,10 +25,10 @@ var OPGoerliChainConfig = &params.ChainConfig{
 	GrayGlacierBlock:              big.NewInt(4061224),
 	MergeNetsplitBlock:            big.NewInt(4061224),
 	BedrockBlock:                  big.NewInt(4061224),
-	RegolithTime:                  &params.OptimismGoerliRegolithTime,
+	RegolithTime:                  &params.SliceGoerliRegolithTime,
 	TerminalTotalDifficulty:       big.NewInt(0),
 	TerminalTotalDifficultyPassed: true,
-	Optimism: &params.OptimismConfig{
+	Slice: &params.SliceConfig{
 		EIP1559Elasticity:  10,
 		EIP1559Denominator: 50,
 	},

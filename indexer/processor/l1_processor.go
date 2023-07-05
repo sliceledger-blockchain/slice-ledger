@@ -23,7 +23,7 @@ import (
 )
 
 type L1Contracts struct {
-	OptimismPortal         common.Address
+	SlicePortal         common.Address
 	L2OutputOracle         common.Address
 	L1CrossDomainMessenger common.Address
 	L1StandardBridge       common.Address

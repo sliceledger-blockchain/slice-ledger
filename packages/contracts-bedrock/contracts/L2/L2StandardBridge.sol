@@ -4,7 +4,7 @@ pragma solidity 0.8.15;
 import { Predeploys } from "../libraries/Predeploys.sol";
 import { StandardBridge } from "../universal/StandardBridge.sol";
 import { Semver } from "../universal/Semver.sol";
-import { OptimismMintableERC20 } from "../universal/OptimismMintableERC20.sol";
+import { SliceMintableERC20 } from "../universal/SliceMintableERC20.sol";
 
 /// @custom:proxied
 /// @custom:predeploy 0x4200000000000000000000000000000000000010
@@ -72,7 +72,7 @@ contract L2StandardBridge is StandardBridge, Semver {
 
     /// @custom:legacy
     /// @notice Initiates a withdrawal from L2 to L1.
-    ///         This function only works with OptimismMintableERC20 tokens or ether. Use the
+    ///         This function only works with SliceMintableERC20 tokens or ether. Use the
     ///         `bridgeERC20` function to bridge native L2 tokens to L1.
     /// @param _l2Token     Address of the L2 token to withdraw.
     /// @param _amount      Amount of the L2 token to withdraw.
@@ -93,7 +93,7 @@ contract L2StandardBridge is StandardBridge, Semver {
     ///         be locked in the L1StandardBridge. ETH may be recoverable if the call can be
     ///         successfully replayed by increasing the amount of gas supplied to the call. If the
     ///         call will fail for any amount of gas, then the ETH will be locked permanently.
-    ///         This function only works with OptimismMintableERC20 tokens or ether. Use the
+    ///         This function only works with SliceMintableERC20 tokens or ether. Use the
     ///         `bridgeERC20To` function to bridge native L2 tokens to L1.
     /// @param _l2Token     Address of the L2 token to withdraw.
     /// @param _to          Recipient account on L1.
@@ -160,7 +160,7 @@ contract L2StandardBridge is StandardBridge, Semver {
         if (_l2Token == Predeploys.LEGACY_ERC20_ETH) {
             _initiateBridgeETH(_from, _to, _amount, _minGasLimit, _extraData);
         } else {
-            address l1Token = OptimismMintableERC20(_l2Token).l1Token();
+            address l1Token = SliceMintableERC20(_l2Token).l1Token();
             _initiateBridgeERC20(_l2Token, l1Token, _from, _to, _amount, _minGasLimit, _extraData);
         }
     }

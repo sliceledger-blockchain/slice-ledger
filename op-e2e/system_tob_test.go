@@ -247,7 +247,7 @@ func TestMixedDepositValidity(t *testing.T) {
 	txTimeoutDuration := 10 * time.Duration(cfg.DeployConfig.L1BlockTime) * time.Second
 
 	// Bind to the deposit contract
-	depositContract, err := bindings.NewOptimismPortal(predeploys.DevOptimismPortalAddr, l1Client)
+	depositContract, err := bindings.NewSlicePortal(predeploys.DevSlicePortalAddr, l1Client)
 	require.NoError(t, err)
 
 	// Create a struct used to track our transactors and their transactions sent.
@@ -425,7 +425,7 @@ func TestMixedWithdrawalValidity(t *testing.T) {
 			txTimeoutDuration := 10 * time.Duration(cfg.DeployConfig.L1BlockTime) * time.Second
 
 			// Bind to the deposit contract
-			depositContract, err := bindings.NewOptimismPortal(predeploys.DevOptimismPortalAddr, l1Client)
+			depositContract, err := bindings.NewSlicePortal(predeploys.DevSlicePortalAddr, l1Client)
 			_ = depositContract
 			require.NoError(t, err)
 
@@ -511,7 +511,7 @@ func TestMixedWithdrawalValidity(t *testing.T) {
 
 			// Wait for the finalization period, then we can finalize this withdrawal.
 			ctx, cancel = context.WithTimeout(context.Background(), 40*time.Duration(cfg.DeployConfig.L1BlockTime)*time.Second)
-			blockNumber, err := withdrawals.WaitForOutputRootPublished(ctx, l1Client, predeploys.DevOptimismPortalAddr, receipt.BlockNumber)
+			blockNumber, err := withdrawals.WaitForOutputRootPublished(ctx, l1Client, predeploys.DevSlicePortalAddr, receipt.BlockNumber)
 			cancel()
 			require.Nil(t, err)
 
@@ -642,7 +642,7 @@ func TestMixedWithdrawalValidity(t *testing.T) {
 				// Wait for finalization and then create the Finalized Withdrawal Transaction
 				ctx, cancel = context.WithTimeout(context.Background(), 45*time.Duration(cfg.DeployConfig.L1BlockTime)*time.Second)
 				defer cancel()
-				err = withdrawals.WaitForFinalizationPeriod(ctx, l1Client, predeploys.DevOptimismPortalAddr, header.Number)
+				err = withdrawals.WaitForFinalizationPeriod(ctx, l1Client, predeploys.DevSlicePortalAddr, header.Number)
 				require.Nil(t, err)
 
 				// Finalize withdrawal

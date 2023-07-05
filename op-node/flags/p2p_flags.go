@@ -195,10 +195,10 @@ var (
 	}
 	UserAgent = &cli.StringFlag{
 		Name:     "p2p.useragent",
-		Usage:    "User-agent string to share via LibP2P identify. If empty it defaults to 'optimism'.",
+		Usage:    "User-agent string to share via LibP2P identify. If empty it defaults to 'slice'.",
 		Hidden:   true,
 		Required: false,
-		Value:    "optimism",
+		Value:    "slice",
 		EnvVars:  p2pEnv("AGENT"),
 	}
 	TimeoutNegotiation = &cli.DurationFlag{

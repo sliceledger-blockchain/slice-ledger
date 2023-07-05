@@ -13,12 +13,12 @@ import { ProxyAdmin } from "../contracts/universal/ProxyAdmin.sol";
 import { AddressManager } from "../contracts/legacy/AddressManager.sol";
 import { Proxy } from "../contracts/universal/Proxy.sol";
 import { L1StandardBridge } from "../contracts/L1/L1StandardBridge.sol";
-import { OptimismPortal } from "../contracts/L1/OptimismPortal.sol";
+import { SlicePortal } from "../contracts/L1/SlicePortal.sol";
 import { L1ChugSplashProxy } from "../contracts/legacy/L1ChugSplashProxy.sol";
 import { ResolvedDelegateProxy } from "../contracts/legacy/ResolvedDelegateProxy.sol";
 import { L1CrossDomainMessenger } from "../contracts/L1/L1CrossDomainMessenger.sol";
 import { L2OutputOracle } from "../contracts/L1/L2OutputOracle.sol";
-import { OptimismMintableERC20Factory } from "../contracts/universal/OptimismMintableERC20Factory.sol";
+import { SliceMintableERC20Factory } from "../contracts/universal/SliceMintableERC20Factory.sol";
 import { SystemConfig } from "../contracts/L1/SystemConfig.sol";
 import { ResourceMetering } from "../contracts/L1/ResourceMetering.sol";
 import { Constants } from "../contracts/libraries/Constants.sol";
@@ -62,19 +62,19 @@ contract Deploy is Deployer {
         deployAddressManager();
         deployProxyAdmin();
 
-        deployOptimismPortalProxy();
+        deploySlicePortalProxy();
         deployL2OutputOracleProxy();
         deploySystemConfigProxy();
         deployL1StandardBridgeProxy();
         deployL1CrossDomainMessengerProxy();
-        deployOptimismMintableERC20FactoryProxy();
+        deploySliceMintableERC20FactoryProxy();
         deployL1ERC721BridgeProxy();
         deployDisputeGameFactoryProxy();
 
-        deployOptimismPortal();
+        deploySlicePortal();
         deployL1CrossDomainMessenger();
         deployL2OutputOracle();
-        deployOptimismMintableERC20Factory();
+        deploySliceMintableERC20Factory();
         deploySystemConfig();
         deployL1StandardBridge();
         deployL1ERC721Bridge();
@@ -86,10 +86,10 @@ contract Deploy is Deployer {
         initializeSystemConfig();
         initializeL1StandardBridge();
         initializeL1ERC721Bridge();
-        initializeOptimismMintableERC20Factory();
+        initializeSliceMintableERC20Factory();
         initializeL1CrossDomainMessenger();
         initializeL2OutputOracle();
-        initializeOptimismPortal();
+        initializeSlicePortal();
 
         setFaultGameImplementation();
 
@@ -180,8 +180,8 @@ contract Deploy is Deployer {
         return address(proxy);
     }
 
-    /// @notice Deploy the OptimismPortalProxy
-    function deployOptimismPortalProxy() broadcast() public returns (address) {
+    /// @notice Deploy the SlicePortalProxy
+    function deploySlicePortalProxy() broadcast() public returns (address) {
         address proxyAdmin = mustGetAddress("ProxyAdmin");
         Proxy proxy = new Proxy({
             _admin: proxyAdmin
@@ -190,14 +190,14 @@ contract Deploy is Deployer {
         address admin = address(uint160(uint256(vm.load(address(proxy), OWNER_KEY))));
         require(admin == proxyAdmin);
 
-        save("OptimismPortalProxy", address(proxy));
-        console.log("OptimismPortalProxy deployed at %s", address(proxy));
+        save("SlicePortalProxy", address(proxy));
+        console.log("SlicePortalProxy deployed at %s", address(proxy));
 
         return address(proxy);
     }
 
-    /// @notice Deploy the OptimismMintableERC20FactoryProxy
-    function deployOptimismMintableERC20FactoryProxy() broadcast() public returns (address) {
+    /// @notice Deploy the SliceMintableERC20FactoryProxy
+    function deploySliceMintableERC20FactoryProxy() broadcast() public returns (address) {
         address proxyAdmin = mustGetAddress("ProxyAdmin");
         Proxy proxy = new Proxy({
             _admin: proxyAdmin
@@ -206,8 +206,8 @@ contract Deploy is Deployer {
         address admin = address(uint160(uint256(vm.load(address(proxy), OWNER_KEY))));
         require(admin == proxyAdmin);
 
-        save("OptimismMintableERC20FactoryProxy", address(proxy));
-        console.log("OptimismMintableERC20FactoryProxy deployed at %s", address(proxy));
+        save("SliceMintableERC20FactoryProxy", address(proxy));
+        console.log("SliceMintableERC20FactoryProxy deployed at %s", address(proxy));
 
         return address(proxy);
     }
@@ -265,9 +265,9 @@ contract Deploy is Deployer {
 
     /// @notice Deploy the L1CrossDomainMessenger
     function deployL1CrossDomainMessenger() broadcast() public returns (address) {
-        address portal = mustGetAddress("OptimismPortalProxy");
+        address portal = mustGetAddress("SlicePortalProxy");
         L1CrossDomainMessenger messenger = new L1CrossDomainMessenger({
-            _portal: OptimismPortal(payable(portal))
+            _portal: SlicePortal(payable(portal))
         });
 
         require(address(messenger.PORTAL()) == portal);
@@ -278,8 +278,8 @@ contract Deploy is Deployer {
         return address(messenger);
     }
 
-    /// @notice Deploy the OptimismPortal
-    function deployOptimismPortal() broadcast() public returns (address) {
+    /// @notice Deploy the SlicePortal
+    function deploySlicePortal() broadcast() public returns (address) {
         address l2OutputOracleProxy = mustGetAddress("L2OutputOracleProxy");
         address systemConfigProxy = mustGetAddress("SystemConfigProxy");
 
@@ -288,7 +288,7 @@ contract Deploy is Deployer {
             console.log("Portal guardian has no code: %s", guardian);
         }
 
-        OptimismPortal portal = new OptimismPortal({
+        SlicePortal portal = new SlicePortal({
             _l2Oracle: L2OutputOracle(l2OutputOracleProxy),
             _guardian: guardian,
             _paused: true,
@@ -300,8 +300,8 @@ contract Deploy is Deployer {
         require(address(portal.SYSTEM_CONFIG()) == systemConfigProxy);
         require(portal.paused() == true);
 
-        save("OptimismPortal", address(portal));
-        console.log("OptimismPortal deployed at %s", address(portal));
+        save("SlicePortal", address(portal));
+        console.log("SlicePortal deployed at %s", address(portal));
 
         return address(portal);
     }
@@ -332,15 +332,15 @@ contract Deploy is Deployer {
         return address(oracle);
     }
 
-    /// @notice Deploy the OptimismMintableERC20Factory
-    function deployOptimismMintableERC20Factory() broadcast() public returns (address) {
+    /// @notice Deploy the SliceMintableERC20Factory
+    function deploySliceMintableERC20Factory() broadcast() public returns (address) {
         address l1StandardBridgeProxy = mustGetAddress("L1StandardBridgeProxy");
-        OptimismMintableERC20Factory factory = new OptimismMintableERC20Factory(l1StandardBridgeProxy);
+        SliceMintableERC20Factory factory = new SliceMintableERC20Factory(l1StandardBridgeProxy);
 
         require(factory.BRIDGE() == l1StandardBridgeProxy);
 
-        save("OptimismMintableERC20Factory", address(factory));
-        console.log("OptimismMintableERC20Factory deployed at %s", address(factory));
+        save("SliceMintableERC20Factory", address(factory));
+        console.log("SliceMintableERC20Factory deployed at %s", address(factory));
 
         return address(factory);
     }
@@ -554,21 +554,21 @@ contract Deploy is Deployer {
         require(bridge.OTHER_BRIDGE() == Predeploys.L2_ERC721_BRIDGE);
     }
 
-    /// @notice Ininitialize the OptimismMintableERC20Factory
-    function initializeOptimismMintableERC20Factory() broadcast() public {
+    /// @notice Ininitialize the SliceMintableERC20Factory
+    function initializeSliceMintableERC20Factory() broadcast() public {
         ProxyAdmin proxyAdmin = ProxyAdmin(mustGetAddress("ProxyAdmin"));
-        address optimismMintableERC20FactoryProxy = mustGetAddress("OptimismMintableERC20FactoryProxy");
-        address optimismMintableERC20Factory = mustGetAddress("OptimismMintableERC20Factory");
+        address sliceMintableERC20FactoryProxy = mustGetAddress("SliceMintableERC20FactoryProxy");
+        address sliceMintableERC20Factory = mustGetAddress("SliceMintableERC20Factory");
         address l1StandardBridgeProxy = mustGetAddress("L1StandardBridgeProxy");
 
         proxyAdmin.upgrade({
-            _proxy: payable(optimismMintableERC20FactoryProxy),
-            _implementation: optimismMintableERC20Factory
+            _proxy: payable(sliceMintableERC20FactoryProxy),
+            _implementation: sliceMintableERC20Factory
         });
 
-        OptimismMintableERC20Factory factory = OptimismMintableERC20Factory(optimismMintableERC20FactoryProxy);
+        SliceMintableERC20Factory factory = SliceMintableERC20Factory(sliceMintableERC20FactoryProxy);
         string memory version = factory.version();
-        console.log("OptimismMintableERC20Factory version: %s", version);
+        console.log("SliceMintableERC20Factory version: %s", version);
 
         require(factory.BRIDGE() == l1StandardBridgeProxy);
     }
@@ -578,7 +578,7 @@ contract Deploy is Deployer {
         ProxyAdmin proxyAdmin = ProxyAdmin(mustGetAddress("ProxyAdmin"));
         address l1CrossDomainMessengerProxy = mustGetAddress("L1CrossDomainMessengerProxy");
         address l1CrossDomainMessenger = mustGetAddress("L1CrossDomainMessenger");
-        address optimismPortalProxy = mustGetAddress("OptimismPortalProxy");
+        address slicePortalProxy = mustGetAddress("SlicePortalProxy");
 
         uint256 proxyType = uint256(proxyAdmin.proxyType(l1CrossDomainMessengerProxy));
         if (proxyType != uint256(ProxyAdmin.ProxyType.RESOLVED)) {
@@ -605,7 +605,7 @@ contract Deploy is Deployer {
         string memory version = messenger.version();
         console.log("L1CrossDomainMessenger version: %s", version);
 
-        require(address(messenger.PORTAL()) == optimismPortalProxy);
+        require(address(messenger.PORTAL()) == slicePortalProxy);
     }
 
     /// @notice Initialize the L2OutputOracle
@@ -639,23 +639,23 @@ contract Deploy is Deployer {
         require(oracle.startingTimestamp() == cfg.l2OutputOracleStartingTimestamp());
     }
 
-    /// @notice Initialize the OptimismPortal
-    function initializeOptimismPortal() broadcast() public {
+    /// @notice Initialize the SlicePortal
+    function initializeSlicePortal() broadcast() public {
         ProxyAdmin proxyAdmin = ProxyAdmin(mustGetAddress("ProxyAdmin"));
-        address optimismPortalProxy = mustGetAddress("OptimismPortalProxy");
-        address optimismPortal = mustGetAddress("OptimismPortal");
+        address slicePortalProxy = mustGetAddress("SlicePortalProxy");
+        address slicePortal = mustGetAddress("SlicePortal");
         address l2OutputOracleProxy = mustGetAddress("L2OutputOracleProxy");
         address systemConfigProxy = mustGetAddress("SystemConfigProxy");
 
         proxyAdmin.upgradeAndCall({
-            _proxy: payable(optimismPortalProxy),
-            _implementation: optimismPortal,
-            _data: abi.encodeCall(OptimismPortal.initialize, (false))
+            _proxy: payable(slicePortalProxy),
+            _implementation: slicePortal,
+            _data: abi.encodeCall(SlicePortal.initialize, (false))
         });
 
-        OptimismPortal portal = OptimismPortal(payable(optimismPortalProxy));
+        SlicePortal portal = SlicePortal(payable(slicePortalProxy));
         string memory version = portal.version();
-        console.log("OptimismPortal version: %s", version);
+        console.log("SlicePortal version: %s", version);
 
         require(address(portal.L2_ORACLE()) == l2OutputOracleProxy);
         require(portal.GUARDIAN() == cfg.portalGuardian());

@@ -10,7 +10,7 @@ import (
 type AddressManager interface {
 	L1StandardBridge() (common.Address, *bindings.L1StandardBridge)
 	StateCommitmentChain() (common.Address, *legacy_bindings.StateCommitmentChain)
-	OptimismPortal() (common.Address, *bindings.OptimismPortal)
+	SlicePortal() (common.Address, *bindings.SlicePortal)
 }
 
 type LegacyAddresses struct {
@@ -61,14 +61,14 @@ func (a *LegacyAddresses) StateCommitmentChain() (common.Address, *legacy_bindin
 	return a.sccAddr, a.scc
 }
 
-func (a *LegacyAddresses) OptimismPortal() (common.Address, *bindings.OptimismPortal) {
-	panic("OptimismPortal not configured on legacy networks - this is a programmer error")
+func (a *LegacyAddresses) SlicePortal() (common.Address, *bindings.SlicePortal) {
+	panic("SlicePortal not configured on legacy networks - this is a programmer error")
 }
 
 type BedrockAddresses struct {
 	l1SB       *bindings.L1StandardBridge
 	l1SBAddr   common.Address
-	portal     *bindings.OptimismPortal
+	portal     *bindings.SlicePortal
 	portalAddr common.Address
 }
 
@@ -79,7 +79,7 @@ func NewBedrockAddresses(client bind.ContractBackend, l1SBAddr, portalAddr commo
 	if err != nil {
 		return nil, err
 	}
-	portal, err := bindings.NewOptimismPortal(portalAddr, client)
+	portal, err := bindings.NewSlicePortal(portalAddr, client)
 	if err != nil {
 		return nil, err
 	}
@@ -100,6 +100,6 @@ func (b *BedrockAddresses) StateCommitmentChain() (common.Address, *legacy_bindi
 	panic("SCC not configured on legacy networks - this is a programmer error")
 }
 
-func (b *BedrockAddresses) OptimismPortal() (common.Address, *bindings.OptimismPortal) {
+func (b *BedrockAddresses) SlicePortal() (common.Address, *bindings.SlicePortal) {
 	return b.portalAddr, b.portal
 }

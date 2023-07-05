@@ -7,7 +7,7 @@ import { Messenger_Initializer } from "./CommonTest.t.sol";
 // Target contract dependencies
 import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import { L1ERC721Bridge } from "../L1/L1ERC721Bridge.sol";
-import { OptimismMintableERC721 } from "../universal/OptimismMintableERC721.sol";
+import { SliceMintableERC721 } from "../universal/SliceMintableERC721.sol";
 
 // Target contract
 import { L2ERC721Bridge } from "../L2/L2ERC721Bridge.sol";
@@ -20,9 +20,9 @@ contract TestERC721 is ERC721 {
     }
 }
 
-contract TestMintableERC721 is OptimismMintableERC721 {
+contract TestMintableERC721 is SliceMintableERC721 {
     constructor(address _bridge, address _remoteToken)
-        OptimismMintableERC721(_bridge, 1, _remoteToken, "Test", "TST")
+        SliceMintableERC721(_bridge, 1, _remoteToken, "Test", "TST")
     {}
 
     function mint(address to, uint256 tokenId) public {
@@ -298,7 +298,7 @@ contract L2ERC721Bridge_Test is Messenger_Initializer {
     }
 
     /// @dev Tests that `finalizeBridgeERC721` reverts if the token is not compliant
-    ///      with the `IOptimismMintableERC721` interface.
+    ///      with the `ISliceMintableERC721` interface.
     function test_finalizeBridgeERC721_interfaceNotCompliant_reverts() external {
         // Create a non-compliant token
         NonCompliantERC721 nonCompliantToken = new NonCompliantERC721(alice);
@@ -308,7 +308,7 @@ contract L2ERC721Bridge_Test is Messenger_Initializer {
         bridge.bridgeERC721(address(nonCompliantToken), address(0x01), tokenId, 1234, hex"5678");
 
         // Attempt to finalize the withdrawal. Should revert because the token does not claim
-        // to be compliant with the `IOptimismMintableERC721` interface.
+        // to be compliant with the `ISliceMintableERC721` interface.
         vm.mockCall(
             address(L2Messenger),
             abi.encodeWithSelector(L2Messenger.xDomainMessageSender.selector),

@@ -16,7 +16,7 @@ import { Types } from "../libraries/Types.sol";
 // Target contract dependencies
 import { Predeploys } from "../libraries/Predeploys.sol";
 import { StandardBridge } from "../universal/StandardBridge.sol";
-import { OptimismMintableERC20 } from "../universal/OptimismMintableERC20.sol";
+import { SliceMintableERC20 } from "../universal/SliceMintableERC20.sol";
 
 contract L2StandardBridge_Test is Bridge_Initializer {
     using stdStorage for StdStorage;
@@ -232,7 +232,7 @@ contract PreBridgeERC20 is Bridge_Initializer {
         // The L2Bridge should burn the tokens
         vm.expectCall(
             _l2Token,
-            abi.encodeWithSelector(OptimismMintableERC20.burn.selector, alice, 100)
+            abi.encodeWithSelector(SliceMintableERC20.burn.selector, alice, 100)
         );
 
         vm.expectEmit(true, true, true, true);
@@ -422,7 +422,7 @@ contract PreBridgeERC20To is Bridge_Initializer {
         // The L2Bridge should burn the tokens
         vm.expectCall(
             address(L2Token),
-            abi.encodeWithSelector(OptimismMintableERC20.burn.selector, alice, 100)
+            abi.encodeWithSelector(SliceMintableERC20.burn.selector, alice, 100)
         );
 
         vm.prank(alice, alice);
@@ -462,7 +462,7 @@ contract L2StandardBridge_Bridge_Test is Bridge_Initializer {
 
         vm.expectCall(
             address(L2Token),
-            abi.encodeWithSelector(OptimismMintableERC20.mint.selector, alice, 100)
+            abi.encodeWithSelector(SliceMintableERC20.mint.selector, alice, 100)
         );
 
         // Should emit both the bedrock and legacy events

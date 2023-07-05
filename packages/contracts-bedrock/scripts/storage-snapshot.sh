@@ -13,7 +13,7 @@ contracts=(
   contracts/L1/L1CrossDomainMessenger.sol:L1CrossDomainMessenger
   contracts/L1/L1StandardBridge.sol:L1StandardBridge
   contracts/L1/L2OutputOracle.sol:L2OutputOracle
-  contracts/L1/OptimismPortal.sol:OptimismPortal
+  contracts/L1/SlicePortal.sol:SlicePortal
   contracts/L1/SystemConfig.sol:SystemConfig
   contracts/legacy/DeployerWhitelist.sol:DeployerWhitelist
   contracts/L2/L1Block.sol:L1Block
@@ -29,8 +29,8 @@ contracts=(
   contracts/universal/ProxyAdmin.sol:ProxyAdmin
   contracts/universal/Proxy.sol:Proxy
   contracts/legacy/L1ChugSplashProxy.sol:L1ChugSplashProxy
-  contracts/universal/OptimismMintableERC20.sol:OptimismMintableERC20
-  contracts/universal/OptimismMintableERC20Factory.sol:OptimismMintableERC20Factory
+  contracts/universal/SliceMintableERC20.sol:SliceMintableERC20
+  contracts/universal/SliceMintableERC20Factory.sol:SliceMintableERC20Factory
   contracts/dispute/DisputeGameFactory.sol:DisputeGameFactory
 )
 

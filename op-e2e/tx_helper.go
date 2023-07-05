@@ -25,7 +25,7 @@ func SendDepositTx(t *testing.T, cfg SystemConfig, l1Client *ethclient.Client, l
 	l2Opts := defaultDepositTxOpts(l1Opts)
 	applyL2Opts(l2Opts)
 	// Find deposit contract
-	depositContract, err := bindings.NewOptimismPortal(predeploys.DevOptimismPortalAddr, l1Client)
+	depositContract, err := bindings.NewSlicePortal(predeploys.DevSlicePortalAddr, l1Client)
 	require.Nil(t, err)
 
 	// Finally send TX

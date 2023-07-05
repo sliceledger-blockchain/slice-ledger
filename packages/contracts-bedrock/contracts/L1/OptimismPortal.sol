@@ -14,11 +14,11 @@ import { ResourceMetering } from "./ResourceMetering.sol";
 import { Semver } from "../universal/Semver.sol";
 
 /// @custom:proxied
-/// @title OptimismPortal
-/// @notice The OptimismPortal is a low-level contract responsible for passing messages between L1
-///         and L2. Messages sent directly to the OptimismPortal have no form of replayability.
+/// @title Portal
+/// @notice The SlicePortal is a low-level contract responsible for passing messages between L1
+///         and L2. Messages sent directly to the SlicePortal have no form of replayability.
 ///         Users are encouraged to use the L1CrossDomainMessenger for a higher-level interface.
-contract OptimismPortal is Initializable, ResourceMetering, Semver {
+contract SlicePortal is Initializable, ResourceMetering, Semver {
     /// @notice Represents a proven withdrawal.
     /// @custom:field outputRoot    Root of the L2 output this was proven against.
     /// @custom:field timestamp     Timestamp at whcih the withdrawal was proven.
@@ -99,12 +99,12 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
 
     /// @notice Reverts when paused.
     modifier whenNotPaused() {
-        require(paused == false, "OptimismPortal: paused");
+        require(paused == false, "SlicePortal: paused");
         _;
     }
 
     /// @custom:semver 1.7.2
-    /// @notice Constructs the OptimismPortal contract.
+    /// @notice Constructs the SlicePortal contract.
     /// @param _l2Oracle Address of the L2OutputOracle contract.
     /// @param _guardian Address that can pause withdrawals.
     /// @param _paused Sets the contract's pausability state.
@@ -130,14 +130,14 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
 
     /// @notice Pauses withdrawals.
     function pause() external {
-        require(msg.sender == GUARDIAN, "OptimismPortal: only guardian can pause");
+        require(msg.sender == GUARDIAN, "SlicePortal: only guardian can pause");
         paused = true;
         emit Paused(msg.sender);
     }
 
     /// @notice Unpauses withdrawals.
     function unpause() external {
-        require(msg.sender == GUARDIAN, "OptimismPortal: only guardian can unpause");
+        require(msg.sender == GUARDIAN, "SlicePortal: only guardian can unpause");
         paused = false;
         emit Unpaused(msg.sender);
     }
@@ -164,7 +164,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
 
     /// @notice Accepts ETH value without triggering a deposit to L2.
     ///         This function mainly exists for the sake of the migration between the legacy
-    ///         Optimism system and Bedrock.
+    ///         Slice system and Bedrock.
     function donateETH() external payable {
         // Intentionally empty.
     }
@@ -198,7 +198,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // `finalizeWithdrawalTransaction`.
         require(
             _tx.target != address(this),
-            "OptimismPortal: you cannot send messages to the portal contract"
+            "SlicePortal: you cannot send messages to the portal contract"
         );
 
         // Get the output root and load onto the stack to prevent multiple mloads. This will
@@ -208,7 +208,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // Verify that the output root can be generated with the elements in the proof.
         require(
             outputRoot == Hashing.hashOutputRootProof(_outputRootProof),
-            "OptimismPortal: invalid output root proof"
+            "SlicePortal: invalid output root proof"
         );
 
         // Load the ProvenWithdrawal into memory, using the withdrawal hash as a unique identifier.
@@ -225,7 +225,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
             provenWithdrawal.timestamp == 0 ||
                 L2_ORACLE.getL2Output(provenWithdrawal.l2OutputIndex).outputRoot !=
                 provenWithdrawal.outputRoot,
-            "OptimismPortal: withdrawal hash has already been proven"
+            "SlicePortal: withdrawal hash has already been proven"
         );
 
         // Compute the storage slot of the withdrawal hash in the L2ToL1MessagePasser contract.
@@ -249,7 +249,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
                 _withdrawalProof,
                 _outputRootProof.messagePasserStorageRoot
             ),
-            "OptimismPortal: invalid withdrawal inclusion proof"
+            "SlicePortal: invalid withdrawal inclusion proof"
         );
 
         // Designate the withdrawalHash as proven by storing the `outputRoot`, `timestamp`, and
@@ -276,7 +276,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // a defacto reentrancy guard.
         require(
             l2Sender == Constants.DEFAULT_L2_SENDER,
-            "OptimismPortal: can only trigger one withdrawal per transaction"
+            "SlicePortal: can only trigger one withdrawal per transaction"
         );
 
         // Grab the proven withdrawal from the `provenWithdrawals` map.
@@ -288,7 +288,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // a timestamp of zero.
         require(
             provenWithdrawal.timestamp != 0,
-            "OptimismPortal: withdrawal has not been proven yet"
+            "SlicePortal: withdrawal has not been proven yet"
         );
 
         // As a sanity check, we make sure that the proven withdrawal's timestamp is greater than
@@ -296,7 +296,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // safety against weird bugs in the proving step.
         require(
             provenWithdrawal.timestamp >= L2_ORACLE.startingTimestamp(),
-            "OptimismPortal: withdrawal timestamp less than L2 Oracle starting timestamp"
+            "SlicePortal: withdrawal timestamp less than L2 Oracle starting timestamp"
         );
 
         // A proven withdrawal must wait at least the finalization period before it can be
@@ -305,7 +305,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // withdrawal time is proposal submission time + finalization period.
         require(
             _isFinalizationPeriodElapsed(provenWithdrawal.timestamp),
-            "OptimismPortal: proven withdrawal finalization period has not elapsed"
+            "SlicePortal: proven withdrawal finalization period has not elapsed"
         );
 
         // Grab the OutputProposal from the L2OutputOracle, will revert if the output that
@@ -319,19 +319,19 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // deleted by the challenger address and then re-proposed.
         require(
             proposal.outputRoot == provenWithdrawal.outputRoot,
-            "OptimismPortal: output root proven is not the same as current output root"
+            "SlicePortal: output root proven is not the same as current output root"
         );
 
         // Check that the output proposal has also been finalized.
         require(
             _isFinalizationPeriodElapsed(proposal.timestamp),
-            "OptimismPortal: output proposal finalization period has not elapsed"
+            "SlicePortal: output proposal finalization period has not elapsed"
         );
 
         // Check that this withdrawal has not already been finalized, this is replay protection.
         require(
             finalizedWithdrawals[withdrawalHash] == false,
-            "OptimismPortal: withdrawal has already been finalized"
+            "SlicePortal: withdrawal has already been finalized"
         );
 
         // Mark the withdrawal as finalized so it can't be replayed.
@@ -360,7 +360,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // sub call to the target contract if the minimum gas limit specified by the user would not
         // be sufficient to execute the sub call.
         if (success == false && tx.origin == Constants.ESTIMATION_ADDRESS) {
-            revert("OptimismPortal: withdrawal failed");
+            revert("SlicePortal: withdrawal failed");
         }
     }
 
@@ -385,7 +385,7 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         if (_isCreation) {
             require(
                 _to == address(0),
-                "OptimismPortal: must send to address(0) when creating a contract"
+                "SlicePortal: must send to address(0) when creating a contract"
             );
         }
 
@@ -393,14 +393,14 @@ contract OptimismPortal is Initializable, ResourceMetering, Semver {
         // more for more resource usage.
         require(
             _gasLimit >= minimumGasLimit(uint64(_data.length)),
-            "OptimismPortal: gas limit too small"
+            "SlicePortal: gas limit too small"
         );
 
         // Prevent the creation of deposit transactions that have too much calldata. This gives an
         // upper limit on the size of unsafe blocks over the p2p network. 120kb is chosen to ensure
         // that the transaction can fit into the p2p network policy of 128kb even though deposit
         // transactions are not gossipped over the p2p network.
-        require(_data.length <= 120_000, "OptimismPortal: data too large");
+        require(_data.length <= 120_000, "SlicePortal: data too large");
 
         // Transform the from-address to its alias if the caller is a contract.
         address from = msg.sender;

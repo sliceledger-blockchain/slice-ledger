@@ -13,11 +13,11 @@ import (
 
 type Portal struct {
 	address  common.Address
-	contract *bindings.OptimismPortal
+	contract *bindings.SlicePortal
 }
 
 func NewPortal(addrs services.AddressManager) *Portal {
-	address, contract := addrs.OptimismPortal()
+	address, contract := addrs.SlicePortal()
 
 	return &Portal{
 		address:  address,
@@ -37,7 +37,7 @@ func (p *Portal) GetProvenWithdrawalsByBlockRange(ctx context.Context, start, en
 		End:     &end,
 	}
 
-	var iter *bindings.OptimismPortalWithdrawalProvenIterator
+	var iter *bindings.SlicePortalWithdrawalProvenIterator
 	err := backoff.Do(3, backoff.Exponential(), func() error {
 		var err error
 		iter, err = p.contract.FilterWithdrawalProven(opts, nil, nil, nil)
@@ -71,7 +71,7 @@ func (p *Portal) GetFinalizedWithdrawalsByBlockRange(ctx context.Context, start,
 		End:     &end,
 	}
 
-	var iter *bindings.OptimismPortalWithdrawalFinalizedIterator
+	var iter *bindings.SlicePortalWithdrawalFinalizedIterator
 	err := backoff.Do(3, backoff.Exponential(), func() error {
 		var err error
 		iter, err = p.contract.FilterWithdrawalFinalized(opts, nil)

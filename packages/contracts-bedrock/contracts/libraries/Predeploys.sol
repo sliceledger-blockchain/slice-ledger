@@ -20,12 +20,12 @@ library Predeploys {
     //// @notice Address of the SequencerFeeWallet predeploy.
     address internal constant SEQUENCER_FEE_WALLET = 0x4200000000000000000000000000000000000011;
 
-    /// @notice Address of the OptimismMintableERC20Factory predeploy.
-    address internal constant OPTIMISM_MINTABLE_ERC20_FACTORY =
+    /// @notice Address of the SliceMintableERC20Factory predeploy.
+    address internal constant SLICE_MINTABLE_ERC20_FACTORY =
         0x4200000000000000000000000000000000000012;
 
-    /// @notice Address of the OptimismMintableERC721Factory predeploy.
-    address internal constant OPTIMISM_MINTABLE_ERC721_FACTORY =
+    /// @notice Address of the SliceMintableERC721Factory predeploy.
+    address internal constant SLICE_MINTABLE_ERC721_FACTORY =
         0x4200000000000000000000000000000000000017;
 
     /// @notice Address of the L1Block predeploy.

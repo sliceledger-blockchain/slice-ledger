@@ -2,7 +2,7 @@ pragma solidity 0.8.15;
 
 import { StdUtils } from "forge-std/StdUtils.sol";
 import { Vm } from "forge-std/Vm.sol";
-import { OptimismPortal } from "../../L1/OptimismPortal.sol";
+import { SlicePortal } from "../../L1/SlicePortal.sol";
 import { L1CrossDomainMessenger } from "../../L1/L1CrossDomainMessenger.sol";
 import { Messenger_Initializer } from "../CommonTest.t.sol";
 import { Types } from "../../libraries/Types.sol";
@@ -19,13 +19,13 @@ contract RelayActor is StdUtils {
     bytes32[] public hashes;
     bool public reverted = false;
 
-    OptimismPortal op;
+    SlicePortal op;
     L1CrossDomainMessenger xdm;
     Vm vm;
     bool doFail;
 
     constructor(
-        OptimismPortal _op,
+        SlicePortal _op,
         L1CrossDomainMessenger _xdm,
         Vm _vm,
         bool _doFail
@@ -86,7 +86,7 @@ contract RelayActor is StdUtils {
         // Make sure we've got a fresh message.
         vm.assume(xdm.successfulMessages(_hash) == false && xdm.failedMessages(_hash) == false);
 
-        // Act as the optimism portal and call `relayMessage` on the `L1CrossDomainMessenger` with
+        // Act as the slice portal and call `relayMessage` on the `L1CrossDomainMessenger` with
         // the outer min gas limit.
         vm.startPrank(address(op));
         if (!doFail) {
@@ -115,7 +115,7 @@ contract XDM_MinGasLimits is Messenger_Initializer {
     RelayActor actor;
 
     function init(bool doFail) public virtual {
-        // Set up the `L1CrossDomainMessenger` and `OptimismPortal` contracts.
+        // Set up the `L1CrossDomainMessenger` and `SlicePortal` contracts.
         super.setUp();
 
         // Deploy a relay actor
@@ -151,7 +151,7 @@ contract XDM_MinGasLimits_Succeeds is XDM_MinGasLimits {
      *
      * There are two minimum gas limits here:
      *
-     * - The outer min gas limit is for the call from the `OptimismPortal` to the
+     * - The outer min gas limit is for the call from the `SlicePortal` to the
      * `L1CrossDomainMessenger`,  and it can be retrieved by calling the xdm's `baseGas` function
      * with the `message` and inner limit.
      *
@@ -186,7 +186,7 @@ contract XDM_MinGasLimits_Reverts is XDM_MinGasLimits {
      *
      * There are two minimum gas limits here:
      *
-     * - The outer min gas limit is for the call from the `OptimismPortal` to the
+     * - The outer min gas limit is for the call from the `SlicePortal` to the
      * `L1CrossDomainMessenger`,  and it can be retrieved by calling the xdm's `baseGas` function
      * with the `message` and inner limit.
      *

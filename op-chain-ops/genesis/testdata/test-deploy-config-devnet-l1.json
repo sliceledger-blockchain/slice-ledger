@@ -39,6 +39,6 @@
 
   "enableGovernance": true,
   "governanceTokenSymbol": "OP",
-  "governanceTokenName": "Optimism",
+  "governanceTokenName": "Slice",
   "governanceTokenOwner": "0x0000000000000000000000000000000000000333"
 }

@@ -8,7 +8,7 @@ import "./CommonTest.t.sol";
 import { CrossDomainMessenger } from "../universal/CrossDomainMessenger.sol";
 import { ResourceMetering } from "../L1/ResourceMetering.sol";
 
-// Free function for setting the prevBaseFee param in the OptimismPortal.
+// Free function for setting the prevBaseFee param in the SlicePortal.
 function setPrevBaseFee(
     Vm _vm,
     address _op,
@@ -31,7 +31,7 @@ contract SetPrevBaseFee_Test is Portal_Initializer {
 // so that they are nothing more than the call we want measure the gas cost of.
 // In order to achieve this we make no assertions, and handle everything else in the setUp()
 // function.
-contract GasBenchMark_OptimismPortal is Portal_Initializer {
+contract GasBenchMark_SlicePortal is Portal_Initializer {
     // Reusable default values for a test withdrawal
     Types.WithdrawalTransaction _defaultTx;
 

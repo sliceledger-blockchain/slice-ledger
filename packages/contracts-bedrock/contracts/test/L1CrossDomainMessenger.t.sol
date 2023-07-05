@@ -13,7 +13,7 @@ import { Encoding } from "../libraries/Encoding.sol";
 
 // Target contract dependencies
 import { L2OutputOracle } from "../L1/L2OutputOracle.sol";
-import { OptimismPortal } from "../L1/OptimismPortal.sol";
+import { SlicePortal } from "../L1/SlicePortal.sol";
 
 // Target contract
 import { L1CrossDomainMessenger } from "../L1/L1CrossDomainMessenger.sol";
@@ -35,11 +35,11 @@ contract L1CrossDomainMessenger_Test is Messenger_Initializer {
     /// TODO: this same test needs to be done with the legacy message type
     ///       by setting the message version to 0
     function test_sendMessage_succeeds() external {
-        // deposit transaction on the optimism portal should be called
+        // deposit transaction on the slice portal should be called
         vm.expectCall(
             address(op),
             abi.encodeWithSelector(
-                OptimismPortal.depositTransaction.selector,
+                SlicePortal.depositTransaction.selector,
                 Predeploys.L2_CROSS_DOMAIN_MESSENGER,
                 0,
                 L1Messenger.baseGas(hex"ff", 100),
@@ -171,7 +171,7 @@ contract L1CrossDomainMessenger_Test is Messenger_Initializer {
     /// @dev Tests that relayMessage reverts if attempting to relay a message
     ///      sent to an L1 system contract.
     function test_relayMessage_toSystemContract_reverts() external {
-        // set the target to be the OptimismPortal
+        // set the target to be the SlicePortal
         address target = address(op);
         address sender = Predeploys.L2_CROSS_DOMAIN_MESSENGER;
         bytes memory message = hex"1111";

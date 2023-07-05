@@ -101,7 +101,7 @@ type Config struct {
 
 	BedrockL1StandardBridgeAddress common.Address
 
-	BedrockOptimismPortalAddress common.Address
+	BedrockSlicePortalAddress common.Address
 }
 
 // NewConfig parses the Config from the provided flags or environment variables.
@@ -121,7 +121,7 @@ func NewConfig(ctx *cli.Context) (Config, error) {
 		/* Optional Flags */
 		Bedrock:                        ctx.GlobalBool(flags.BedrockFlag.Name),
 		BedrockL1StandardBridgeAddress: common.HexToAddress(ctx.GlobalString(flags.BedrockL1StandardBridgeAddress.Name)),
-		BedrockOptimismPortalAddress:   common.HexToAddress(ctx.GlobalString(flags.BedrockOptimismPortalAddress.Name)),
+		BedrockSlicePortalAddress:   common.HexToAddress(ctx.GlobalString(flags.BedrockSlicePortalAddress.Name)),
 		DisableIndexer:                 ctx.GlobalBool(flags.DisableIndexer.Name),
 		LogLevel:                       ctx.GlobalString(flags.LogLevelFlag.Name),
 		LogTerminal:                    ctx.GlobalBool(flags.LogTerminalFlag.Name),
@@ -157,7 +157,7 @@ func ValidateConfig(cfg *Config) error {
 		return err
 	}
 
-	if cfg.Bedrock && (cfg.BedrockL1StandardBridgeAddress == common.Address{} || cfg.BedrockOptimismPortalAddress == common.Address{}) {
+	if cfg.Bedrock && (cfg.BedrockL1StandardBridgeAddress == common.Address{} || cfg.BedrockSlicePortalAddress == common.Address{}) {
 		return errors.New("must specify l1 standard bridge and optimism portal addresses in bedrock mode")
 	}
 

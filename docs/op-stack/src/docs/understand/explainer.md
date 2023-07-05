@@ -8,7 +8,7 @@ meta:
 - property: og:image
   content: https://stack.optimism.io/assets/logos/twitter-superchain.png
 - name: twitter:title
-  content: Superchain Explainer  
+  content: Superchain Explainer
 - property: og:title
   content: Superchain Explainer
 - name: twitter:card
@@ -29,7 +29,7 @@ This is the detailed explanation. [Click here for a less technical introduction]
 
 ::: tip Note
 
-Today, the Superchain is a concept and in-flight project, not a concrete reality.  This documentation represents our best current guess as to what the Superchain’s components, features, and roadmap will be. Ultimately, its actualization will depend on (and change alongside) contributions from across the entire Optimism Collective. We cannot wait to see where it goes. 
+Today, the Superchain is a concept and in-flight project, not a concrete reality.  This documentation represents our best current guess as to what the Superchain’s components, features, and roadmap will be. Ultimately, its actualization will depend on (and change alongside) contributions from across the entire Optimism Collective. We cannot wait to see where it goes.
 
 :::
 
@@ -133,13 +133,13 @@ We believe the following changes (after the Bedrock release) are required to cre
 
 Bedrock introduced the [SystemConfig contract](https://github.com/ethereum-optimism/optimism/blob/74a63c94d881442b4edd4df6492513e0113eb064/packages/contracts-bedrock/contracts/L1/SystemConfig.sol) which began to define the L2 chain directly with L1 smart contracts. This can be extended to put *all information* defining the L2 chain, onchain. Including generating a unique chain ID, key configuration values such as block gas limit, etc.
 
-Once the chain data is entirely onchain, we can create a factory which deploys the configuration and all other required contracts for each chain. This can be extended further by making the contract addresses deterministic with CREATE2, meaning that given a chain config it is possible to determine all bridge addresses associated with that chain. This also enables chains to be interacted with without having to deploy their bridge contracts, making (counterfactual) chain deployment virtually free, and allowing chains to inherit standard security properties. 
+Once the chain data is entirely onchain, we can create a factory which deploys the configuration and all other required contracts for each chain. This can be extended further by making the contract addresses deterministic with CREATE2, meaning that given a chain config it is possible to determine all bridge addresses associated with that chain. This also enables chains to be interacted with without having to deploy their bridge contracts, making (counterfactual) chain deployment virtually free, and allowing chains to inherit standard security properties.
 
 ### Derive OP Chain data using the chain factory
 
 [Bedrock introduced L2 chain derivation from an L1 chain](../releases/bedrock/explainer/#block-derivation), where all chain data can be synced based on L1 blocks. With the L1 chain factory extending this to put all configuration onchain, it should become possible for Optimism nodes to sync *any* OP Chain deterministically given a single L1 address plus a connection to L1.
 
-::: tip 📌 
+::: tip 📌
 
 When the OP Chain is synced, the chain state is locally computed. This means determining the state of the OP Chain is fully permissionless & secure. No proof system is required for chain derivation because all invalid transactions are simply ignored by the local computation process performed by the node. A proof system is, however, still required to enable Superchain withdrawals.
 
@@ -320,13 +320,13 @@ These are some tools which could make developing on the Superchain a better expe
 
 1. Content-addressable smart contracts — this enables contracts to have the same address on all chains. This way developers can write smart contracts which are counterfactually deployed to all OP Chains at the same address. If a user on an OP Chain would like to use the smart contract that is not yet available on their chain, they can independently deploy the code.
 2. Cross-chain contract state management standards — creating standards for how smart contract state can migrate from one chain to the next enables developers to shard their applications on many chains. Additionally, this logic can be used in wallets to display user state as if it is all on the same chain. For instance, if a user has tokens split across many chains, the wallet can use the cross-chain state management logic to know that it should display the user balance as a sum of all of their token balances across all chains.
-    
-    ::: tip 📌 
+
+    ::: tip 📌
 
     For the Ethereum scalability nerds: the state growth problem can be addressed in these frameworks by making it easy to migrate user state from bloated chains into fresh chains. Old bloated chains can be maintained with a low gas limit or deprecated entirely.
-        
+
     :::
-    
+
 3. Superchain RPC endpoint — creating a single RPC endpoint where users can send their Superchain transactions regardless of which OP Chain they are intended to enables users to avoid constantly switching their network.
 
 With robust multi-chain dApp frameworks, it may become as easy to deploy cross-chain dApps as it is to deploy dApps which target a single chain.

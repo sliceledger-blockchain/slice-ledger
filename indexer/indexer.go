@@ -75,7 +75,7 @@ func NewIndexer(ctx *cli.Context) (*Indexer, error) {
 
 	// L1 Processor (hardhat devnet contracts). Make this configurable
 	l1Contracts := processor.L1Contracts{
-		OptimismPortal:         common.HexToAddress("0x6900000000000000000000000000000000000000"),
+		SlicePortal:         common.HexToAddress("0x6900000000000000000000000000000000000000"),
 		L2OutputOracle:         common.HexToAddress("0x6900000000000000000000000000000000000001"),
 		L1CrossDomainMessenger: common.HexToAddress("0x6900000000000000000000000000000000000002"),
 		L1StandardBridge:       common.HexToAddress("0x6900000000000000000000000000000000000003"),

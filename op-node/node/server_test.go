@@ -119,7 +119,7 @@ func TestOutputAtBlock(t *testing.T) {
 	require.NoError(t, err)
 
 	var out *eth.OutputResponse
-	err = client.CallContext(context.Background(), &out, "optimism_outputAtBlock", "0xdcdc89")
+	err = client.CallContext(context.Background(), &out, "slice_outputAtBlock", "0xdcdc89")
 	require.NoError(t, err)
 
 	require.Equal(t, "0x0000000000000000000000000000000000000000000000000000000000000000", out.Version.String())
@@ -194,7 +194,7 @@ func TestSyncStatus(t *testing.T) {
 	assert.NoError(t, err)
 
 	var out *eth.SyncStatus
-	err = client.CallContext(context.Background(), &out, "optimism_syncStatus")
+	err = client.CallContext(context.Background(), &out, "slice_syncStatus")
 	assert.NoError(t, err)
 	assert.Equal(t, status, out)
 }

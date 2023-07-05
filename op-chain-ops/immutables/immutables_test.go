@@ -10,10 +10,10 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestBuildOptimism(t *testing.T) {
+func TestBuildSlice(t *testing.T) {
 	minimumWithdrawalAmountBig, _ := big.NewInt(0).SetString("8ac7230489e80000", 16)
 	minimumWithdrawalAmount := (*hexutil.Big)(minimumWithdrawalAmountBig)
-	results, err := immutables.BuildOptimism(immutables.ImmutableConfig{
+	results, err := immutables.BuildSlice(immutables.ImmutableConfig{
 		"L2StandardBridge": {
 			"otherBridge": common.HexToAddress("0x1234567890123456789012345678901234567890"),
 		},
@@ -24,7 +24,7 @@ func TestBuildOptimism(t *testing.T) {
 			"otherBridge": common.HexToAddress("0x1234567890123456789012345678901234567890"),
 			"messenger":   common.HexToAddress("0x1234567890123456789012345678901234567890"),
 		},
-		"OptimismMintableERC721Factory": {
+		"SliceMintableERC721Factory": {
 			"remoteChainId": big.NewInt(1),
 			"bridge":        common.HexToAddress("0x1234567890123456789012345678901234567890"),
 		},
@@ -56,12 +56,12 @@ func TestBuildOptimism(t *testing.T) {
 		"SequencerFeeVault":             true,
 		"BaseFeeVault":                  true,
 		"L1FeeVault":                    true,
-		"OptimismMintableERC20Factory":  true,
+		"SliceMintableERC20Factory":  true,
 		"DeployerWhitelist":             true,
 		"LegacyMessagePasser":           true,
 		"L1BlockNumber":                 true,
 		"L2ERC721Bridge":                true,
-		"OptimismMintableERC721Factory": true,
+		"SliceMintableERC721Factory": true,
 		"LegacyERC20ETH":                true,
 	}
 

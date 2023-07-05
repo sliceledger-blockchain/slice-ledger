@@ -4,9 +4,9 @@ pragma solidity 0.8.15;
 import { StandardBridge } from "../universal/StandardBridge.sol";
 import { CommonTest } from "./CommonTest.t.sol";
 import {
-    OptimismMintableERC20,
+    SliceMintableERC20,
     ILegacyMintableERC20
-} from "../universal/OptimismMintableERC20.sol";
+} from "../universal/SliceMintableERC20.sol";
 import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /// @title StandardBridgeTester
@@ -17,8 +17,8 @@ contract StandardBridgeTester is StandardBridge {
         StandardBridge(_messenger, _otherBridge)
     {}
 
-    function isOptimismMintableERC20(address _token) external view returns (bool) {
-        return _isOptimismMintableERC20(_token);
+    function isSliceMintableERC20(address _token) external view returns (bool) {
+        return _isSliceMintableERC20(_token);
     }
 
     function isCorrectTokenPair(address _mintableToken, address _otherToken)
@@ -33,7 +33,7 @@ contract StandardBridgeTester is StandardBridge {
 }
 
 /// @title LegacyMintable
-/// @notice Simple implementation of the legacy OptimismMintableERC20.
+/// @notice Simple implementation of the legacy SliceMintableERC20.
 contract LegacyMintable is ERC20, ILegacyMintableERC20 {
     constructor(string memory _name, string memory _ticker) ERC20(_name, _ticker) {}
 
@@ -46,7 +46,7 @@ contract LegacyMintable is ERC20, ILegacyMintableERC20 {
     function burn(address _from, uint256 _amount) external pure {}
 
     /// @notice Implements ERC165. This implementation should not be changed as
-    ///         it is how the actual legacy optimism mintable token does the
+    ///         it is how the actual legacy slice mintable token does the
     ///         check. Allows for testing against code that is has been deployed,
     ///         assuming different compiler version is no problem.
     function supportsInterface(bytes4 _interfaceId) external pure returns (bool) {
@@ -63,7 +63,7 @@ contract LegacyMintable is ERC20, ILegacyMintableERC20 {
 ///         interactions with the messenger.
 contract StandardBridge_Stateless_Test is CommonTest {
     StandardBridgeTester internal bridge;
-    OptimismMintableERC20 internal mintable;
+    SliceMintableERC20 internal mintable;
     ERC20 internal erc20;
     LegacyMintable internal legacy;
 
@@ -75,7 +75,7 @@ contract StandardBridge_Stateless_Test is CommonTest {
             _otherBridge: payable(address(0))
         });
 
-        mintable = new OptimismMintableERC20({
+        mintable = new SliceMintableERC20({
             _bridge: address(0),
             _remoteToken: address(0),
             _name: "Stonks",
@@ -86,19 +86,19 @@ contract StandardBridge_Stateless_Test is CommonTest {
         legacy = new LegacyMintable("Legacy", "LEG");
     }
 
-    /// @notice Test coverage for identifying OptimismMintableERC20 tokens.
+    /// @notice Test coverage for identifying SliceMintableERC20 tokens.
     ///         This function should return true for both modern and legacy
-    ///         OptimismMintableERC20 tokens and false for any accounts that
+    ///         SliceMintableERC20 tokens and false for any accounts that
     ///         do not implement the interface.
-    function test_isOptimismMintableERC20_succeeds() external {
+    function test_isSliceMintableERC20_succeeds() external {
         // Both the modern and legacy mintable tokens should return true
-        assertTrue(bridge.isOptimismMintableERC20(address(mintable)));
-        assertTrue(bridge.isOptimismMintableERC20(address(legacy)));
+        assertTrue(bridge.isSliceMintableERC20(address(mintable)));
+        assertTrue(bridge.isSliceMintableERC20(address(legacy)));
         // A regular ERC20 should return false
-        assertFalse(bridge.isOptimismMintableERC20(address(erc20)));
+        assertFalse(bridge.isSliceMintableERC20(address(erc20)));
         // Non existent contracts should return false and not revert
         assertEq(address(0x20).code.length, 0);
-        assertFalse(bridge.isOptimismMintableERC20(address(0x20)));
+        assertFalse(bridge.isSliceMintableERC20(address(0x20)));
     }
 
     /// @notice Test coverage of isCorrectTokenPair under different types of

@@ -171,8 +171,8 @@ func checkPredeployConfig(client *ethclient.Client, name string) error {
 				return err
 			}
 
-		case predeploys.OptimismMintableERC20FactoryAddr:
-			if err := checkOptimismMintableERC20Factory(p, client); err != nil {
+		case predeploys.SliceMintableERC20FactoryAddr:
+			if err := checkSliceMintableERC20Factory(p, client); err != nil {
 				return err
 			}
 
@@ -201,8 +201,8 @@ func checkPredeployConfig(client *ethclient.Client, name string) error {
 				return err
 			}
 
-		case predeploys.OptimismMintableERC721FactoryAddr:
-			if err := checkOptimismMintableERC721Factory(p, client); err != nil {
+		case predeploys.SliceMintableERC721FactoryAddr:
+			if err := checkSliceMintableERC721Factory(p, client); err != nil {
 				return err
 			}
 
@@ -334,8 +334,8 @@ func checkProxyAdmin(addr common.Address, client *ethclient.Client) error {
 	return nil
 }
 
-func checkOptimismMintableERC721Factory(addr common.Address, client *ethclient.Client) error {
-	contract, err := bindings.NewOptimismMintableERC721Factory(addr, client)
+func checkSliceMintableERC721Factory(addr common.Address, client *ethclient.Client) error {
+	contract, err := bindings.NewSliceMintableERC721Factory(addr, client)
 	if err != nil {
 		return err
 	}
@@ -343,22 +343,22 @@ func checkOptimismMintableERC721Factory(addr common.Address, client *ethclient.C
 	if err != nil {
 		return err
 	}
-	log.Info("OptimismMintableERC721Factory", "BRIDGE", bridge.Hex())
+	log.Info("SliceMintableERC721Factory", "BRIDGE", bridge.Hex())
 	if bridge == (common.Address{}) {
-		return errors.New("OptimismMintableERC721Factory.BRIDGE is zero address")
+		return errors.New("SliceMintableERC721Factory.BRIDGE is zero address")
 	}
 
 	remoteChainID, err := contract.REMOTECHAINID(&bind.CallOpts{})
 	if err != nil {
 		return err
 	}
-	log.Info("OptimismMintableERC721Factory", "REMOTE_CHAIN_ID", remoteChainID)
+	log.Info("SliceMintableERC721Factory", "REMOTE_CHAIN_ID", remoteChainID)
 
 	version, err := contract.Version(&bind.CallOpts{})
 	if err != nil {
 		return err
 	}
-	log.Info("OptimismMintableERC721Factory version", "version", version)
+	log.Info("SliceMintableERC721Factory version", "version", version)
 	return nil
 }
 
@@ -485,8 +485,8 @@ func checkL1BlockNumber(addr common.Address, client *ethclient.Client) error {
 	return nil
 }
 
-func checkOptimismMintableERC20Factory(addr common.Address, client *ethclient.Client) error {
-	contract, err := bindings.NewOptimismMintableERC20Factory(addr, client)
+func checkSliceMintableERC20Factory(addr common.Address, client *ethclient.Client) error {
+	contract, err := bindings.NewSliceMintableERC20Factory(addr, client)
 	if err != nil {
 		return err
 	}
@@ -495,16 +495,16 @@ func checkOptimismMintableERC20Factory(addr common.Address, client *ethclient.Cl
 	if err != nil {
 		return err
 	}
-	log.Info("OptimismMintableERC20Factory", "BRIDGE", bridge.Hex())
+	log.Info("SliceMintableERC20Factory", "BRIDGE", bridge.Hex())
 	if bridge == (common.Address{}) {
-		return errors.New("OptimismMintableERC20Factory.BRIDGE is zero address")
+		return errors.New("SliceMintableERC20Factory.BRIDGE is zero address")
 	}
 
 	version, err := contract.Version(&bind.CallOpts{})
 	if err != nil {
 		return err
 	}
-	log.Info("OptimismMintableERC20Factory version", "version", version)
+	log.Info("SliceMintableERC20Factory version", "version", version)
 	return nil
 }
 

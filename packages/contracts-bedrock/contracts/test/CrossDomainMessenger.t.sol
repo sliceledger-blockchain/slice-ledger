@@ -25,9 +25,9 @@ contract CrossDomainMessenger_BaseGas_Test is Messenger_Initializer {
     }
 
     /// @notice The baseGas function should always return a value greater than
-    ///         or equal to the minimum gas limit value on the OptimismPortal.
+    ///         or equal to the minimum gas limit value on the SlicePortal.
     ///         This guarantees that the messengers will always pass sufficient
-    ///         gas to the OptimismPortal.
+    ///         gas to the SlicePortal.
     function testFuzz_baseGas_portalMinGasLimit_succeeds(bytes memory _data, uint32 _minGasLimit)
         external
     {
@@ -121,7 +121,7 @@ contract CrossDomainMessenger_RelayMessage_Test is Messenger_Initializer {
         er = new ExternalRelay(L1Messenger, address(op));
     }
 
-    /// @dev This test mocks an OptimismPortal call to the L1CrossDomainMessenger via
+    /// @dev This test mocks an SlicePortal call to the L1CrossDomainMessenger via
     ///      the relayMessage function. The relayMessage function will then use SafeCall's
     ///      callWithMinGas to call the target with call data packed in the callMessage.
     ///      For this test, the callWithMinGas will call the mock ExternalRelay test contract

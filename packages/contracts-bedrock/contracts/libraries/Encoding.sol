@@ -6,7 +6,7 @@ import { Hashing } from "./Hashing.sol";
 import { RLPWriter } from "./rlp/RLPWriter.sol";
 
 /// @title Encoding
-/// @notice Encoding handles Optimism's various different encoding schemes.
+/// @notice Encoding handles Slice's various different encoding schemes.
 library Encoding {
     /// @notice RLP encodes the L2 transaction that would be generated when a given deposit is sent
     ///         to the L2 system. Useful for searching for a deposit in the L2 system. The

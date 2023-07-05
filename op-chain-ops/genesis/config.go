@@ -27,7 +27,7 @@ var (
 	ErrInvalidImmutablesConfig = errors.New("invalid immutables config")
 )
 
-// DeployConfig represents the deployment configuration for Optimism
+// DeployConfig represents the deployment configuration for Slice
 type DeployConfig struct {
 	L1StartingBlockTag *MarshalableRPCBlockNumberOrHash `json:"l1StartingBlockTag"`
 	L1ChainID          uint64                           `json:"l1ChainID"`
@@ -79,7 +79,7 @@ type DeployConfig struct {
 	ProxyAdminOwner common.Address `json:"proxyAdminOwner"`
 	// Owner of the system on L1
 	FinalSystemOwner common.Address `json:"finalSystemOwner"`
-	// GUARDIAN account in the OptimismPortal
+	// GUARDIAN account in the SlicePortal
 	PortalGuardian common.Address `json:"portalGuardian"`
 	// L1 recipient of fees accumulated in the BaseFeeVault
 	BaseFeeVaultRecipient common.Address `json:"baseFeeVaultRecipient"`
@@ -107,8 +107,8 @@ type DeployConfig struct {
 	L1ERC721BridgeProxy common.Address `json:"l1ERC721BridgeProxy"`
 	// SystemConfig proxy address on L1
 	SystemConfigProxy common.Address `json:"systemConfigProxy"`
-	// OptimismPortal proxy address on L1
-	OptimismPortalProxy common.Address `json:"optimismPortalProxy"`
+	// SlicePortal proxy address on L1
+	SlicePortalProxy common.Address `json:"slicePortalProxy"`
 	// The initial value of the gas overhead
 	GasPriceOracleOverhead uint64 `json:"gasPriceOracleOverhead"`
 	// The initial value of the gas scalar
@@ -222,8 +222,8 @@ func (d *DeployConfig) Check() error {
 	if d.SystemConfigProxy == (common.Address{}) {
 		return fmt.Errorf("%w: SystemConfigProxy cannot be address(0)", ErrInvalidDeployConfig)
 	}
-	if d.OptimismPortalProxy == (common.Address{}) {
-		return fmt.Errorf("%w: OptimismPortalProxy cannot be address(0)", ErrInvalidDeployConfig)
+	if d.SlicePortalProxy == (common.Address{}) {
+		return fmt.Errorf("%w: SlicePortalProxy cannot be address(0)", ErrInvalidDeployConfig)
 	}
 	if d.EIP1559Denominator == 0 {
 		return fmt.Errorf("%w: EIP1559Denominator cannot be 0", ErrInvalidDeployConfig)
@@ -304,12 +304,12 @@ func (d *DeployConfig) GetDeployedAddresses(hh *hardhat.Hardhat) error {
 		d.SystemConfigProxy = systemConfigProxyDeployment.Address
 	}
 
-	if d.OptimismPortalProxy == (common.Address{}) {
-		optimismPortalProxyDeployment, err := hh.GetDeployment("OptimismPortalProxy")
+	if d.SlicePortalProxy == (common.Address{}) {
+		slicePortalProxyDeployment, err := hh.GetDeployment("SlicePortalProxy")
 		if err != nil {
 			return err
 		}
-		d.OptimismPortalProxy = optimismPortalProxyDeployment.Address
+		d.SlicePortalProxy = slicePortalProxyDeployment.Address
 	}
 
 	return nil
@@ -320,7 +320,7 @@ func (d *DeployConfig) InitDeveloperDeployedAddresses() error {
 	d.L1StandardBridgeProxy = predeploys.DevL1StandardBridgeAddr
 	d.L1CrossDomainMessengerProxy = predeploys.DevL1CrossDomainMessengerAddr
 	d.L1ERC721BridgeProxy = predeploys.DevL1ERC721BridgeAddr
-	d.OptimismPortalProxy = predeploys.DevOptimismPortalAddr
+	d.SlicePortalProxy = predeploys.DevSlicePortalAddr
 	d.SystemConfigProxy = predeploys.DevSystemConfigAddr
 	return nil
 }
@@ -338,8 +338,8 @@ func (d *DeployConfig) RegolithTime(genesisTime uint64) *uint64 {
 
 // RollupConfig converts a DeployConfig to a rollup.Config
 func (d *DeployConfig) RollupConfig(l1StartBlock *types.Block, l2GenesisBlockHash common.Hash, l2GenesisBlockNumber uint64) (*rollup.Config, error) {
-	if d.OptimismPortalProxy == (common.Address{}) {
-		return nil, errors.New("OptimismPortalProxy cannot be address(0)")
+	if d.SlicePortalProxy == (common.Address{}) {
+		return nil, errors.New("SlicePortalProxy cannot be address(0)")
 	}
 	if d.SystemConfigProxy == (common.Address{}) {
 		return nil, errors.New("SystemConfigProxy cannot be address(0)")
@@ -370,7 +370,7 @@ func (d *DeployConfig) RollupConfig(l1StartBlock *types.Block, l2GenesisBlockHas
 		L1ChainID:              new(big.Int).SetUint64(d.L1ChainID),
 		L2ChainID:              new(big.Int).SetUint64(d.L2ChainID),
 		BatchInboxAddress:      d.BatchInboxAddress,
-		DepositContractAddress: d.OptimismPortalProxy,
+		DepositContractAddress: d.SlicePortalProxy,
 		L1SystemConfigAddress:  d.SystemConfigProxy,
 		RegolithTime:           d.RegolithTime(l1StartBlock.Time()),
 	}, nil
@@ -433,7 +433,7 @@ func NewL2ImmutableConfig(config *DeployConfig, block *types.Block) (immutables.
 		"messenger":   predeploys.L2CrossDomainMessengerAddr,
 		"otherBridge": config.L1ERC721BridgeProxy,
 	}
-	immutable["OptimismMintableERC721Factory"] = immutables.ImmutableValues{
+	immutable["SliceMintableERC721Factory"] = immutables.ImmutableValues{
 		"bridge":        predeploys.L2ERC721BridgeAddr,
 		"remoteChainId": new(big.Int).SetUint64(config.L1ChainID),
 	}

@@ -147,7 +147,7 @@ func NewIndexer(cfg Config) (*Indexer, error) {
 		addrManager, err = services.NewBedrockAddresses(
 			l1Client,
 			cfg.BedrockL1StandardBridgeAddress,
-			cfg.BedrockOptimismPortalAddress,
+			cfg.BedrockSlicePortalAddress,
 		)
 	} else {
 		addrManager, err = services.NewLegacyAddresses(l1Client, common.HexToAddress(cfg.L1AddressManagerAddress))

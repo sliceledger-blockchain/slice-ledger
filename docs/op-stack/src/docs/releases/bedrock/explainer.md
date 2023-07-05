@@ -1,5 +1,5 @@
 ---
-title: Bedrock Explainer 
+title: Bedrock Explainer
 lang: en-US
 meta:
     - name: og:image

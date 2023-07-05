@@ -2,10 +2,10 @@
 pragma solidity 0.8.15;
 
 import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import { ILegacyMintableERC20 } from "../universal/OptimismMintableERC20.sol";
+import { ILegacyMintableERC20 } from "../universal/SliceMintableERC20.sol";
 
 /// @title LegacyMintableERC20
-/// @notice The legacy implementation of the OptimismMintableERC20. This
+/// @notice The legacy implementation of the SliceMintableERC20. This
 ///         contract is deprecated and should no longer be used.
 contract LegacyMintableERC20 is ILegacyMintableERC20, ERC20 {
     /// @notice Emitted when the token is minted by the bridge.

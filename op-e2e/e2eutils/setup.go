@@ -139,7 +139,7 @@ type DeploymentsL1 struct {
 	L1CrossDomainMessengerProxy common.Address
 	L1StandardBridgeProxy       common.Address
 	L2OutputOracleProxy         common.Address
-	OptimismPortalProxy         common.Address
+	SlicePortalProxy         common.Address
 	SystemConfigProxy           common.Address
 }
 
@@ -218,7 +218,7 @@ func Setup(t require.TestingT, deployParams *DeployParams, alloc *AllocParams) *
 		L1ChainID:              new(big.Int).SetUint64(deployConf.L1ChainID),
 		L2ChainID:              new(big.Int).SetUint64(deployConf.L2ChainID),
 		BatchInboxAddress:      deployConf.BatchInboxAddress,
-		DepositContractAddress: predeploys.DevOptimismPortalAddr,
+		DepositContractAddress: predeploys.DevSlicePortalAddr,
 		L1SystemConfigAddress:  predeploys.DevSystemConfigAddr,
 		RegolithTime:           deployConf.RegolithTime(uint64(deployConf.L1GenesisBlockTimestamp)),
 	}
@@ -227,7 +227,7 @@ func Setup(t require.TestingT, deployParams *DeployParams, alloc *AllocParams) *
 		L1CrossDomainMessengerProxy: predeploys.DevL1CrossDomainMessengerAddr,
 		L1StandardBridgeProxy:       predeploys.DevL1StandardBridgeAddr,
 		L2OutputOracleProxy:         predeploys.DevL2OutputOracleAddr,
-		OptimismPortalProxy:         predeploys.DevOptimismPortalAddr,
+		SlicePortalProxy:         predeploys.DevSlicePortalAddr,
 		SystemConfigProxy:           predeploys.DevSystemConfigAddr,
 	}
 

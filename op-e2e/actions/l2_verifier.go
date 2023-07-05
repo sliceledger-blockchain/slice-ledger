@@ -78,7 +78,7 @@ func NewL2Verifier(t Testing, log log.Logger, l1 derive.L1Fetcher, eng L2API, cf
 	backend := &l2VerifierBackend{verifier: rollupNode}
 	apis := []rpc.API{
 		{
-			Namespace:     "optimism",
+			Namespace:     "slice",
 			Service:       node.NewNodeAPI(cfg, eng, backend, log, m),
 			Public:        true,
 			Authenticated: false,

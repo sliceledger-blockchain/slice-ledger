@@ -50,19 +50,19 @@
 | l2Outputs           | struct Types.OutputProposal[] | 3    | 0      | 32    | contracts/L1/L2OutputOracle.sol:L2OutputOracle |
 
 =======================
-➡ contracts/L1/OptimismPortal.sol:OptimismPortal
+➡ contracts/L1/SlicePortal.sol:SlicePortal
 =======================
 
 | Name                 | Type                                                       | Slot | Offset | Bytes | Contract                                       |
 |----------------------|------------------------------------------------------------|------|--------|-------|------------------------------------------------|
-| _initialized         | uint8                                                      | 0    | 0      | 1     | contracts/L1/OptimismPortal.sol:OptimismPortal |
-| _initializing        | bool                                                       | 0    | 1      | 1     | contracts/L1/OptimismPortal.sol:OptimismPortal |
-| params               | struct ResourceMetering.ResourceParams                     | 1    | 0      | 32    | contracts/L1/OptimismPortal.sol:OptimismPortal |
-| __gap                | uint256[48]                                                | 2    | 0      | 1536  | contracts/L1/OptimismPortal.sol:OptimismPortal |
-| l2Sender             | address                                                    | 50   | 0      | 20    | contracts/L1/OptimismPortal.sol:OptimismPortal |
-| finalizedWithdrawals | mapping(bytes32 => bool)                                   | 51   | 0      | 32    | contracts/L1/OptimismPortal.sol:OptimismPortal |
-| provenWithdrawals    | mapping(bytes32 => struct OptimismPortal.ProvenWithdrawal) | 52   | 0      | 32    | contracts/L1/OptimismPortal.sol:OptimismPortal |
-| paused               | bool                                                       | 53   | 0      | 1     | contracts/L1/OptimismPortal.sol:OptimismPortal |
+| _initialized         | uint8                                                      | 0    | 0      | 1     | contracts/L1/SlicePortal.sol:SlicePortal |
+| _initializing        | bool                                                       | 0    | 1      | 1     | contracts/L1/SlicePortal.sol:SlicePortal |
+| params               | struct ResourceMetering.ResourceParams                     | 1    | 0      | 32    | contracts/L1/SlicePortal.sol:SlicePortal |
+| __gap                | uint256[48]                                                | 2    | 0      | 1536  | contracts/L1/SlicePortal.sol:SlicePortal |
+| l2Sender             | address                                                    | 50   | 0      | 20    | contracts/L1/SlicePortal.sol:SlicePortal |
+| finalizedWithdrawals | mapping(bytes32 => bool)                                   | 51   | 0      | 32    | contracts/L1/SlicePortal.sol:SlicePortal |
+| provenWithdrawals    | mapping(bytes32 => struct SlicePortal.ProvenWithdrawal) | 52   | 0      | 32    | contracts/L1/SlicePortal.sol:SlicePortal |
+| paused               | bool                                                       | 53   | 0      | 1     | contracts/L1/SlicePortal.sol:SlicePortal |
 
 =======================
 ➡ contracts/L1/SystemConfig.sol:SystemConfig
@@ -231,19 +231,19 @@
 |------|------|------|--------|-------|----------|
 
 =======================
-➡ contracts/universal/OptimismMintableERC20.sol:OptimismMintableERC20
+➡ contracts/universal/SliceMintableERC20.sol:SliceMintableERC20
 =======================
 
 | Name         | Type                                            | Slot | Offset | Bytes | Contract                                                            |
 |--------------|-------------------------------------------------|------|--------|-------|---------------------------------------------------------------------|
-| _balances    | mapping(address => uint256)                     | 0    | 0      | 32    | contracts/universal/OptimismMintableERC20.sol:OptimismMintableERC20 |
-| _allowances  | mapping(address => mapping(address => uint256)) | 1    | 0      | 32    | contracts/universal/OptimismMintableERC20.sol:OptimismMintableERC20 |
-| _totalSupply | uint256                                         | 2    | 0      | 32    | contracts/universal/OptimismMintableERC20.sol:OptimismMintableERC20 |
-| _name        | string                                          | 3    | 0      | 32    | contracts/universal/OptimismMintableERC20.sol:OptimismMintableERC20 |
-| _symbol      | string                                          | 4    | 0      | 32    | contracts/universal/OptimismMintableERC20.sol:OptimismMintableERC20 |
+| _balances    | mapping(address => uint256)                     | 0    | 0      | 32    | contracts/universal/SliceMintableERC20.sol:SliceMintableERC20 |
+| _allowances  | mapping(address => mapping(address => uint256)) | 1    | 0      | 32    | contracts/universal/SliceMintableERC20.sol:SliceMintableERC20 |
+| _totalSupply | uint256                                         | 2    | 0      | 32    | contracts/universal/SliceMintableERC20.sol:SliceMintableERC20 |
+| _name        | string                                          | 3    | 0      | 32    | contracts/universal/SliceMintableERC20.sol:SliceMintableERC20 |
+| _symbol      | string                                          | 4    | 0      | 32    | contracts/universal/SliceMintableERC20.sol:SliceMintableERC20 |
 
 =======================
-➡ contracts/universal/OptimismMintableERC20Factory.sol:OptimismMintableERC20Factory
+➡ contracts/universal/SliceMintableERC20Factory.sol:SliceMintableERC20Factory
 =======================
 
 | Name | Type | Slot | Offset | Bytes | Contract |

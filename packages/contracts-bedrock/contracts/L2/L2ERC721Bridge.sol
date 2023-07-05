@@ -4,17 +4,17 @@ pragma solidity 0.8.15;
 import { ERC721Bridge } from "../universal/ERC721Bridge.sol";
 import { ERC165Checker } from "@openzeppelin/contracts/utils/introspection/ERC165Checker.sol";
 import { L1ERC721Bridge } from "../L1/L1ERC721Bridge.sol";
-import { IOptimismMintableERC721 } from "../universal/IOptimismMintableERC721.sol";
+import { ISliceMintableERC721 } from "../universal/ISliceMintableERC721.sol";
 import { Semver } from "../universal/Semver.sol";
 
 /// @title L2ERC721Bridge
 /// @notice The L2 ERC721 bridge is a contract which works together with the L1 ERC721 bridge to
-///         make it possible to transfer ERC721 tokens from Ethereum to Optimism. This contract
+///         make it possible to transfer ERC721 tokens from Ethereum to Slice. This contract
 ///         acts as a minter for new tokens when it hears about deposits into the L1 ERC721 bridge.
 ///         This contract also acts as a burner for tokens being withdrawn.
-///         **WARNING**: Do not bridge an ERC721 that was originally deployed on Optimism. This
+///         **WARNING**: Do not bridge an ERC721 that was originally deployed on Slice. This
 ///         bridge ONLY supports ERC721s originally deployed on Ethereum. Users will need to
-///         wait for the one-week challenge period to elapse before their Optimism-native NFT
+///         wait for the one-week challenge period to elapse before their Slice-native NFT
 ///         can be refunded on L2.
 contract L2ERC721Bridge is ERC721Bridge, Semver {
     /// @custom:semver 1.1.1
@@ -49,18 +49,18 @@ contract L2ERC721Bridge is ERC721Bridge, Semver {
         // Note that supportsInterface makes a callback to the _localToken address which is user
         // provided.
         require(
-            ERC165Checker.supportsInterface(_localToken, type(IOptimismMintableERC721).interfaceId),
+            ERC165Checker.supportsInterface(_localToken, type(ISliceMintableERC721).interfaceId),
             "L2ERC721Bridge: local token interface is not compliant"
         );
 
         require(
-            _remoteToken == IOptimismMintableERC721(_localToken).remoteToken(),
-            "L2ERC721Bridge: wrong remote token for Optimism Mintable ERC721 local token"
+            _remoteToken == ISliceMintableERC721(_localToken).remoteToken(),
+            "L2ERC721Bridge: wrong remote token for Slice Mintable ERC721 local token"
         );
 
         // When a deposit is finalized, we give the NFT with the same tokenId to the account
         // on L2. Note that safeMint makes a callback to the _to address which is user provided.
-        IOptimismMintableERC721(_localToken).safeMint(_to, _tokenId);
+        ISliceMintableERC721(_localToken).safeMint(_to, _tokenId);
 
         // slither-disable-next-line reentrancy-events
         emit ERC721BridgeFinalized(_localToken, _remoteToken, _from, _to, _tokenId, _extraData);
@@ -80,13 +80,13 @@ contract L2ERC721Bridge is ERC721Bridge, Semver {
 
         // Check that the withdrawal is being initiated by the NFT owner
         require(
-            _from == IOptimismMintableERC721(_localToken).ownerOf(_tokenId),
+            _from == ISliceMintableERC721(_localToken).ownerOf(_tokenId),
             "L2ERC721Bridge: Withdrawal is not being initiated by NFT owner"
         );
 
         // Construct calldata for l1ERC721Bridge.finalizeBridgeERC721(_to, _tokenId)
         // slither-disable-next-line reentrancy-events
-        address remoteToken = IOptimismMintableERC721(_localToken).remoteToken();
+        address remoteToken = ISliceMintableERC721(_localToken).remoteToken();
         require(
             remoteToken == _remoteToken,
             "L2ERC721Bridge: remote token does not match given value"
@@ -95,7 +95,7 @@ contract L2ERC721Bridge is ERC721Bridge, Semver {
         // When a withdrawal is initiated, we burn the withdrawer's NFT to prevent subsequent L2
         // usage
         // slither-disable-next-line reentrancy-events
-        IOptimismMintableERC721(_localToken).burn(_from, _tokenId);
+        ISliceMintableERC721(_localToken).burn(_from, _tokenId);
 
         bytes memory message = abi.encodeWithSelector(
             L1ERC721Bridge.finalizeBridgeERC721.selector,

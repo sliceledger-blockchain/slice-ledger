@@ -53,7 +53,7 @@ func TestBedrockIndexer(t *testing.T) {
 	require.NoError(t, err)
 	l2SB, err := bindings.NewL2StandardBridge(predeploys.L2StandardBridgeAddr, l2Client)
 	require.NoError(t, err)
-	portal, err := bindings.NewOptimismPortal(predeploys.DevOptimismPortalAddr, l1Client)
+	portal, err := bindings.NewSlicePortal(predeploys.DevSlicePortalAddr, l1Client)
 	require.NoError(t, err)
 	l1Opts, err := bind.NewKeyedTransactorWithChainID(cfg.Secrets.Alice, cfg.L1ChainIDBig())
 	require.NoError(t, err)
@@ -81,7 +81,7 @@ func TestBedrockIndexer(t *testing.T) {
 		DisableIndexer:                 false,
 		Bedrock:                        true,
 		BedrockL1StandardBridgeAddress: cfg.DeployConfig.L1StandardBridgeProxy,
-		BedrockOptimismPortalAddress:   cfg.DeployConfig.OptimismPortalProxy,
+		BedrockSlicePortalAddress:   cfg.DeployConfig.SlicePortalProxy,
 	}
 	idxr, err := legacy.NewIndexer(idxrCfg)
 	require.NoError(t, err)
@@ -192,7 +192,7 @@ func TestBedrockIndexer(t *testing.T) {
 		finBlockNum, err := withdrawals.WaitForFinalizationPeriod(
 			e2eutils.TimeoutCtx(t, time.Minute),
 			l1Client,
-			predeploys.DevOptimismPortalAddr,
+			predeploys.DevSlicePortalAddr,
 			wdReceipt.BlockNumber,
 		)
 		require.NoError(t, err)
@@ -255,7 +255,7 @@ func TestBedrockIndexer(t *testing.T) {
 		_, err = withdrawals.WaitForFinalizationPeriod(
 			e2eutils.TimeoutCtx(t, time.Minute),
 			l1Client,
-			predeploys.DevOptimismPortalAddr,
+			predeploys.DevSlicePortalAddr,
 			finHeader.Number,
 		)
 		require.NoError(t, err)

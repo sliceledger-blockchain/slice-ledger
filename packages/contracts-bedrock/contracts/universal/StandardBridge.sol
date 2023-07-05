@@ -6,9 +6,9 @@ import { ERC165Checker } from "@openzeppelin/contracts/utils/introspection/ERC16
 import { Address } from "@openzeppelin/contracts/utils/Address.sol";
 import { SafeERC20 } from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import { SafeCall } from "../libraries/SafeCall.sol";
-import { IOptimismMintableERC20, ILegacyMintableERC20 } from "./IOptimismMintableERC20.sol";
+import { ISliceMintableERC20, ILegacyMintableERC20 } from "./ISliceMintableERC20.sol";
 import { CrossDomainMessenger } from "./CrossDomainMessenger.sol";
-import { OptimismMintableERC20 } from "./OptimismMintableERC20.sol";
+import { SliceMintableERC20 } from "./SliceMintableERC20.sol";
 
 /// @custom:upgradeable
 /// @title StandardBridge
@@ -273,13 +273,13 @@ abstract contract StandardBridge {
         uint256 _amount,
         bytes calldata _extraData
     ) public onlyOtherBridge {
-        if (_isOptimismMintableERC20(_localToken)) {
+        if (_isSliceMintableERC20(_localToken)) {
             require(
                 _isCorrectTokenPair(_localToken, _remoteToken),
-                "StandardBridge: wrong remote token for Optimism Mintable ERC20 local token"
+                "StandardBridge: wrong remote token for Slice Mintable ERC20 local token"
             );
 
-            OptimismMintableERC20(_localToken).mint(_to, _amount);
+            SliceMintableERC20(_localToken).mint(_to, _amount);
         } else {
             deposits[_localToken][_remoteToken] = deposits[_localToken][_remoteToken] - _amount;
             IERC20(_localToken).safeTransfer(_to, _amount);
@@ -345,13 +345,13 @@ abstract contract StandardBridge {
         uint32 _minGasLimit,
         bytes memory _extraData
     ) internal {
-        if (_isOptimismMintableERC20(_localToken)) {
+        if (_isSliceMintableERC20(_localToken)) {
             require(
                 _isCorrectTokenPair(_localToken, _remoteToken),
-                "StandardBridge: wrong remote token for Optimism Mintable ERC20 local token"
+                "StandardBridge: wrong remote token for Slice Mintable ERC20 local token"
             );
 
-            OptimismMintableERC20(_localToken).burn(_from, _amount);
+            SliceMintableERC20(_localToken).burn(_from, _amount);
         } else {
             IERC20(_localToken).safeTransferFrom(_from, address(this), _amount);
             deposits[_localToken][_remoteToken] = deposits[_localToken][_remoteToken] + _amount;
@@ -379,22 +379,22 @@ abstract contract StandardBridge {
         );
     }
 
-    /// @notice Checks if a given address is an OptimismMintableERC20. Not perfect, but good enough.
+    /// @notice Checks if a given address is an SliceMintableERC20. Not perfect, but good enough.
     ///         Just the way we like it.
     /// @param _token Address of the token to check.
-    /// @return True if the token is an OptimismMintableERC20.
-    function _isOptimismMintableERC20(address _token) internal view returns (bool) {
+    /// @return True if the token is an SliceMintableERC20.
+    function _isSliceMintableERC20(address _token) internal view returns (bool) {
         return
             ERC165Checker.supportsInterface(_token, type(ILegacyMintableERC20).interfaceId) ||
-            ERC165Checker.supportsInterface(_token, type(IOptimismMintableERC20).interfaceId);
+            ERC165Checker.supportsInterface(_token, type(ISliceMintableERC20).interfaceId);
     }
 
-    /// @notice Checks if the "other token" is the correct pair token for the OptimismMintableERC20.
+    /// @notice Checks if the "other token" is the correct pair token for the SliceMintableERC20.
     ///         Calls can be saved in the future by combining this logic with
-    ///         `_isOptimismMintableERC20`.
-    /// @param _mintableToken OptimismMintableERC20 to check against.
+    ///         `_isSliceMintableERC20`.
+    /// @param _mintableToken SliceMintableERC20 to check against.
     /// @param _otherToken    Pair token to check.
-    /// @return True if the other token is the correct pair token for the OptimismMintableERC20.
+    /// @return True if the other token is the correct pair token for the SliceMintableERC20.
     function _isCorrectTokenPair(address _mintableToken, address _otherToken)
         internal
         view
@@ -405,7 +405,7 @@ abstract contract StandardBridge {
         ) {
             return _otherToken == ILegacyMintableERC20(_mintableToken).l1Token();
         } else {
-            return _otherToken == IOptimismMintableERC20(_mintableToken).remoteToken();
+            return _otherToken == ISliceMintableERC20(_mintableToken).remoteToken();
         }
     }
 

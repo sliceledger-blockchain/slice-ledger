@@ -5,7 +5,7 @@ import { Types } from "./Types.sol";
 import { Encoding } from "./Encoding.sol";
 
 /// @title Hashing
-/// @notice Hashing handles Optimism's various different hashing schemes.
+/// @notice Hashing handles Slice's various different hashing schemes.
 library Hashing {
     /// @notice Computes the hash of the RLP encoded L2 transaction that would be generated when a
     ///         given deposit is sent to the L2 system. Useful for searching for a deposit in the L2

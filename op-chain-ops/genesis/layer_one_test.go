@@ -40,7 +40,7 @@ func TestBuildL1DeveloperGenesis(t *testing.T) {
 
 	oracle, err := bindings.NewL2OutputOracle(predeploys.DevL2OutputOracleAddr, sim)
 	require.NoError(t, err)
-	portal, err := bindings.NewOptimismPortal(predeploys.DevOptimismPortalAddr, sim)
+	portal, err := bindings.NewSlicePortal(predeploys.DevSlicePortalAddr, sim)
 	require.NoError(t, err)
 
 	proposer, err := oracle.PROPOSER(callOpts)
@@ -72,7 +72,7 @@ func TestBuildL1DeveloperGenesis(t *testing.T) {
 	require.NoError(t, err)
 	portalAddr, err := msgr.PORTAL(callOpts)
 	require.NoError(t, err)
-	require.Equal(t, predeploys.DevOptimismPortalAddr, portalAddr)
+	require.Equal(t, predeploys.DevSlicePortalAddr, portalAddr)
 
 	bridge, err := bindings.NewL1StandardBridge(predeploys.DevL1StandardBridgeAddr, sim)
 	require.NoError(t, err)
@@ -83,7 +83,7 @@ func TestBuildL1DeveloperGenesis(t *testing.T) {
 	require.NoError(t, err)
 	require.Equal(t, predeploys.L2StandardBridgeAddr, otherBridge)
 
-	factory, err := bindings.NewOptimismMintableERC20(predeploys.DevOptimismMintableERC20FactoryAddr, sim)
+	factory, err := bindings.NewSliceMintableERC20(predeploys.DevSliceMintableERC20FactoryAddr, sim)
 	require.NoError(t, err)
 	bridgeAddr, err := factory.BRIDGE(callOpts)
 	require.NoError(t, err)

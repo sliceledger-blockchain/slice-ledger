@@ -26,7 +26,7 @@ type ImmutableValues map[string]any
 type ImmutableConfig map[string]ImmutableValues
 
 // Check does a sanity check that the specific values that
-// Optimism uses are set inside of the ImmutableConfig.
+// Slice uses are set inside of the ImmutableConfig.
 func (i ImmutableConfig) Check() error {
 	if _, ok := i["L2CrossDomainMessenger"]["otherMessenger"]; !ok {
 		return errors.New("L2CrossDomainMessenger otherMessenger not set")
@@ -40,11 +40,11 @@ func (i ImmutableConfig) Check() error {
 	if _, ok := i["L2ERC721Bridge"]["otherBridge"]; !ok {
 		return errors.New("L2ERC721Bridge otherBridge not set")
 	}
-	if _, ok := i["OptimismMintableERC721Factory"]["bridge"]; !ok {
-		return errors.New("OptimismMintableERC20Factory bridge not set")
+	if _, ok := i["SliceMintableERC721Factory"]["bridge"]; !ok {
+		return errors.New("SliceMintableERC20Factory bridge not set")
 	}
-	if _, ok := i["OptimismMintableERC721Factory"]["remoteChainId"]; !ok {
-		return errors.New("OptimismMintableERC20Factory remoteChainId not set")
+	if _, ok := i["SliceMintableERC721Factory"]["remoteChainId"]; !ok {
+		return errors.New("SliceMintableERC20Factory remoteChainId not set")
 	}
 	if _, ok := i["SequencerFeeVault"]["recipient"]; !ok {
 		return errors.New("SequencerFeeVault recipient not set")
@@ -62,9 +62,9 @@ func (i ImmutableConfig) Check() error {
 // contracts so that the immutables can be set properly in the bytecode.
 type DeploymentResults map[string]hexutil.Bytes
 
-// BuildOptimism will deploy the L2 predeploys so that their immutables are set
+// BuildSlice will deploy the L2 predeploys so that their immutables are set
 // correctly.
-func BuildOptimism(immutable ImmutableConfig) (DeploymentResults, error) {
+func BuildSlice(immutable ImmutableConfig) (DeploymentResults, error) {
 	if err := immutable.Check(); err != nil {
 		return DeploymentResults{}, err
 	}
@@ -116,7 +116,7 @@ func BuildOptimism(immutable ImmutableConfig) (DeploymentResults, error) {
 			},
 		},
 		{
-			Name: "OptimismMintableERC20Factory",
+			Name: "SliceMintableERC20Factory",
 		},
 		{
 			Name: "DeployerWhitelist",
@@ -135,10 +135,10 @@ func BuildOptimism(immutable ImmutableConfig) (DeploymentResults, error) {
 			},
 		},
 		{
-			Name: "OptimismMintableERC721Factory",
+			Name: "SliceMintableERC721Factory",
 			Args: []interface{}{
 				predeploys.L2ERC721BridgeAddr,
-				immutable["OptimismMintableERC721Factory"]["remoteChainId"],
+				immutable["SliceMintableERC721Factory"]["remoteChainId"],
 			},
 		},
 		{
@@ -208,8 +208,8 @@ func l2Deployer(backend *backends.SimulatedBackend, opts *bind.TransactOpts, dep
 			return nil, err
 		}
 		_, tx, _, err = bindings.DeployL1FeeVault(opts, backend, recipient, minimumWithdrawalAmount, withdrawalNetwork)
-	case "OptimismMintableERC20Factory":
-		_, tx, _, err = bindings.DeployOptimismMintableERC20Factory(opts, backend, predeploys.L2StandardBridgeAddr)
+	case "SliceMintableERC20Factory":
+		_, tx, _, err = bindings.DeploySliceMintableERC20Factory(opts, backend, predeploys.L2StandardBridgeAddr)
 	case "DeployerWhitelist":
 		_, tx, _, err = bindings.DeployDeployerWhitelist(opts, backend)
 	case "LegacyMessagePasser":
@@ -227,7 +227,7 @@ func l2Deployer(backend *backends.SimulatedBackend, opts *bind.TransactOpts, dep
 			return nil, fmt.Errorf("invalid type for otherBridge")
 		}
 		_, tx, _, err = bindings.DeployL2ERC721Bridge(opts, backend, messenger, otherBridge)
-	case "OptimismMintableERC721Factory":
+	case "SliceMintableERC721Factory":
 		bridge, ok := deployment.Args[0].(common.Address)
 		if !ok {
 			return nil, fmt.Errorf("invalid type for bridge")
@@ -236,7 +236,7 @@ func l2Deployer(backend *backends.SimulatedBackend, opts *bind.TransactOpts, dep
 		if !ok {
 			return nil, fmt.Errorf("invalid type for remoteChainId")
 		}
-		_, tx, _, err = bindings.DeployOptimismMintableERC721Factory(opts, backend, bridge, remoteChainId)
+		_, tx, _, err = bindings.DeploySliceMintableERC721Factory(opts, backend, bridge, remoteChainId)
 	case "LegacyERC20ETH":
 		_, tx, _, err = bindings.DeployLegacyERC20ETH(opts, backend)
 	default:

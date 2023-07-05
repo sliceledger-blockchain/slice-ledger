@@ -403,7 +403,7 @@ func (cfg SystemConfig) Start(_opts ...SystemConfigOption) (*System, error) {
 			L1ChainID:              cfg.L1ChainIDBig(),
 			L2ChainID:              cfg.L2ChainIDBig(),
 			BatchInboxAddress:      cfg.DeployConfig.BatchInboxAddress,
-			DepositContractAddress: predeploys.DevOptimismPortalAddr,
+			DepositContractAddress: predeploys.DevSlicePortalAddr,
 			L1SystemConfigAddress:  predeploys.DevSystemConfigAddr,
 			RegolithTime:           cfg.DeployConfig.RegolithTime(uint64(cfg.DeployConfig.L1GenesisBlockTimestamp)),
 		}

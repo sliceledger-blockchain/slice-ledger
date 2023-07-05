@@ -8,7 +8,7 @@ import { Types } from "../libraries/Types.sol";
 /// @custom:proxied
 /// @title L2OutputOracle
 /// @notice The L2OutputOracle contains an array of L2 state outputs, where each output is a
-///         commitment to the state of the L2 chain. Other contracts like the OptimismPortal use
+///         commitment to the state of the L2 chain. Other contracts like the SlicePortal use
 ///         these outputs to verify information about the state of L2.
 contract L2OutputOracle is Initializable, Semver {
     /// @notice The interval in L2 blocks at which checkpoints must be submitted.
