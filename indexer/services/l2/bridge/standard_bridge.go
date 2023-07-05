@@ -3,10 +3,10 @@ package bridge
 import (
 	"context"
 
-	"github.com/ethereum-optimism/optimism/indexer/db"
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	"github.com/ethereum-optimism/optimism/op-node/withdrawals"
-	"github.com/ethereum-optimism/optimism/op-service/backoff"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/db"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/withdrawals"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/backoff"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/ethclient"
 

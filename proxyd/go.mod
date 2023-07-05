@@ -1,4 +1,4 @@
-module github.com/ethereum-optimism/optimism/proxyd
+module github.com/sliceledger-blockchain/slice-ledger/proxyd
 
 go 1.18
 

@@ -3,7 +3,7 @@ package query
 import (
 	"context"
 
-	"github.com/ethereum-optimism/optimism/op-service/backoff"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/backoff"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/ethclient"
 )

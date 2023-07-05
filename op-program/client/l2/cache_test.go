@@ -4,8 +4,8 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-node/testutils"
-	"github.com/ethereum-optimism/optimism/op-program/client/l2/test"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client/l2/test"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/require"
 )

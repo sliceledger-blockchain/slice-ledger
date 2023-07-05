@@ -1,10 +1,10 @@
 package metrics
 
 import (
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/derive"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
-	txmetrics "github.com/ethereum-optimism/optimism/op-service/txmgr/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/derive"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
+	txmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr/metrics"
 	"github.com/ethereum/go-ethereum/core/types"
 )
 

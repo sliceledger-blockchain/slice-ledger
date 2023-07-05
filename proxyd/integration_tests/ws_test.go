@@ -9,7 +9,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/proxyd"
+	"github.com/sliceledger-blockchain/slice-ledger/proxyd"
 	"github.com/gorilla/websocket"
 	"github.com/stretchr/testify/require"
 )

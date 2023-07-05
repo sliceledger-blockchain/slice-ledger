@@ -10,9 +10,9 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/derive"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/derive"
 )
 
 type Downloader interface {

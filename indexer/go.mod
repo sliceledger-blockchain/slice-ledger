@@ -1,4 +1,4 @@
-module github.com/ethereum-optimism/optimism/indexer
+module github.com/sliceledger-blockchain/slice-ledger/indexer
 
 go 1.19
 
@@ -6,7 +6,7 @@ replace github.com/ethereum/go-ethereum v1.11.6 => github.com/ethereum-optimism/
 
 require (
 	github.com/BurntSushi/toml v1.3.0
-	github.com/ethereum-optimism/optimism v1.0.9
+	github.com/sliceledger-blockchain/slice-ledger v1.0.9
 	github.com/ethereum/go-ethereum v1.11.6
 	github.com/go-chi/chi/v5 v5.0.8
 	github.com/google/uuid v1.3.0

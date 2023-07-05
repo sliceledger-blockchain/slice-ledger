@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ethereum-optimism/optimism/indexer/config"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/config"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/urfave/cli/v2"

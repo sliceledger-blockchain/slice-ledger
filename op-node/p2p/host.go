@@ -27,9 +27,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-node/p2p/gating"
-	"github.com/ethereum-optimism/optimism/op-node/p2p/store"
-	"github.com/ethereum-optimism/optimism/op-service/clock"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/gating"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/store"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/clock"
 )
 
 const (

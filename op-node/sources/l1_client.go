@@ -10,10 +10,10 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-node/client"
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
-	"github.com/ethereum-optimism/optimism/op-node/sources/caching"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/client"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources/caching"
 )
 
 type L1ClientConfig struct {

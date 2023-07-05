@@ -5,8 +5,8 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/ethereum-optimism/optimism/indexer/database"
-	"github.com/ethereum-optimism/optimism/indexer/node"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/database"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/node"
 	"github.com/google/uuid"
 
 	"github.com/ethereum/go-ethereum"

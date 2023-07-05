@@ -6,8 +6,8 @@ import (
 	"math/big"
 	"os"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/predeploys"
-	"github.com/ethereum-optimism/optimism/op-chain-ops/crossdomain"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/predeploys"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/crossdomain"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"

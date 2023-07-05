@@ -6,10 +6,10 @@ import (
 
 	"github.com/urfave/cli/v2"
 
-	"github.com/ethereum-optimism/optimism/op-proposer/cmd/doc"
-	"github.com/ethereum-optimism/optimism/op-proposer/flags"
-	"github.com/ethereum-optimism/optimism/op-proposer/proposer"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
+	"github.com/sliceledger-blockchain/slice-ledger/op-proposer/cmd/doc"
+	"github.com/sliceledger-blockchain/slice-ledger/op-proposer/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/op-proposer/proposer"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
 	"github.com/ethereum/go-ethereum/log"
 )
 

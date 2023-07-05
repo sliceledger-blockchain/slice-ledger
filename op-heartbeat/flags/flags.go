@@ -1,9 +1,9 @@
 package flags
 
 import (
-	opservice "github.com/ethereum-optimism/optimism/op-service"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
+	opservice "github.com/sliceledger-blockchain/slice-ledger/op-service"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
 	"github.com/urfave/cli/v2"
 )
 

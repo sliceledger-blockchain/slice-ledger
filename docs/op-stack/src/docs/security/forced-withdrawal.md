@@ -15,12 +15,12 @@ However, that L2 endpoint can be a read-only replica.
 
 ## Setup
 
-The code to go along with this article is available at [our tutorials repository](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/op-stack/forced-withdrawal).
+The code to go along with this article is available at [our tutorials repository](https://github.com/sliceledger-blockchain/slice-ledger-tutorial/tree/main/op-stack/forced-withdrawal).
 
 1. Clone the repository, move to the correct directory, and install the required dependencies.
 
    ```sh
-   git clone https://github.com/ethereum-optimism/optimism-tutorial.git
+   git clone https://github.com/sliceledger-blockchain/slice-ledger-tutorial.git
    cd optimism-tutorial/op-stack/forced-withdrawal
    npm install
    ```
@@ -60,7 +60,7 @@ The easiest way to withdraw ETH is to send it to the bridge, or the cross domain
    transferAmt = BigInt(0.01 * 1e18)
    ```
 
-1. Create a contract object for the [`OptimismPortal`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) contract.
+1. Create a contract object for the [`OptimismPortal`](https://github.com/sliceledger-blockchain/slice-ledger/blob/develop/packages/contracts-bedrock/contracts/L1/OptimismPortal.sol) contract.
 
    ```js
    optimismContracts = require("@eth-optimism/contracts-bedrock")
@@ -135,7 +135,7 @@ The easiest way to withdraw ETH is to send it to the bridge, or the cross domain
 
 
 1. Create [a cross domain messenger](https://sdk.optimism.io/classes/crosschainmessenger).
-   This step, and subsequent ETH withdrawal steps, are explained in [this tutorial](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/cross-dom-bridge-eth).
+   This step, and subsequent ETH withdrawal steps, are explained in [this tutorial](https://github.com/sliceledger-blockchain/slice-ledger-tutorial/tree/main/cross-dom-bridge-eth).
 
    ```js
    optimismSDK = require("@eth-optimism/sdk")

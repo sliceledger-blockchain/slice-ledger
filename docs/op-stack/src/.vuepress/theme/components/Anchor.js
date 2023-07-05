@@ -69,13 +69,13 @@ export default Vue.extend({
                                     " Get support for going live"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/issues", target: "_blank" } }, [
+                            h("a", { attrs: { href: "https://github.com/sliceledger-blockchain/slice-ledger/issues", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "fab fa-github" } }),
                                     " Make an issue on GitHub"
                                 ])
                             ]),
-                            h("a", { attrs: { href: "https://github.com/ethereum-optimism/optimism/contribute", target: "_blank" } }, [
+                            h("a", { attrs: { href: "https://github.com/sliceledger-blockchain/slice-ledger/contribute", target: "_blank" } }, [
                                 h("div", [
                                     h("i", { attrs: { class: "far fa-hands-helping" } }),
                                     " Contribute to Optimism"

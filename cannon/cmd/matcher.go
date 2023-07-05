@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ethereum-optimism/optimism/cannon/mipsevm"
+	"github.com/sliceledger-blockchain/slice-ledger/cannon/mipsevm"
 )
 
 type StepMatcher func(st *mipsevm.State) bool

@@ -1,7 +1,7 @@
 package metrics
 
 import (
-	"github.com/ethereum-optimism/optimism/op-service/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

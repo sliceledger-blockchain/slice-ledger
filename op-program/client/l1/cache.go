@@ -1,7 +1,7 @@
 package l1
 
 import (
-	"github.com/ethereum-optimism/optimism/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/hashicorp/golang-lru/v2/simplelru"

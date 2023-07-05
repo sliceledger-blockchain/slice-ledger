@@ -4,12 +4,12 @@ import (
 	"testing"
 	"time"
 
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
-	oppprof "github.com/ethereum-optimism/optimism/op-service/pprof"
-	oprpc "github.com/ethereum-optimism/optimism/op-service/rpc"
-	"github.com/ethereum-optimism/optimism/op-service/txmgr"
-	"github.com/ethereum-optimism/optimism/op-signer/client"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
+	oppprof "github.com/sliceledger-blockchain/slice-ledger/op-service/pprof"
+	oprpc "github.com/sliceledger-blockchain/slice-ledger/op-service/rpc"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr"
+	"github.com/sliceledger-blockchain/slice-ledger/op-signer/client"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/require"

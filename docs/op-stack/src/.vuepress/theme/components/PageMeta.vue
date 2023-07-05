@@ -17,7 +17,7 @@
             </a>
           </li>
           <li>
-            <a href="https://github.com/ethereum-optimism/optimism/contribute" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/sliceledger-blockchain/slice-ledger/contribute" target="_blank" rel="noopener noreferrer">
               <i class="far fa-hands-helping"></i> Contribute to Optimism
             </a>
           </li>

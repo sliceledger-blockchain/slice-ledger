@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/ethereum-optimism/optimism/op-bootnode/bootnode"
-	"github.com/ethereum-optimism/optimism/op-bootnode/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bootnode/bootnode"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bootnode/flags"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/urfave/cli/v2"
 )

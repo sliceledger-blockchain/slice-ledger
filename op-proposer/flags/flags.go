@@ -6,12 +6,12 @@ import (
 
 	"github.com/urfave/cli/v2"
 
-	opservice "github.com/ethereum-optimism/optimism/op-service"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
-	oppprof "github.com/ethereum-optimism/optimism/op-service/pprof"
-	oprpc "github.com/ethereum-optimism/optimism/op-service/rpc"
-	"github.com/ethereum-optimism/optimism/op-service/txmgr"
+	opservice "github.com/sliceledger-blockchain/slice-ledger/op-service"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
+	oppprof "github.com/sliceledger-blockchain/slice-ledger/op-service/pprof"
+	oprpc "github.com/sliceledger-blockchain/slice-ledger/op-service/rpc"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr"
 )
 
 const EnvVarPrefix = "OP_PROPOSER"

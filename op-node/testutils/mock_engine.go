@@ -3,7 +3,7 @@ package testutils
 import (
 	"context"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
 )
 
 type MockEngine struct {

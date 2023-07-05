@@ -9,8 +9,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	wheel "github.com/ethereum-optimism/optimism/op-wheel"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	wheel "github.com/sliceledger-blockchain/slice-ledger/op-wheel"
 )
 
 var (

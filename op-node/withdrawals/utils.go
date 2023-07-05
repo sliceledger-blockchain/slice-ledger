@@ -8,7 +8,7 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-e2e/e2eutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-e2e/e2eutils"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
@@ -17,8 +17,8 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/ethclient/gethclient"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	"github.com/ethereum-optimism/optimism/op-bindings/predeploys"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/predeploys"
 )
 
 var MessagePassedTopic = crypto.Keccak256Hash([]byte("MessagePassed(uint256,address,address,uint256,uint256,bytes,bytes32)"))

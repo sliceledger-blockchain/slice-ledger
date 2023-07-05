@@ -49,15 +49,15 @@ This tutorial was checked on:
 
 ## Build the Source Code
 
-We’re going to be spinning up an EVM Rollup from the OP Stack source code.  You could use docker images, but this way we keep the option to modify component behavior if you need to do so. The OP Stack source code is split between two repositories, the [Optimism Monorepo](https://github.com/ethereum-optimism/optimism) and the [`op-geth`](https://github.com/ethereum-optimism/op-geth) repository.
+We’re going to be spinning up an EVM Rollup from the OP Stack source code.  You could use docker images, but this way we keep the option to modify component behavior if you need to do so. The OP Stack source code is split between two repositories, the [Optimism Monorepo](https://github.com/sliceledger-blockchain/slice-ledger) and the [`op-geth`](https://github.com/ethereum-optimism/op-geth) repository.
 
 ### Build the Optimism Monorepo
 
-1. Clone the [Optimism Monorepo](https://github.com/ethereum-optimism/optimism).
+1. Clone the [Optimism Monorepo](https://github.com/sliceledger-blockchain/slice-ledger).
 
     ```bash
     cd ~
-    git clone https://github.com/ethereum-optimism/optimism.git
+    git clone https://github.com/sliceledger-blockchain/slice-ledger.git
     ```
 
 1. Enter the Optimism Monorepo.
@@ -178,7 +178,7 @@ The `cast wallet new` tool is *not* designed for production deployments. If you 
 
 ## Configure your network
 
-Once you’ve built both repositories, you’ll need head back to the Optimism Monorepo to set up the configuration for your chain. Currently, chain configuration lives inside of the [`contracts-bedrock`](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock) package.
+Once you’ve built both repositories, you’ll need head back to the Optimism Monorepo to set up the configuration for your chain. Currently, chain configuration lives inside of the [`contracts-bedrock`](https://github.com/sliceledger-blockchain/slice-ledger/tree/develop/packages/contracts-bedrock) package.
 
 1. Enter the Optimism Monorepo:
 
@@ -226,7 +226,7 @@ Once you’ve built both repositories, you’ll need head back to the Optimism M
     timestamp            1676253324
     ```
 
-1. Fill out the remainder of the pre-populated config file found at [`deploy-config/getting-started.json`](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/deploy-config/getting-started.json). Use the default values in the config file and make following modifications:
+1. Fill out the remainder of the pre-populated config file found at [`deploy-config/getting-started.json`](https://github.com/sliceledger-blockchain/slice-ledger/blob/develop/packages/contracts-bedrock/deploy-config/getting-started.json). Use the default values in the config file and make following modifications:
 
     - Replace `"ADMIN"` with the address of the Admin account you generated earlier.
     - Replace `"PROPOSER"` with the address of the Proposer account you generated earlier.
@@ -553,13 +553,13 @@ Once you’ve connected your wallet, you’ll probably notice that you don’t h
 
 Congratulations, you made it! You now have a complete OP Stack based EVM Rollup.
 
-To see your rollup in action, you can use the [Optimism Mainnet Getting Started tutorial](https://github.com/ethereum-optimism/optimism-tutorial/blob/main/getting-started). Follow these steps:
+To see your rollup in action, you can use the [Optimism Mainnet Getting Started tutorial](https://github.com/sliceledger-blockchain/slice-ledger-tutorial/blob/main/getting-started). Follow these steps:
 
 1. Clone the tutorials repository.
 
     ```bash
     cd ~
-    git clone https://github.com/ethereum-optimism/optimism-tutorial.git
+    git clone https://github.com/sliceledger-blockchain/slice-ledger-tutorial.git
     ```
 
 1. Change to the Foundry directory of the Getting Started tutorial.

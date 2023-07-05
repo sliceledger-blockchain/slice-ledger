@@ -1,4 +1,4 @@
-module github.com/ethereum-optimism/optimism/packages/contracts-bedrock/ctb-test-case-generator
+module github.com/sliceledger-blockchain/slice-ledger/packages/contracts-bedrock/ctb-test-case-generator
 
 go 1.19
 

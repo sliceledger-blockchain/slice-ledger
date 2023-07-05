@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-program/client/l2/engineapi"
-	"github.com/ethereum-optimism/optimism/op-program/client/l2/engineapi/test"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client/l2/engineapi"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client/l2/engineapi/test"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/consensus/beacon"
 	"github.com/ethereum/go-ethereum/consensus/ethash"
@@ -17,10 +17,10 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-e2e/e2eutils"
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/sources"
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-e2e/e2eutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
 )
 
 func TestL2EngineAPI(gt *testing.T) {

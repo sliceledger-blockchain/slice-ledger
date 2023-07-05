@@ -16,11 +16,11 @@ import (
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	"github.com/ethereum-optimism/optimism/op-bindings/predeploys"
-	"github.com/ethereum-optimism/optimism/op-e2e/e2eutils"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/derive"
-	"github.com/ethereum-optimism/optimism/op-node/withdrawals"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/predeploys"
+	"github.com/sliceledger-blockchain/slice-ledger/op-e2e/e2eutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/derive"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/withdrawals"
 )
 
 type L1Bindings struct {

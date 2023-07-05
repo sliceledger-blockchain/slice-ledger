@@ -15,7 +15,7 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/ethereum/go-ethereum/trie"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
 )
 
 type BatchCallContextFn func(ctx context.Context, b []rpc.BatchElem) error

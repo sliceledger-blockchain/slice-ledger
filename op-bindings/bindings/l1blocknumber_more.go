@@ -6,7 +6,7 @@ package bindings
 import (
 	"encoding/json"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/solc"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/solc"
 )
 
 const L1BlockNumberStorageLayoutJSON = "{\"storage\":null,\"types\":{}}"

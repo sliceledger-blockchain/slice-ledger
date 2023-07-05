@@ -7,8 +7,8 @@
 There are plenty of ways to contribute, in particular we appreciate support in the following areas:
 
 - Reporting issues. For security issues see [Security policy](https://github.com/ethereum-optimism/.github/blob/master/SECURITY.md).
-- Fixing and responding to existing issues. You can start off with those tagged ["good first issue"](https://github.com/ethereum-optimism/optimism/contribute) which are meant as introductory issues for external contributors.
-- Improving the [community site](https://community.optimism.io/), [documentation](https://github.com/ethereum-optimism/community-hub) and [tutorials](https://github.com/ethereum-optimism/optimism-tutorial).
+- Fixing and responding to existing issues. You can start off with those tagged ["good first issue"](https://github.com/sliceledger-blockchain/slice-ledger/contribute) which are meant as introductory issues for external contributors.
+- Improving the [community site](https://community.optimism.io/), [documentation](https://github.com/ethereum-optimism/community-hub) and [tutorials](https://github.com/sliceledger-blockchain/slice-ledger-tutorial).
 - Become an "Optimizer" and answer questions in the [Optimism Discord](https://discord.optimism.io).
 - Get involved in the protocol design process by proposing changes or new features or write parts of the spec yourself in the [specs subdirectory](./specs/).
 
@@ -20,7 +20,7 @@ Note that we have a [Code of Conduct](https://github.com/ethereum-optimism/.gith
 
 In general, the smaller the diff the easier it will be for us to review quickly.
 
-In order to contribute, fork the appropriate branch, for non-breaking changes to production that is `develop` and for the next release that is normally `release/X.X.X` branch, see [details about our branching model](https://github.com/ethereum-optimism/optimism/blob/develop/README.md#branching-model-and-releases).
+In order to contribute, fork the appropriate branch, for non-breaking changes to production that is `develop` and for the next release that is normally `release/X.X.X` branch, see [details about our branching model](https://github.com/sliceledger-blockchain/slice-ledger/blob/develop/README.md#branching-model-and-releases).
 
 Additionally, if you are writing a new feature, please ensure you add appropriate test cases.
 
@@ -74,7 +74,7 @@ You'll need the following:
 Clone the repository and open it:
 
 ```bash
-git clone git@github.com:ethereum-optimism/optimism.git
+git clone git@github.com:sliceledger-blockchain/slice-ledger.git
 cd optimism
 ```
 

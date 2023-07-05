@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ethereum-optimism/optimism/op-program/host"
-	"github.com/ethereum-optimism/optimism/op-program/host/config"
-	"github.com/ethereum-optimism/optimism/op-program/host/flags"
-	"github.com/ethereum-optimism/optimism/op-program/host/version"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/host"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/host/config"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/host/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/host/version"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/urfave/cli/v2"
 )

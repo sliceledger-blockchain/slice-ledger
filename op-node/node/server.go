@@ -7,15 +7,15 @@ import (
 	"net/http"
 	"strconv"
 
-	ophttp "github.com/ethereum-optimism/optimism/op-node/http"
+	ophttp "github.com/sliceledger-blockchain/slice-ledger/op-node/http"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/node"
 	"github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/ethereum-optimism/optimism/op-node/metrics"
-	"github.com/ethereum-optimism/optimism/op-node/p2p"
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
-	"github.com/ethereum-optimism/optimism/op-node/sources"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
 )
 
 type rpcServer struct {

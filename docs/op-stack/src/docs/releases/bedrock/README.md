@@ -20,15 +20,15 @@ Learn all about the Bedrock release of the OP Stack by reading the [Bedrock Expl
 
 ### Specifications
 
-Dive deep into the specifications for the Bedrock release in the [specs folder of the Optimism Monorepo](https://github.com/ethereum-optimism/optimism/blob/develop/specs/README.md).
+Dive deep into the specifications for the Bedrock release in the [specs folder of the Optimism Monorepo](https://github.com/sliceledger-blockchain/slice-ledger/blob/develop/specs/README.md).
 
 ## Components
 
-- [`op-node`](https://github.com/ethereum-optimism/optimism/tree/develop/op-node)
+- [`op-node`](https://github.com/sliceledger-blockchain/slice-ledger/tree/develop/op-node)
 - [`op-geth`](https://github.com/ethereum-optimism/op-geth)
-- [`op-batcher`](https://github.com/ethereum-optimism/optimism/tree/develop/op-batcher)
-- [`op-proposer`](https://github.com/ethereum-optimism/optimism/tree/develop/op-proposer)
-- [`contracts-bedrock`](https://github.com/ethereum-optimism/optimism/tree/develop/packages/contracts-bedrock)
-- [`fault-detector`](https://github.com/ethereum-optimism/optimism/tree/develop/packages/fault-detector)
-- [`sdk`](https://github.com/ethereum-optimism/optimism/tree/develop/packages/sdk)
-- [`chain-mon`](https://github.com/ethereum-optimism/optimism/tree/develop/packages/chain-mon)
+- [`op-batcher`](https://github.com/sliceledger-blockchain/slice-ledger/tree/develop/op-batcher)
+- [`op-proposer`](https://github.com/sliceledger-blockchain/slice-ledger/tree/develop/op-proposer)
+- [`contracts-bedrock`](https://github.com/sliceledger-blockchain/slice-ledger/tree/develop/packages/contracts-bedrock)
+- [`fault-detector`](https://github.com/sliceledger-blockchain/slice-ledger/tree/develop/packages/fault-detector)
+- [`sdk`](https://github.com/sliceledger-blockchain/slice-ledger/tree/develop/packages/sdk)
+- [`chain-mon`](https://github.com/sliceledger-blockchain/slice-ledger/tree/develop/packages/chain-mon)

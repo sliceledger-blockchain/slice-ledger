@@ -3,7 +3,7 @@ package examples
 import (
 	"os"
 
-	"github.com/ethereum-optimism/optimism/op-challenger/fault"
+	"github.com/sliceledger-blockchain/slice-ledger/op-challenger/fault"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 )

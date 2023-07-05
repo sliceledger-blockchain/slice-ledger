@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/stretchr/testify/require"

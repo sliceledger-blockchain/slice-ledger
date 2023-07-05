@@ -8,10 +8,10 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	"github.com/ethereum-optimism/optimism/op-e2e/e2eutils"
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/op-e2e/e2eutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
 )
 
 func TestProposer(gt *testing.T) {

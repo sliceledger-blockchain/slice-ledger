@@ -3,7 +3,7 @@ package p2p
 import (
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
 )
 
 type ApplicationScoreParams struct {

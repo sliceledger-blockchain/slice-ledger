@@ -18,12 +18,12 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/urfave/cli/v2"
 
-	"github.com/ethereum-optimism/optimism/op-node/client"
-	opservice "github.com/ethereum-optimism/optimism/op-service"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
-	"github.com/ethereum-optimism/optimism/op-wheel/cheat"
-	"github.com/ethereum-optimism/optimism/op-wheel/engine"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/client"
+	opservice "github.com/sliceledger-blockchain/slice-ledger/op-service"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-wheel/cheat"
+	"github.com/sliceledger-blockchain/slice-ledger/op-wheel/engine"
 )
 
 const envVarPrefix = "OP_WHEEL"

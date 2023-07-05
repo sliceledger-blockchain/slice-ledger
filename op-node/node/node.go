@@ -13,12 +13,12 @@ import (
 	"github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-node/client"
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/metrics"
-	"github.com/ethereum-optimism/optimism/op-node/p2p"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/driver"
-	"github.com/ethereum-optimism/optimism/op-node/sources"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/client"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/driver"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
 )
 
 type OpNode struct {

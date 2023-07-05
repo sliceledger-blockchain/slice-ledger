@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ethereum-optimism/optimism/proxyd"
+	"github.com/sliceledger-blockchain/slice-ledger/proxyd"
 
 	"github.com/gorilla/mux"
 	"github.com/pkg/errors"

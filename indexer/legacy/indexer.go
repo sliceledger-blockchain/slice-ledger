@@ -10,16 +10,16 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/indexer/services"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services"
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/ethereum-optimism/optimism/indexer/metrics"
-	"github.com/ethereum-optimism/optimism/indexer/server"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/server"
 	"github.com/rs/cors"
 
-	database "github.com/ethereum-optimism/optimism/indexer/db"
-	"github.com/ethereum-optimism/optimism/indexer/services/l1"
-	"github.com/ethereum-optimism/optimism/indexer/services/l2"
+	database "github.com/sliceledger-blockchain/slice-ledger/indexer/db"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services/l1"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services/l2"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rpc"

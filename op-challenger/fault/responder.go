@@ -4,8 +4,8 @@ import (
 	"context"
 	"math/big"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	"github.com/ethereum-optimism/optimism/op-service/txmgr"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"

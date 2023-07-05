@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/proxyd"
+	"github.com/sliceledger-blockchain/slice-ledger/proxyd"
 	"github.com/stretchr/testify/require"
 )
 

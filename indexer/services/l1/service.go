@@ -11,18 +11,18 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/indexer/metrics"
-	"github.com/ethereum-optimism/optimism/indexer/services"
-	"github.com/ethereum-optimism/optimism/indexer/services/query"
-	legacy_bindings "github.com/ethereum-optimism/optimism/op-bindings/legacy-bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services/query"
+	legacy_bindings "github.com/sliceledger-blockchain/slice-ledger/op-bindings/legacy-bindings"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/ethereum-optimism/optimism/indexer/server"
-	"github.com/ethereum-optimism/optimism/indexer/services/l1/bridge"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/server"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services/l1/bridge"
 
 	_ "github.com/lib/pq"
 
-	"github.com/ethereum-optimism/optimism/indexer/db"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/db"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/ethclient"

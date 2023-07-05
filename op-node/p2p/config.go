@@ -6,7 +6,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/p2p/gating"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/gating"
 
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/p2p/discover"
@@ -21,7 +21,7 @@ import (
 	"github.com/libp2p/go-libp2p/core/metrics"
 	cmgr "github.com/libp2p/go-libp2p/p2p/net/connmgr"
 
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
 )
 
 var DefaultBootnodes = []*enode.Node{

@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/client"
-	"github.com/ethereum-optimism/optimism/op-node/sources"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/client"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
 	"github.com/ethereum/go-ethereum/rpc"
 )
 

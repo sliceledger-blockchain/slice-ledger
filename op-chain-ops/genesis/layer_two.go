@@ -7,9 +7,9 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/predeploys"
-	"github.com/ethereum-optimism/optimism/op-chain-ops/immutables"
-	"github.com/ethereum-optimism/optimism/op-chain-ops/state"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/predeploys"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/immutables"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/state"
 )
 
 // BuildL2DeveloperGenesis will build the L2 genesis block.

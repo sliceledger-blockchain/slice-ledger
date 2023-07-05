@@ -10,9 +10,9 @@ import (
 	"strconv"
 	"time"
 
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
-	optls "github.com/ethereum-optimism/optimism/op-service/tls"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
+	optls "github.com/sliceledger-blockchain/slice-ledger/op-service/tls"
 
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/node"

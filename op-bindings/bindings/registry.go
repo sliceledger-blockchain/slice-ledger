@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/solc"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/solc"
 	"github.com/ethereum/go-ethereum/common"
 )
 

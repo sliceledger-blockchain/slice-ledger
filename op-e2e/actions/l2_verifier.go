@@ -11,14 +11,14 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-node/client"
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/node"
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/derive"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/driver"
-	"github.com/ethereum-optimism/optimism/op-node/sources"
-	"github.com/ethereum-optimism/optimism/op-node/testutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/client"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/node"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/derive"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/driver"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testutils"
 )
 
 // L2Verifier is an actor that functions like a rollup node,

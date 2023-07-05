@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/urfave/cli/v2"
 
-	endpointMonitor "github.com/ethereum-optimism/optimism/endpoint-monitor"
+	endpointMonitor "github.com/sliceledger-blockchain/slice-ledger/endpoint-monitor"
 )
 
 var (

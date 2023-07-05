@@ -14,8 +14,8 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-node/heartbeat"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/heartbeat"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
 )
 
 func TestService(t *testing.T) {

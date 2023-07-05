@@ -74,7 +74,7 @@ module.exports = {
             iconPrefix: 'fab fa-',
             iconClass: 'color-github',
             text: 'GitHub',
-            link: 'https://github.com/ethereum-optimism/optimism',
+            link: 'https://github.com/sliceledger-blockchain/slice-ledger',
           },
           {
             icon: 'twitter',

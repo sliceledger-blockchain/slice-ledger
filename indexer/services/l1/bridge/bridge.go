@@ -5,10 +5,10 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/ethereum-optimism/optimism/indexer/db"
-	"github.com/ethereum-optimism/optimism/indexer/services"
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	legacy_bindings "github.com/ethereum-optimism/optimism/op-bindings/legacy-bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/db"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	legacy_bindings "github.com/sliceledger-blockchain/slice-ledger/op-bindings/legacy-bindings"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 )

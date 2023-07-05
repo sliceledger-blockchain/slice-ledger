@@ -3,8 +3,8 @@ package processor
 import (
 	"time"
 
-	"github.com/ethereum-optimism/optimism/indexer/database"
-	"github.com/ethereum-optimism/optimism/indexer/node"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/database"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/node"
 
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/log"

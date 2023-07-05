@@ -17,10 +17,10 @@ import (
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/ethereum/go-ethereum/trie"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	"github.com/ethereum-optimism/optimism/op-bindings/predeploys"
-	"github.com/ethereum-optimism/optimism/op-chain-ops/deployer"
-	"github.com/ethereum-optimism/optimism/op-chain-ops/state"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/predeploys"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/deployer"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/state"
 )
 
 var (

@@ -3,9 +3,9 @@ package derive
 import (
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/testutils"
-	"github.com/ethereum-optimism/optimism/op-node/testutils/fuzzerutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testutils/fuzzerutils"
 	fuzz "github.com/google/gofuzz"
 	"github.com/stretchr/testify/require"
 )

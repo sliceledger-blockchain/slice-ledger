@@ -4,7 +4,7 @@ import (
 	"context"
 	"os"
 
-	"github.com/ethereum-optimism/optimism/op-e2e/e2eutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-e2e/e2eutils"
 )
 
 var enableParallelTesting bool = true

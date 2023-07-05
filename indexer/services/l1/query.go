@@ -3,9 +3,9 @@ package l1
 import (
 	"context"
 
-	"github.com/ethereum-optimism/optimism/indexer/db"
-	"github.com/ethereum-optimism/optimism/indexer/services/l1/bridge"
-	legacy_bindings "github.com/ethereum-optimism/optimism/op-bindings/legacy-bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/db"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services/l1/bridge"
+	legacy_bindings "github.com/sliceledger-blockchain/slice-ledger/op-bindings/legacy-bindings"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 )

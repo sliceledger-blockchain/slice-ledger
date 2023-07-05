@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	legacy "github.com/ethereum-optimism/optimism/indexer/legacy"
+	legacy "github.com/sliceledger-blockchain/slice-ledger/indexer/legacy"
 	"github.com/stretchr/testify/require"
 )
 

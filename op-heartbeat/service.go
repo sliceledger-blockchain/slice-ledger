@@ -18,11 +18,11 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-node/heartbeat"
-	"github.com/ethereum-optimism/optimism/op-service/httputil"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
-	oppprof "github.com/ethereum-optimism/optimism/op-service/pprof"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/heartbeat"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/httputil"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
+	oppprof "github.com/sliceledger-blockchain/slice-ledger/op-service/pprof"
 )
 
 const (

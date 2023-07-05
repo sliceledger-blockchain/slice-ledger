@@ -7,9 +7,9 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/rlp"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	preimage "github.com/ethereum-optimism/optimism/op-preimage"
-	"github.com/ethereum-optimism/optimism/op-program/client/mpt"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	preimage "github.com/sliceledger-blockchain/slice-ledger/op-preimage"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client/mpt"
 )
 
 // StateOracle defines the high-level API used to retrieve L2 state data pre-images

@@ -8,14 +8,14 @@ import (
 	gethrpc "github.com/ethereum/go-ethereum/rpc"
 	"github.com/urfave/cli/v2"
 
-	"github.com/ethereum-optimism/optimism/op-batcher/flags"
-	"github.com/ethereum-optimism/optimism/op-batcher/metrics"
-	"github.com/ethereum-optimism/optimism/op-batcher/rpc"
-	opservice "github.com/ethereum-optimism/optimism/op-service"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	"github.com/ethereum-optimism/optimism/op-service/opio"
-	oppprof "github.com/ethereum-optimism/optimism/op-service/pprof"
-	oprpc "github.com/ethereum-optimism/optimism/op-service/rpc"
+	"github.com/sliceledger-blockchain/slice-ledger/op-batcher/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/op-batcher/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-batcher/rpc"
+	opservice "github.com/sliceledger-blockchain/slice-ledger/op-service"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/opio"
+	oppprof "github.com/sliceledger-blockchain/slice-ledger/op-service/pprof"
+	oprpc "github.com/sliceledger-blockchain/slice-ledger/op-service/rpc"
 )
 
 // Main is the entrypoint into the Batch Submitter. This method returns a

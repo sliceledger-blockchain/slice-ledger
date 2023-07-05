@@ -5,8 +5,8 @@ import (
 
 	"github.com/urfave/cli/v2"
 
-	opservice "github.com/ethereum-optimism/optimism/op-service"
-	optls "github.com/ethereum-optimism/optimism/op-service/tls"
+	opservice "github.com/sliceledger-blockchain/slice-ledger/op-service"
+	optls "github.com/sliceledger-blockchain/slice-ledger/op-service/tls"
 )
 
 const (

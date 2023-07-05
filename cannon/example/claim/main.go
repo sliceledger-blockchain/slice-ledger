@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ethereum-optimism/optimism/op-preimage"
+	"github.com/sliceledger-blockchain/slice-ledger/op-preimage"
 )
 
 type rawHint string

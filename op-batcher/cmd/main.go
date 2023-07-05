@@ -6,10 +6,10 @@ import (
 
 	"github.com/urfave/cli/v2"
 
-	"github.com/ethereum-optimism/optimism/op-batcher/batcher"
-	"github.com/ethereum-optimism/optimism/op-batcher/cmd/doc"
-	"github.com/ethereum-optimism/optimism/op-batcher/flags"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
+	"github.com/sliceledger-blockchain/slice-ledger/op-batcher/batcher"
+	"github.com/sliceledger-blockchain/slice-ledger/op-batcher/cmd/doc"
+	"github.com/sliceledger-blockchain/slice-ledger/op-batcher/flags"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
 	"github.com/ethereum/go-ethereum/log"
 )
 

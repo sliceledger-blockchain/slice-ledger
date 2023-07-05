@@ -3,9 +3,9 @@ package services
 import (
 	"net/http"
 
-	"github.com/ethereum-optimism/optimism/indexer/db"
-	"github.com/ethereum-optimism/optimism/indexer/metrics"
-	"github.com/ethereum-optimism/optimism/indexer/server"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/db"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/server"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/gorilla/mux"

@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"encoding/json"
 
-	"github.com/ethereum-optimism/optimism/op-program/client"
-	"github.com/ethereum-optimism/optimism/op-program/host/config"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/host/config"
 	"github.com/ethereum/go-ethereum/common"
 )
 

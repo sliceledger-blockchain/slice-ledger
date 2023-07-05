@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"

@@ -11,8 +11,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
-	"github.com/ethereum-optimism/optimism/op-service/txmgr/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr/metrics"
 
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"

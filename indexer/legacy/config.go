@@ -8,7 +8,7 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/urfave/cli"
 
-	"github.com/ethereum-optimism/optimism/indexer/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/flags"
 )
 
 var (

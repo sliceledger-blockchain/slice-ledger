@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-service/txmgr"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core"
 )

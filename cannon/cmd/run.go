@@ -14,8 +14,8 @@ import (
 
 	"github.com/pkg/profile"
 
-	"github.com/ethereum-optimism/optimism/cannon/mipsevm"
-	preimage "github.com/ethereum-optimism/optimism/op-preimage"
+	"github.com/sliceledger-blockchain/slice-ledger/cannon/mipsevm"
+	preimage "github.com/sliceledger-blockchain/slice-ledger/op-preimage"
 )
 
 var (

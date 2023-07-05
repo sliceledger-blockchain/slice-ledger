@@ -17,7 +17,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-service/txmgr/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr/metrics"
 )
 
 const (

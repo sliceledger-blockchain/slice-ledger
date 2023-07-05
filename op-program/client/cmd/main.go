@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/ethereum-optimism/optimism/op-program/client"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
 )
 
 func main() {

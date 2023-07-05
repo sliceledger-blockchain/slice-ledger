@@ -3,8 +3,8 @@ package config
 import (
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-node/chaincfg"
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/chaincfg"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/stretchr/testify/require"

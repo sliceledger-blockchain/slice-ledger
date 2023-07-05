@@ -17,7 +17,7 @@ import (
 	"sync"
 	"time"
 
-	sw "github.com/ethereum-optimism/optimism/proxyd/pkg/avg-sliding-window"
+	sw "github.com/sliceledger-blockchain/slice-ledger/proxyd/pkg/avg-sliding-window"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/rpc"
 

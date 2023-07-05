@@ -3,8 +3,8 @@ package rpc
 import (
 	"github.com/urfave/cli/v2"
 
-	opservice "github.com/ethereum-optimism/optimism/op-service"
-	oprpc "github.com/ethereum-optimism/optimism/op-service/rpc"
+	opservice "github.com/sliceledger-blockchain/slice-ledger/op-service"
+	oprpc "github.com/sliceledger-blockchain/slice-ledger/op-service/rpc"
 )
 
 const (

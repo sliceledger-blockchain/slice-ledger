@@ -79,7 +79,7 @@ func DeploySlicePortal(auth *bind.TransactOpts, backend bind.ContractBackend, _l
 
 // SlicePortal is an auto generated Go binding around an Ethereum contract.
 type SlicePortal struct {
-	PortalCaller     // Read-only binding to the contract
+	SlicePortalCaller     // Read-only binding to the contract
 	SlicePortalTransactor // Write-only binding to the contract
 	SlicePortalFilterer   // Log filterer for contract events
 }

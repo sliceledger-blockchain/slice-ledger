@@ -9,7 +9,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
 )
 
 // AttributesMatchBlock checks if the L2 attributes pre-inputs match the output

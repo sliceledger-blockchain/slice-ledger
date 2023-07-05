@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-service/clock"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/clock"
 	"github.com/ethereum/go-ethereum/log"
 	ds "github.com/ipfs/go-datastore"
 	"github.com/libp2p/go-libp2p/core/peer"

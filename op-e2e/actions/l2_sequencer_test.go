@@ -11,9 +11,9 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-e2e/e2eutils"
-	"github.com/ethereum-optimism/optimism/op-node/sources"
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-e2e/e2eutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
 )
 
 func setupSequencerTest(t Testing, sd *e2eutils.SetupData, log log.Logger) (*L1Miner, *L2Engine, *L2Sequencer) {

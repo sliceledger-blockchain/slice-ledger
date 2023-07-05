@@ -7,14 +7,14 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/urfave/cli/v2"
 
-	"github.com/ethereum-optimism/optimism/op-node/sources"
-	"github.com/ethereum-optimism/optimism/op-proposer/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
+	"github.com/sliceledger-blockchain/slice-ledger/op-proposer/flags"
 
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
-	oppprof "github.com/ethereum-optimism/optimism/op-service/pprof"
-	oprpc "github.com/ethereum-optimism/optimism/op-service/rpc"
-	"github.com/ethereum-optimism/optimism/op-service/txmgr"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
+	oppprof "github.com/sliceledger-blockchain/slice-ledger/op-service/pprof"
+	oprpc "github.com/sliceledger-blockchain/slice-ledger/op-service/rpc"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr"
 )
 
 // Config contains the well typed fields that are used to initialize the output submitter.

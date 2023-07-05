@@ -4,7 +4,7 @@ import (
 	"context"
 	"sync"
 
-	"github.com/ethereum-optimism/optimism/op-node/client"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/client"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/rpc"
 )

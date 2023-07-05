@@ -5,12 +5,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/p2p/store"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/store"
 
-	"github.com/ethereum-optimism/optimism/op-node/metrics"
-	"github.com/ethereum-optimism/optimism/op-node/p2p/gating/mocks"
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
-	"github.com/ethereum-optimism/optimism/op-service/clock"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/gating/mocks"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/clock"
 	log "github.com/ethereum/go-ethereum/log"
 	"github.com/libp2p/go-libp2p/core/network"
 	"github.com/libp2p/go-libp2p/core/peer"

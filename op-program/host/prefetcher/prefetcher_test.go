@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
@@ -13,13 +13,13 @@ import (
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/testutils"
-	preimage "github.com/ethereum-optimism/optimism/op-preimage"
-	"github.com/ethereum-optimism/optimism/op-program/client/l1"
-	"github.com/ethereum-optimism/optimism/op-program/client/l2"
-	"github.com/ethereum-optimism/optimism/op-program/client/mpt"
-	"github.com/ethereum-optimism/optimism/op-program/host/kvstore"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testutils"
+	preimage "github.com/sliceledger-blockchain/slice-ledger/op-preimage"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client/l1"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client/l2"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client/mpt"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/host/kvstore"
 )
 
 func TestNoHint(t *testing.T) {

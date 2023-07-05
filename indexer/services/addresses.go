@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	legacy_bindings "github.com/ethereum-optimism/optimism/op-bindings/legacy-bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	legacy_bindings "github.com/sliceledger-blockchain/slice-ledger/op-bindings/legacy-bindings"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 )

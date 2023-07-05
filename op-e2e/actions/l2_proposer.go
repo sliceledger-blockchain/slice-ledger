@@ -15,10 +15,10 @@ import (
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-node/sources"
-	"github.com/ethereum-optimism/optimism/op-proposer/metrics"
-	"github.com/ethereum-optimism/optimism/op-proposer/proposer"
-	"github.com/ethereum-optimism/optimism/op-service/txmgr"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
+	"github.com/sliceledger-blockchain/slice-ledger/op-proposer/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-proposer/proposer"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr"
 )
 
 type ProposerCfg struct {

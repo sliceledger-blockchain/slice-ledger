@@ -18,7 +18,7 @@ import (
 	"github.com/ethereum/go-ethereum/eth/tracers/logger"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-chain-ops/srcmap"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/srcmap"
 )
 
 func testContractsSetup(t *testing.T) (*Contracts, *Addresses) {

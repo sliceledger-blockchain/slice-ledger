@@ -8,20 +8,20 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ethereum-optimism/optimism/op-node/chaincfg"
-	"github.com/ethereum-optimism/optimism/op-node/sources"
-	oppprof "github.com/ethereum-optimism/optimism/op-service/pprof"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/chaincfg"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/sources"
+	oppprof "github.com/sliceledger-blockchain/slice-ledger/op-service/pprof"
 	"github.com/urfave/cli/v2"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/ethereum-optimism/optimism/op-node/flags"
-	"github.com/ethereum-optimism/optimism/op-node/node"
-	p2pcli "github.com/ethereum-optimism/optimism/op-node/p2p/cli"
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/driver"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/node"
+	p2pcli "github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/cli"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/driver"
 )
 
 // NewConfig creates a Config from the provided flags or environment variables.

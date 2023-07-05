@@ -8,10 +8,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
-	"github.com/ethereum-optimism/optimism/op-node/testutils"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testutils"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/stretchr/testify/require"
 )

@@ -3,15 +3,15 @@ package metrics
 import (
 	"context"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/prometheus/client_golang/prometheus"
 
-	opmetrics "github.com/ethereum-optimism/optimism/op-service/metrics"
-	txmetrics "github.com/ethereum-optimism/optimism/op-service/txmgr/metrics"
+	opmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/metrics"
+	txmetrics "github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr/metrics"
 )
 
 const Namespace = "op_proposer"

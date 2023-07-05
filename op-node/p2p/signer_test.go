@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
 	"github.com/stretchr/testify/require"
 )
 

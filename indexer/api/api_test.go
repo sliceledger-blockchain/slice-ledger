@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/indexer/database"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/database"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"

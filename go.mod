@@ -1,4 +1,4 @@
-module github.com/ethereum-optimism/optimism
+module github.com/sliceledger-blockchain/slice-ledger
 
 go 1.19
 

@@ -10,15 +10,15 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
 	ds "github.com/ipfs/go-datastore"
 	"github.com/ipfs/go-datastore/sync"
 	leveldb "github.com/ipfs/go-ds-leveldb"
 	"github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/multiformats/go-multiaddr"
 
-	"github.com/ethereum-optimism/optimism/op-node/flags"
-	"github.com/ethereum-optimism/optimism/op-node/p2p"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p"
 
 	"github.com/urfave/cli/v2"
 

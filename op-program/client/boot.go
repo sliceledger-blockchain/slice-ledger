@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"encoding/json"
 
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
-	preimage "github.com/ethereum-optimism/optimism/op-preimage"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
+	preimage "github.com/sliceledger-blockchain/slice-ledger/op-preimage"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/params"
 )

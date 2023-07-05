@@ -10,11 +10,11 @@ import (
 
 	log "github.com/ethereum/go-ethereum/log"
 
-	p2p "github.com/ethereum-optimism/optimism/op-node/p2p"
-	p2pMocks "github.com/ethereum-optimism/optimism/op-node/p2p/mocks"
-	"github.com/ethereum-optimism/optimism/op-node/p2p/store"
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
+	p2p "github.com/sliceledger-blockchain/slice-ledger/op-node/p2p"
+	p2pMocks "github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/mocks"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/store"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
 )
 
 // PeerScorerTestSuite tests peer parameterization.

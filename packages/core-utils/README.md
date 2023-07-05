@@ -1,6 +1,6 @@
 # @eth-optimism/core-utils
 
-[![codecov](https://codecov.io/gh/ethereum-optimism/optimism/branch/develop/graph/badge.svg?token=0VTG7PG7YR&flag=core-utils-tests)](https://codecov.io/gh/ethereum-optimism/optimism)
+[![codecov](https://codecov.io/gh/sliceledger-blockchain/slice-ledger/branch/develop/graph/badge.svg?token=0VTG7PG7YR&flag=core-utils-tests)](https://codecov.io/gh/sliceledger-blockchain/slice-ledger)
 
 ## What is this?
 

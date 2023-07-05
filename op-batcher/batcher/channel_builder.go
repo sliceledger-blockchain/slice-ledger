@@ -7,8 +7,8 @@ import (
 	"io"
 	"math"
 
-	"github.com/ethereum-optimism/optimism/op-batcher/compressor"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/derive"
+	"github.com/sliceledger-blockchain/slice-ledger/op-batcher/compressor"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/derive"
 	"github.com/ethereum/go-ethereum/core/types"
 )
 

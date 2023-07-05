@@ -1,6 +1,6 @@
 # @eth-optimism/replica-healthcheck
 
-[![codecov](https://codecov.io/gh/ethereum-optimism/optimism/branch/develop/graph/badge.svg?token=0VTG7PG7YR&flag=replica-healthcheck-tests)](https://codecov.io/gh/ethereum-optimism/optimism)
+[![codecov](https://codecov.io/gh/sliceledger-blockchain/slice-ledger/branch/develop/graph/badge.svg?token=0VTG7PG7YR&flag=replica-healthcheck-tests)](https://codecov.io/gh/sliceledger-blockchain/slice-ledger)
 
 ## What is this?
 
@@ -12,7 +12,7 @@
 Clone, install, and build the Optimism monorepo:
 
 ```
-git clone https://github.com/ethereum-optimism/optimism.git
+git clone https://github.com/sliceledger-blockchain/slice-ledger.git
 pnpm install
 pnpm build
 ```

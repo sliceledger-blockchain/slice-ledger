@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/ethereum-optimism/optimism/op-service/solabi"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/solabi"
 	"github.com/stretchr/testify/require"
 )
 

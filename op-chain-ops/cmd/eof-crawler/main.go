@@ -7,7 +7,7 @@ import (
 	"github.com/mattn/go-isatty"
 	"github.com/urfave/cli/v2"
 
-	"github.com/ethereum-optimism/optimism/op-chain-ops/eof"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/eof"
 	"github.com/ethereum/go-ethereum/log"
 )
 

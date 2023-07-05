@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/predeploys"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/predeploys"
 )
 
 func TestWriteDefaultJWT(t *testing.T) {

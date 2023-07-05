@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
-	"github.com/ethereum-optimism/optimism/op-service/txmgr/metrics"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/txmgr/metrics"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core"
 	"github.com/ethereum/go-ethereum/core/types"

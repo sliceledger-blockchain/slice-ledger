@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ethereum-optimism/optimism/op-challenger/fault/cmd/examples"
+	"github.com/sliceledger-blockchain/slice-ledger/op-challenger/fault/cmd/examples"
 )
 
 func main() {

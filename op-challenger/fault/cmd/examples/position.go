@@ -1,7 +1,7 @@
 package examples
 
 import (
-	"github.com/ethereum-optimism/optimism/op-challenger/fault"
+	"github.com/sliceledger-blockchain/slice-ledger/op-challenger/fault"
 )
 
 func PositionExampleOne() {

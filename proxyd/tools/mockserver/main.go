@@ -6,7 +6,7 @@ import (
 	"path"
 	"strconv"
 
-	"github.com/ethereum-optimism/optimism/proxyd/tools/mockserver/handler"
+	"github.com/sliceledger-blockchain/slice-ledger/proxyd/tools/mockserver/handler"
 )
 
 func main() {

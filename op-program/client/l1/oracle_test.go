@@ -13,10 +13,10 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	"github.com/ethereum-optimism/optimism/op-node/testutils"
-	preimage "github.com/ethereum-optimism/optimism/op-preimage"
-	"github.com/ethereum-optimism/optimism/op-program/client/mpt"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testutils"
+	preimage "github.com/sliceledger-blockchain/slice-ledger/op-preimage"
+	"github.com/sliceledger-blockchain/slice-ledger/op-program/client/mpt"
 )
 
 // testBlock tests that the given block with receipts can be passed through the preimage oracle.

@@ -7,7 +7,7 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/indexer/services/util"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/services/util"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"

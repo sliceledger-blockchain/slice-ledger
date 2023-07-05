@@ -9,10 +9,10 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/ethereum-optimism/optimism/indexer/database"
-	"github.com/ethereum-optimism/optimism/indexer/node"
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
-	legacy_bindings "github.com/ethereum-optimism/optimism/op-bindings/legacy-bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/database"
+	"github.com/sliceledger-blockchain/slice-ledger/indexer/node"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
+	legacy_bindings "github.com/sliceledger-blockchain/slice-ledger/op-bindings/legacy-bindings"
 
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"

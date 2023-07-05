@@ -6,10 +6,10 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/urfave/cli/v2"
 
-	"github.com/ethereum-optimism/optimism/op-challenger/config"
-	"github.com/ethereum-optimism/optimism/op-challenger/flags"
-	"github.com/ethereum-optimism/optimism/op-challenger/version"
-	oplog "github.com/ethereum-optimism/optimism/op-service/log"
+	"github.com/sliceledger-blockchain/slice-ledger/op-challenger/config"
+	"github.com/sliceledger-blockchain/slice-ledger/op-challenger/flags"
+	"github.com/sliceledger-blockchain/slice-ledger/op-challenger/version"
+	oplog "github.com/sliceledger-blockchain/slice-ledger/op-service/log"
 )
 
 var (

@@ -7,9 +7,9 @@ import (
 	"math/big"
 	"time"
 
-	opservice "github.com/ethereum-optimism/optimism/op-service"
-	opcrypto "github.com/ethereum-optimism/optimism/op-service/crypto"
-	"github.com/ethereum-optimism/optimism/op-signer/client"
+	opservice "github.com/sliceledger-blockchain/slice-ledger/op-service"
+	opcrypto "github.com/sliceledger-blockchain/slice-ledger/op-service/crypto"
+	"github.com/sliceledger-blockchain/slice-ledger/op-signer/client"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/log"

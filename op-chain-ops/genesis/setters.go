@@ -4,10 +4,10 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/ethereum-optimism/optimism/op-bindings/bindings"
+	"github.com/sliceledger-blockchain/slice-ledger/op-bindings/bindings"
 
-	"github.com/ethereum-optimism/optimism/op-chain-ops/immutables"
-	"github.com/ethereum-optimism/optimism/op-chain-ops/state"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/immutables"
+	"github.com/sliceledger-blockchain/slice-ledger/op-chain-ops/state"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/vm"
 	"github.com/ethereum/go-ethereum/log"

@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/p2p/store"
-	"github.com/ethereum-optimism/optimism/op-node/testlog"
-	"github.com/ethereum-optimism/optimism/op-service/clock"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/store"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/clock"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/libp2p/go-libp2p/core/peer"
 	"github.com/stretchr/testify/require"

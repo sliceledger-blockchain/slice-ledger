@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	t "github.com/ethereum-optimism/optimism/packages/contracts-bedrock/ctb-test-case-generator/trie"
+	t "github.com/sliceledger-blockchain/slice-ledger/packages/contracts-bedrock/ctb-test-case-generator/trie"
 )
 
 // Mode enum

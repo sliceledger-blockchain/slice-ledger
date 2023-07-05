@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/rollup"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
 
-	p2pMocks "github.com/ethereum-optimism/optimism/op-node/p2p/mocks"
-	"github.com/ethereum-optimism/optimism/op-node/p2p/store"
-	testlog "github.com/ethereum-optimism/optimism/op-node/testlog"
-	"github.com/ethereum-optimism/optimism/op-service/clock"
+	p2pMocks "github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/mocks"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p/store"
+	testlog "github.com/sliceledger-blockchain/slice-ledger/op-node/testlog"
+	"github.com/sliceledger-blockchain/slice-ledger/op-service/clock"
 	log "github.com/ethereum/go-ethereum/log"
 	ds "github.com/ipfs/go-datastore"
 	"github.com/ipfs/go-datastore/sync"
