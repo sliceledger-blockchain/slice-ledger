@@ -7,9 +7,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/cmd/batch_decoder/fetch"
-	"github.com/ethereum-optimism/optimism/op-node/cmd/batch_decoder/reassemble"
-	"github.com/ethereum-optimism/optimism/op-node/rollup/derive"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/cmd/batch_decoder/fetch"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/cmd/batch_decoder/reassemble"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/derive"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/urfave/cli/v2"

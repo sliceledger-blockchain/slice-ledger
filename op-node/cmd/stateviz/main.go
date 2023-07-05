@@ -18,8 +18,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum-optimism/optimism/op-node/eth"
-	ophttp "github.com/ethereum-optimism/optimism/op-node/http"
+	"github.com/sliceledger-blockchain/slice-ledger/op-node/eth"
+	ophttp "github.com/sliceledger-blockchain/slice-ledger/op-node/http"
 	"github.com/ethereum/go-ethereum/log"
 )
 
