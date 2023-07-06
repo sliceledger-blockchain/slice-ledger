@@ -1,37 +1,37 @@
 {
   "numDeployConfirmations": 1,
 
-  "finalSystemOwner": "ADMIN",
-  "portalGuardian": "ADMIN",
-  "controller": "ADMIN",
+  "finalSystemOwner": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "portalGuardian": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "controller": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
 
-  "l1StartingBlockTag": "BLOCKHASH",
+  "l1StartingBlockTag": "0xdf94c2b7d4475988acd8506911f530f4846f367905294cf06dc76987f615c688",
 
   "l1ChainID": 5,
-  "l2ChainID": 42069,
+  "l2ChainID": 6969,
   "l2BlockTime": 2,
 
   "maxSequencerDrift": 600,
   "sequencerWindowSize": 3600,
   "channelTimeout": 300,
 
-  "p2pSequencerAddress": "SEQUENCER",
+  "p2pSequencerAddress": "0x8C8e74bce5091AADBB291BA9144252828664ab1C",
   "batchInboxAddress": "0xff00000000000000000000000000000000042069",
-  "batchSenderAddress": "BATCHER",
+  "batchSenderAddress": "0x654f112fcfD5B91b66d3D20FB8373ea943192638",
 
   "l2OutputOracleSubmissionInterval": 120,
   "l2OutputOracleStartingBlockNumber": 0,
-  "l2OutputOracleStartingTimestamp": TIMESTAMP,
+  "l2OutputOracleStartingTimestamp": 1688565216,
 
-  "l2OutputOracleProposer": "PROPOSER",
-  "l2OutputOracleChallenger": "ADMIN",
+  "l2OutputOracleProposer": "0x6AD2d56B32862430b3F0d1777edd15dFfeEb26B0",
+  "l2OutputOracleChallenger": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
 
   "finalizationPeriodSeconds": 12,
 
-  "proxyAdminOwner": "ADMIN",
-  "baseFeeVaultRecipient": "ADMIN",
-  "l1FeeVaultRecipient": "ADMIN",
-  "sequencerFeeVaultRecipient": "ADMIN",
+  "proxyAdminOwner": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "baseFeeVaultRecipient": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "l1FeeVaultRecipient": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "sequencerFeeVaultRecipient": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
 
   "baseFeeVaultMinimumWithdrawalAmount": "0x8ac7230489e80000",
   "l1FeeVaultMinimumWithdrawalAmount": "0x8ac7230489e80000",
@@ -46,7 +46,7 @@
   "enableGovernance": true,
   "governanceTokenSymbol": "OP",
   "governanceTokenName": "Optimism",
-  "governanceTokenOwner": "ADMIN",
+  "governanceTokenOwner": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
 
   "l2GenesisBlockGasLimit": "0x1c9c380",
   "l2GenesisBlockBaseFeePerGas": "0x3b9aca00",
