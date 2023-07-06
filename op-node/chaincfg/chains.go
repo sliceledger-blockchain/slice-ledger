@@ -10,7 +10,7 @@ import (
 	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
 )
 
-var Mainnet = rollup.Config{
+var SliceMainnet = rollup.Config{
 	Genesis: rollup.Genesis{
 		L1: eth.BlockID{
 			Hash:   common.HexToHash("0x438335a20d98863a4c0c97999eb2481921ccd28553eac6f913af7c12aec04108"),
@@ -40,7 +40,7 @@ var Mainnet = rollup.Config{
 	RegolithTime:           u64Ptr(0),
 }
 
-var Goerli = rollup.Config{
+var SliceGoerli = rollup.Config{
 	Genesis: rollup.Genesis{
 		L1: eth.BlockID{
 			Hash:   common.HexToHash("0x6ffc1bf3754c01f6bb9fe057c1578b87a8571ce2e9be5ca14bace6eccfd336c7"),
@@ -63,7 +63,7 @@ var Goerli = rollup.Config{
 	SeqWindowSize:          3600,
 	ChannelTimeout:         300,
 	L1ChainID:              big.NewInt(5),
-	L2ChainID:              big.NewInt(420),
+	L2ChainID:              big.NewInt(6969),
 	BatchInboxAddress:      common.HexToAddress("0xff00000000000000000000000000000000000420"),
 	DepositContractAddress: common.HexToAddress("0x5b47E1A08Ea6d985D6649300584e6722Ec4B1383"),
 	L1SystemConfigAddress:  common.HexToAddress("0xAe851f927Ee40dE99aaBb7461C00f9622ab91d60"),
@@ -71,8 +71,8 @@ var Goerli = rollup.Config{
 }
 
 var NetworksByName = map[string]rollup.Config{
-	"goerli":  Goerli,
-	"mainnet": Mainnet,
+	"Slice Testnet": SliceGoerli,
+	"Slice mainnet": SliceMainnet,
 }
 
 var L2ChainIDToNetworkName = func() map[string]string {
