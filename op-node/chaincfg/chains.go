@@ -23,7 +23,7 @@ var SliceMainnet = rollup.Config{
 		L2Time: 1686068903,
 		SystemConfig: eth.SystemConfig{
 			BatcherAddr: common.HexToAddress("0x6887246668a3b87f54deb3b94ba47a6f63f32985"),
-			Overhead:    eth.Bytes32(common.HexToHash("0x00000000000000000000000000000000000000000000000000000000000000bc")),
+			Overhead:    eth.Bytes32(common.HexToHash("0x0000000000000000000000000000000000000000000000000000000000000834")),
 			Scalar:      eth.Bytes32(common.HexToHash("0x00000000000000000000000000000000000000000000000000000000000a6fe0")),
 			GasLimit:    30_000_000,
 		},

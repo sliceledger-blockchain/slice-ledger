@@ -6,12 +6,12 @@ import (
 	"math"
 	"time"
 
+	"github.com/ethereum/go-ethereum/log"
 	"github.com/sliceledger-blockchain/slice-ledger/op-node/flags"
 	"github.com/sliceledger-blockchain/slice-ledger/op-node/p2p"
 	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup"
 	"github.com/sliceledger-blockchain/slice-ledger/op-node/rollup/driver"
 	oppprof "github.com/sliceledger-blockchain/slice-ledger/op-service/pprof"
-	"github.com/ethereum/go-ethereum/log"
 )
 
 type Config struct {
