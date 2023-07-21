@@ -44,8 +44,8 @@
   "gasPriceOracleScalar": 1000000,
 
   "enableGovernance": true,
-  "governanceTokenSymbol": "OP",
-  "governanceTokenName": "Optimism",
+  "governanceTokenSymbol": "SLICE",
+  "governanceTokenName": "Slice",
   "governanceTokenOwner": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
 
   "l2GenesisBlockGasLimit": "0x1c9c380",
