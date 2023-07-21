@@ -37,7 +37,9 @@ packages/contracts-bedrock/deployments/anvil
 *.log
 
 .devnet
-
+.changeset
+docs/
+technical-documents/
 # Ignore local fuzzing results
 **/testdata/fuzz/
 
