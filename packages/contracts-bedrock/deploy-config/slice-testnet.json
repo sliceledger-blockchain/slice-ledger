@@ -1,0 +1,57 @@
+{
+  "numDeployConfirmations": 1,
+
+  "finalSystemOwner": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "portalGuardian": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "controller": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+
+  "l1StartingBlockTag": "0xcc6bf177feef03daed2087339157398551cfe0291facfaabe49a7633402aaacc",
+
+  "l1ChainID": 5,
+  "l2ChainID": 8900,
+  "l2BlockTime": 2,
+
+  "maxSequencerDrift": 600,
+  "sequencerWindowSize": 3600,
+  "channelTimeout": 300,
+
+  "p2pSequencerAddress": "0x8C8e74bce5091AADBB291BA9144252828664ab1C",
+  "batchInboxAddress": "0xff00000000000000000000000000000000008900",
+  "batchSenderAddress": "0x654f112fcfD5B91b66d3D20FB8373ea943192638",
+
+  "l2OutputOracleSubmissionInterval": 120,
+  "l2OutputOracleStartingBlockNumber": 0,
+  "l2OutputOracleStartingTimestamp": 1690172640,
+
+  "l2OutputOracleProposer": "0x6AD2d56B32862430b3F0d1777edd15dFfeEb26B0",
+  "l2OutputOracleChallenger": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+
+  "finalizationPeriodSeconds": 12,
+
+  "proxyAdminOwner": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "baseFeeVaultRecipient": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "l1FeeVaultRecipient": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+  "sequencerFeeVaultRecipient": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+
+  "baseFeeVaultMinimumWithdrawalAmount": "0xb1a2bc2ec50000",
+  "l1FeeVaultMinimumWithdrawalAmount": "0xb1a2bc2ec50000",
+  "sequencerFeeVaultMinimumWithdrawalAmount": "0xb1a2bc2ec50000",
+  "baseFeeVaultWithdrawalNetwork": 0,
+  "l1FeeVaultWithdrawalNetwork": 0,
+  "sequencerFeeVaultWithdrawalNetwork": 0,
+
+  "gasPriceOracleOverhead": 2100,
+  "gasPriceOracleScalar": 1000000,
+
+  "enableGovernance": true,
+  "governanceTokenSymbol": "SLICE",
+  "governanceTokenName": "Slice",
+  "governanceTokenOwner": "0xEB71FA3084f1c3E2A66075760b3E3926F7843f34",
+
+  "l2GenesisBlockGasLimit": "0x17D7840",
+  "l2GenesisBlockBaseFeePerGas": "0x3b9aca00",
+  "l2GenesisRegolithTimeOffset": "0x0",
+
+  "eip1559Denominator": 50,
+  "eip1559Elasticity": 10
+}
