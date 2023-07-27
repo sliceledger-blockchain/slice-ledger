@@ -1,9 +1,9 @@
 {
   "numDeployConfirmations": 1,
 
-  "finalSystemOwner": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
-  "portalGuardian": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
-  "controller": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
+  "finalSystemOwner": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
+  "portalGuardian": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
+  "controller": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
 
   "l1StartingBlockTag": "0x526ee706964b4ee833bc52f560ebf8921b4558f0c5891a0d69b9c04f1678e1a0",
 
@@ -15,23 +15,23 @@
   "sequencerWindowSize": 3600,
   "channelTimeout": 300,
 
-  "p2pSequencerAddress": "0x3058C0beeBE35D665E12328754406Cf404488883",
+  "p2pSequencerAddress": "0x9aa90Da73c1a331908ca53D42e4c1399C87E605e",
   "batchInboxAddress": "0xff00000000000000000000000000000000008900",
-  "batchSenderAddress": "0x087a0d884E51EeD9A2f74979971B419181D2f9A0",
+  "batchSenderAddress": "0x4501285E8FFE2d38828F1E69FB57a6a2fAAC2620",
 
   "l2OutputOracleSubmissionInterval": 120,
   "l2OutputOracleStartingBlockNumber": 0,
   "l2OutputOracleStartingTimestamp": 1690277472,
 
-  "l2OutputOracleProposer": "0x0B481545948177286773442035f1d9f8B3c915bD",
-  "l2OutputOracleChallenger": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
+  "l2OutputOracleProposer": "0x1aea424E9502Cc06f0Fc22516466d73A4317CF6b",
+  "l2OutputOracleChallenger": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
 
   "finalizationPeriodSeconds": 12,
 
-  "proxyAdminOwner": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
-  "baseFeeVaultRecipient": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
-  "l1FeeVaultRecipient": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
-  "sequencerFeeVaultRecipient": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
+  "proxyAdminOwner": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
+  "baseFeeVaultRecipient": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
+  "l1FeeVaultRecipient": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
+  "sequencerFeeVaultRecipient": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
 
   "baseFeeVaultMinimumWithdrawalAmount": "0xb1a2bc2ec50000",
   "l1FeeVaultMinimumWithdrawalAmount": "0xb1a2bc2ec50000",
@@ -46,7 +46,7 @@
   "enableGovernance": true,
   "governanceTokenSymbol": "SLICE",
   "governanceTokenName": "Slice",
-  "governanceTokenOwner": "0xde17480b11E60b2ae23D51B8312dE8fEEf1d3716",
+  "governanceTokenOwner": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
 
   "l2GenesisBlockGasLimit": "0x17D7840",
   "l2GenesisBlockBaseFeePerGas": "0x3b9aca00",
