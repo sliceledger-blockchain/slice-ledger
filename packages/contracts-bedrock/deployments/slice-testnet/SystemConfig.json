@@ -503,7 +503,7 @@
       "type": "function"
     }
   ],
-  "address": "0x00BBe82067e6FAC691089f17FE2a615179A39CeC",
+  "address": "0xdaB4C2d47E38321191ca6045F140846973F27A08",
   "args": [
     "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
     "2100",
@@ -608,73 +608,73 @@
     },
     "title": "SystemConfig"
   },
-  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_overhead\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_scalar\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_batcherHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"_gasLimit\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"_unsafeBlockSigner\",\"type\":\"address\"},{\"internalType\":\"struct ResourceMetering.ResourceConfig\",\"name\":\"_config\",\"type\":\"tuple\",\"components\":[{\"internalType\":\"uint32\",\"name\":\"maxResourceLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint8\",\"name\":\"elasticityMultiplier\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"baseFeeMaxChangeDenominator\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"minimumBaseFee\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"systemTxMaxGas\",\"type\":\"uint32\"},{\"internalType\":\"uint128\",\"name\":\"maximumBaseFee\",\"type\":\"uint128\"}]}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"version\",\"type\":\"uint256\",\"indexed\":true},{\"internalType\":\"enum SystemConfig.UpdateType\",\"name\":\"updateType\",\"type\":\"uint8\",\"indexed\":true},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\",\"indexed\":false}],\"type\":\"event\",\"name\":\"ConfigUpdate\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\",\"indexed\":false}],\"type\":\"event\",\"name\":\"Initialized\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\",\"indexed\":true}],\"type\":\"event\",\"name\":\"OwnershipTransferred\",\"anonymous\":false},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"UNSAFE_BLOCK_SIGNER_SLOT\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"VERSION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"batcherHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"gasLimit\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}]},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_overhead\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_scalar\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_batcherHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"_gasLimit\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"_unsafeBlockSigner\",\"type\":\"address\"},{\"internalType\":\"struct ResourceMetering.ResourceConfig\",\"name\":\"_config\",\"type\":\"tuple\",\"components\":[{\"internalType\":\"uint32\",\"name\":\"maxResourceLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint8\",\"name\":\"elasticityMultiplier\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"baseFeeMaxChangeDenominator\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"minimumBaseFee\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"systemTxMaxGas\",\"type\":\"uint32\"},{\"internalType\":\"uint128\",\"name\":\"maximumBaseFee\",\"type\":\"uint128\"}]}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"initialize\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"minimumGasLimit\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"overhead\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}]},{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"renounceOwnership\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"resourceConfig\",\"outputs\":[{\"internalType\":\"struct ResourceMetering.ResourceConfig\",\"name\":\"\",\"type\":\"tuple\",\"components\":[{\"internalType\":\"uint32\",\"name\":\"maxResourceLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint8\",\"name\":\"elasticityMultiplier\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"baseFeeMaxChangeDenominator\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"minimumBaseFee\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"systemTxMaxGas\",\"type\":\"uint32\"},{\"internalType\":\"uint128\",\"name\":\"maximumBaseFee\",\"type\":\"uint128\"}]}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"scalar\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_batcherHash\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setBatcherHash\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_overhead\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_scalar\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setGasConfig\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"_gasLimit\",\"type\":\"uint64\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setGasLimit\"},{\"inputs\":[{\"internalType\":\"struct ResourceMetering.ResourceConfig\",\"name\":\"_config\",\"type\":\"tuple\",\"components\":[{\"internalType\":\"uint32\",\"name\":\"maxResourceLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint8\",\"name\":\"elasticityMultiplier\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"baseFeeMaxChangeDenominator\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"minimumBaseFee\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"systemTxMaxGas\",\"type\":\"uint32\"},{\"internalType\":\"uint128\",\"name\":\"maximumBaseFee\",\"type\":\"uint128\"}]}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setResourceConfig\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_unsafeBlockSigner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setUnsafeBlockSigner\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"transferOwnership\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"unsafeBlockSigner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}]}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"custom:semver\":\"1.3.1\",\"params\":{\"_batcherHash\":\"Initial batcher hash.\",\"_config\":\"Initial resource config.\",\"_gasLimit\":\"Initial gas limit.\",\"_overhead\":\"Initial overhead value.\",\"_owner\":\"Initial owner of the contract.\",\"_scalar\":\"Initial scalar value.\",\"_unsafeBlockSigner\":\"Initial unsafe block signer address.\"}},\"initialize(address,uint256,uint256,bytes32,uint64,address,(uint32,uint8,uint8,uint32,uint32,uint128))\":{\"params\":{\"_batcherHash\":\"Initial batcher hash.\",\"_config\":\"Initial ResourceConfig.\",\"_gasLimit\":\"Initial gas limit.\",\"_overhead\":\"Initial overhead value.\",\"_owner\":\"Initial owner of the contract.\",\"_scalar\":\"Initial scalar value.\",\"_unsafeBlockSigner\":\"Initial unsafe block signer address.\"}},\"minimumGasLimit()\":{\"returns\":{\"_0\":\"uint64 Minimum gas limit.\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"resourceConfig()\":{\"returns\":{\"_0\":\"ResourceConfig\"}},\"setBatcherHash(bytes32)\":{\"params\":{\"_batcherHash\":\"New batcher hash.\"}},\"setGasConfig(uint256,uint256)\":{\"params\":{\"_overhead\":\"New overhead value.\",\"_scalar\":\"New scalar value.\"}},\"setGasLimit(uint64)\":{\"params\":{\"_gasLimit\":\"New gas limit.\"}},\"setResourceConfig((uint32,uint8,uint8,uint32,uint32,uint128))\":{\"params\":{\"_config\":\"The new resource config values.\"}},\"setUnsafeBlockSigner(address)\":{\"params\":{\"_unsafeBlockSigner\":\"New unsafe block signer address.\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"unsafeBlockSigner()\":{\"returns\":{\"_0\":\"Address of the unsafe block signer.\"}},\"version()\":{\"returns\":{\"_0\":\"Semver contract version as a string.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"UNSAFE_BLOCK_SIGNER_SLOT()\":{\"notice\":\"Storage slot that the unsafe block signer is stored at.         Storing it at this deterministic storage slot allows for decoupling the storage         layout from the way that `solc` lays out storage. The `op-node` uses a storage         proof to fetch this value.\"},\"VERSION()\":{\"notice\":\"Version identifier, used for upgrades.\"},\"batcherHash()\":{\"notice\":\"Identifier for the batcher.         For version 1 of this configuration, this is represented as an address left-padded         with zeros to 32 bytes.\"},\"constructor\":{\"notice\":\"Constructs the SystemConfig contract.\"},\"gasLimit()\":{\"notice\":\"L2 block gas limit.\"},\"initialize(address,uint256,uint256,bytes32,uint64,address,(uint32,uint8,uint8,uint32,uint32,uint128))\":{\"notice\":\"Initializer.         The resource config must be set before the require check.\"},\"minimumGasLimit()\":{\"notice\":\"Returns the minimum L2 gas limit that can be safely set for the system to         operate. The L2 gas limit must be larger than or equal to the amount of         gas that is allocated for deposits per block plus the amount of gas that         is allocated for the system transaction.         This function is used to determine if changes to parameters are safe.\"},\"overhead()\":{\"notice\":\"Fixed L2 gas overhead. Used as part of the L2 fee calculation.\"},\"resourceConfig()\":{\"notice\":\"A getter for the resource config.         Ensures that the struct is returned instead of a tuple.\"},\"scalar()\":{\"notice\":\"Dynamic L2 gas overhead. Used as part of the L2 fee calculation.\"},\"setBatcherHash(bytes32)\":{\"notice\":\"Updates the batcher hash.\"},\"setGasConfig(uint256,uint256)\":{\"notice\":\"Updates gas config.\"},\"setGasLimit(uint64)\":{\"notice\":\"Updates the L2 gas limit.\"},\"setResourceConfig((uint32,uint8,uint8,uint32,uint32,uint128))\":{\"notice\":\"An external setter for the resource config.         In the future, this method may emit an event that the `op-node` picks up         for when the resource config is changed.\"},\"setUnsafeBlockSigner(address)\":{\"notice\":\"Updates the unsafe block signer address.\"},\"unsafeBlockSigner()\":{\"notice\":\"High level getter for the unsafe block signer address.         Unsafe blocks can be propagated across the p2p network if they are signed by the         key corresponding to this address.\"},\"version()\":{\"notice\":\"Returns the full semver contract version.\"}},\"version\":1}},\"settings\":{\"remappings\":[\"@cwia/=node_modules/clones-with-immutable-args/src/\",\"@openzeppelin/=node_modules/@openzeppelin/\",\"@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/\",\"@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/\",\"@rari-capital/=node_modules/@rari-capital/\",\"@rari-capital/solmate/=node_modules/@rari-capital/solmate/\",\"clones-with-immutable-args/=node_modules/clones-with-immutable-args/\",\"ds-test/=node_modules/ds-test/src/\",\"forge-std/=node_modules/forge-std/src/\"],\"optimizer\":{\"enabled\":true,\"runs\":999999},\"metadata\":{\"bytecodeHash\":\"none\"},\"compilationTarget\":{\"contracts/L1/SystemConfig.sol\":\"SystemConfig\"},\"libraries\":{}},\"sources\":{\"contracts/L1/ResourceMetering.sol\":{\"keccak256\":\"0x35ca59dee75f40dce00096a4a4648fbb7c10b4a43e9c30c2553b7703a7549743\",\"urls\":[\"bzz-raw://24e8582cb6f9803f66237816e2cbb075b7be4a9933dda83f4683409fac1ce562\",\"dweb:/ipfs/QmewENu8wjnsPZS39L19kjk1hsfpkLKrsomNs711oiwzxP\"],\"license\":\"MIT\"},\"contracts/L1/SystemConfig.sol\":{\"keccak256\":\"0x4f4b61b2fd702aab4463f7fca36a11dc034ecd3e3c687577fadfb000c6b5f39d\",\"urls\":[\"bzz-raw://13124e4ba5cda4421a6752fb5ff843b5a09a5f2b8ebc60f6fdc34da7cfa6124e\",\"dweb:/ipfs/QmYJ6uyAaPiqw2KQBrPPJXEMcR144CbxNB18pFNbj2VYRV\"],\"license\":\"MIT\"},\"contracts/libraries/Arithmetic.sol\":{\"keccak256\":\"0xd4d2a32c60c02a9b5484ddc19a4c9309b81908968dacc71ba42e97bd8a82efa2\",\"urls\":[\"bzz-raw://2e1411ddf93a89b7a94d4252399ae4a790278d9dc4e0772e040a52b6df7f81d0\",\"dweb:/ipfs/Qmetfi8dN9nyzjnK7PGUBqNp6nXECAbpQkyEJQXYFoP8Cb\"],\"license\":\"MIT\"},\"contracts/libraries/Burn.sol\":{\"keccak256\":\"0x90a795bcea3ef06d6d5011256c4bd63d1a4271f519246dbf1ee3e8f1c0e21010\",\"urls\":[\"bzz-raw://9f60c3aa77cf0c484ddda4754157cff4dc0e2eace4bea67990daff4c0612ab5f\",\"dweb:/ipfs/QmSYGanMFve9uBC17X7hFneSFnwnJxz86Jgh6MX9BRMweb\"],\"license\":\"MIT\"},\"contracts/universal/Semver.sol\":{\"keccak256\":\"0xc455c84bb1f17e994dea0451fd363f81f83965bfa86e81ac6c8b3a327b9a0ff0\",\"urls\":[\"bzz-raw://fab499f3c0d7df8eb763b50621848d5d2147fb9c42a8eb9b65a11093090bb482\",\"dweb:/ipfs/QmUKsG4ztwtUZFjuRYAxgUFTgH5YxWSGF1BFFaB7vdM2K3\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\":{\"keccak256\":\"0x247c62047745915c0af6b955470a72d1696ebad4352d7d3011aef1a2463cd888\",\"urls\":[\"bzz-raw://d7fc8396619de513c96b6e00301b88dd790e83542aab918425633a5f7297a15a\",\"dweb:/ipfs/QmXbP4kiZyp7guuS7xe8KaybnwkRPGrBc2Kbi3vhcTfpxb\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x0203dcadc5737d9ef2c211d6fa15d18ebc3b30dfa51903b64870b01a062b0b4e\",\"urls\":[\"bzz-raw://6eb2fd1e9894dbe778f4b8131adecebe570689e63cf892f4e21257bfe1252497\",\"dweb:/ipfs/QmXgUGNfZvrn6N2miv3nooSs7Jm34A41qz94fu2GtDFcx8\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0x611aa3f23e59cfdd1863c536776407b3e33d695152a266fa7cfb34440a29a8a3\",\"urls\":[\"bzz-raw://9b4b2110b7f2b3eb32951bc08046fa90feccffa594e1176cb91cdfb0e94726b4\",\"dweb:/ipfs/QmSxLwYjicf9zWFuieRc8WQwE4FisA1Um5jp1iSa731TGt\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149\",\"urls\":[\"bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c\",\"dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x2a21b14ff90012878752f230d3ffd5c3405e5938d06c97a7d89c0a64561d0d66\",\"urls\":[\"bzz-raw://3313a8f9bb1f9476857c9050067b31982bf2140b83d84f3bc0cec1f62bbe947f\",\"dweb:/ipfs/Qma17Pk8NRe7aB4UD3jjVxk7nSFaov3eQyv86hcyqkwJRV\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xd6153ce99bcdcce22b124f755e72553295be6abcd63804cfdffceb188b8bef10\",\"urls\":[\"bzz-raw://35c47bece3c03caaa07fab37dd2bb3413bfbca20db7bd9895024390e0a469487\",\"dweb:/ipfs/QmPGWT2x3QHcKxqe6gRmAkdakhbaRgx3DLzcakHz5M4eXG\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"urls\":[\"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638\",\"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xd15c3e400531f00203839159b2b8e7209c5158b35618f570c695b7e47f12e9f0\",\"urls\":[\"bzz-raw://b600b852e0597aa69989cc263111f02097e2827edc1bdc70306303e3af5e9929\",\"dweb:/ipfs/QmU4WfM28A1nDqghuuGeFmN3CnVrk6opWtiF65K4vhFPeC\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol\":{\"keccak256\":\"0xb3ebde1c8d27576db912d87c3560dab14adfb9cd001be95890ec4ba035e652e7\",\"urls\":[\"bzz-raw://a709421c4f5d4677db8216055d2d4dac96a613efdb08178a9f7041f0c5cef689\",\"dweb:/ipfs/QmYs2rStvVLDnSJs8HgaMD1ABwoKKWdiVbQyNfLfFWTjTy\"],\"license\":\"MIT\"},\"node_modules/@rari-capital/solmate/src/utils/FixedPointMathLib.sol\":{\"keccak256\":\"0x622fcd8a49e132df5ec7651cc6ae3aaf0cf59bdcd67a9a804a1b9e2485113b7d\",\"urls\":[\"bzz-raw://af77088eb606427d4c55e578984a615779c86bc30646a20f7bb27299ba390f7c\",\"dweb:/ipfs/QmZGQdhdQDtHc7gZXWrKXgA3govc74X8U63BiWhPQK3mK8\"],\"license\":\"MIT\"}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_overhead\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_scalar\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_batcherHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"_gasLimit\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"_unsafeBlockSigner\",\"type\":\"address\"},{\"internalType\":\"struct ResourceMetering.ResourceConfig\",\"name\":\"_config\",\"type\":\"tuple\",\"components\":[{\"internalType\":\"uint32\",\"name\":\"maxResourceLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint8\",\"name\":\"elasticityMultiplier\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"baseFeeMaxChangeDenominator\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"minimumBaseFee\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"systemTxMaxGas\",\"type\":\"uint32\"},{\"internalType\":\"uint128\",\"name\":\"maximumBaseFee\",\"type\":\"uint128\"}]}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"version\",\"type\":\"uint256\",\"indexed\":true},{\"internalType\":\"enum SystemConfig.UpdateType\",\"name\":\"updateType\",\"type\":\"uint8\",\"indexed\":true},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\",\"indexed\":false}],\"type\":\"event\",\"name\":\"ConfigUpdate\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\",\"indexed\":false}],\"type\":\"event\",\"name\":\"Initialized\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\",\"indexed\":true}],\"type\":\"event\",\"name\":\"OwnershipTransferred\",\"anonymous\":false},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"UNSAFE_BLOCK_SIGNER_SLOT\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"VERSION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"batcherHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"gasLimit\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}]},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_overhead\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_scalar\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_batcherHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"_gasLimit\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"_unsafeBlockSigner\",\"type\":\"address\"},{\"internalType\":\"struct ResourceMetering.ResourceConfig\",\"name\":\"_config\",\"type\":\"tuple\",\"components\":[{\"internalType\":\"uint32\",\"name\":\"maxResourceLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint8\",\"name\":\"elasticityMultiplier\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"baseFeeMaxChangeDenominator\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"minimumBaseFee\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"systemTxMaxGas\",\"type\":\"uint32\"},{\"internalType\":\"uint128\",\"name\":\"maximumBaseFee\",\"type\":\"uint128\"}]}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"initialize\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"minimumGasLimit\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"overhead\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}]},{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"renounceOwnership\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"resourceConfig\",\"outputs\":[{\"internalType\":\"struct ResourceMetering.ResourceConfig\",\"name\":\"\",\"type\":\"tuple\",\"components\":[{\"internalType\":\"uint32\",\"name\":\"maxResourceLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint8\",\"name\":\"elasticityMultiplier\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"baseFeeMaxChangeDenominator\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"minimumBaseFee\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"systemTxMaxGas\",\"type\":\"uint32\"},{\"internalType\":\"uint128\",\"name\":\"maximumBaseFee\",\"type\":\"uint128\"}]}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"scalar\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_batcherHash\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setBatcherHash\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_overhead\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_scalar\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setGasConfig\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"_gasLimit\",\"type\":\"uint64\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setGasLimit\"},{\"inputs\":[{\"internalType\":\"struct ResourceMetering.ResourceConfig\",\"name\":\"_config\",\"type\":\"tuple\",\"components\":[{\"internalType\":\"uint32\",\"name\":\"maxResourceLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint8\",\"name\":\"elasticityMultiplier\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"baseFeeMaxChangeDenominator\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"minimumBaseFee\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"systemTxMaxGas\",\"type\":\"uint32\"},{\"internalType\":\"uint128\",\"name\":\"maximumBaseFee\",\"type\":\"uint128\"}]}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setResourceConfig\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_unsafeBlockSigner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"setUnsafeBlockSigner\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"transferOwnership\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"unsafeBlockSigner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}]}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"custom:semver\":\"1.3.1\",\"params\":{\"_batcherHash\":\"Initial batcher hash.\",\"_config\":\"Initial resource config.\",\"_gasLimit\":\"Initial gas limit.\",\"_overhead\":\"Initial overhead value.\",\"_owner\":\"Initial owner of the contract.\",\"_scalar\":\"Initial scalar value.\",\"_unsafeBlockSigner\":\"Initial unsafe block signer address.\"}},\"initialize(address,uint256,uint256,bytes32,uint64,address,(uint32,uint8,uint8,uint32,uint32,uint128))\":{\"params\":{\"_batcherHash\":\"Initial batcher hash.\",\"_config\":\"Initial ResourceConfig.\",\"_gasLimit\":\"Initial gas limit.\",\"_overhead\":\"Initial overhead value.\",\"_owner\":\"Initial owner of the contract.\",\"_scalar\":\"Initial scalar value.\",\"_unsafeBlockSigner\":\"Initial unsafe block signer address.\"}},\"minimumGasLimit()\":{\"returns\":{\"_0\":\"uint64 Minimum gas limit.\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"resourceConfig()\":{\"returns\":{\"_0\":\"ResourceConfig\"}},\"setBatcherHash(bytes32)\":{\"params\":{\"_batcherHash\":\"New batcher hash.\"}},\"setGasConfig(uint256,uint256)\":{\"params\":{\"_overhead\":\"New overhead value.\",\"_scalar\":\"New scalar value.\"}},\"setGasLimit(uint64)\":{\"params\":{\"_gasLimit\":\"New gas limit.\"}},\"setResourceConfig((uint32,uint8,uint8,uint32,uint32,uint128))\":{\"params\":{\"_config\":\"The new resource config values.\"}},\"setUnsafeBlockSigner(address)\":{\"params\":{\"_unsafeBlockSigner\":\"New unsafe block signer address.\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"unsafeBlockSigner()\":{\"returns\":{\"_0\":\"Address of the unsafe block signer.\"}},\"version()\":{\"returns\":{\"_0\":\"Semver contract version as a string.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"UNSAFE_BLOCK_SIGNER_SLOT()\":{\"notice\":\"Storage slot that the unsafe block signer is stored at.         Storing it at this deterministic storage slot allows for decoupling the storage         layout from the way that `solc` lays out storage. The `op-node` uses a storage         proof to fetch this value.\"},\"VERSION()\":{\"notice\":\"Version identifier, used for upgrades.\"},\"batcherHash()\":{\"notice\":\"Identifier for the batcher.         For version 1 of this configuration, this is represented as an address left-padded         with zeros to 32 bytes.\"},\"constructor\":{\"notice\":\"Constructs the SystemConfig contract.\"},\"gasLimit()\":{\"notice\":\"L2 block gas limit.\"},\"initialize(address,uint256,uint256,bytes32,uint64,address,(uint32,uint8,uint8,uint32,uint32,uint128))\":{\"notice\":\"Initializer.         The resource config must be set before the require check.\"},\"minimumGasLimit()\":{\"notice\":\"Returns the minimum L2 gas limit that can be safely set for the system to         operate. The L2 gas limit must be larger than or equal to the amount of         gas that is allocated for deposits per block plus the amount of gas that         is allocated for the system transaction.         This function is used to determine if changes to parameters are safe.\"},\"overhead()\":{\"notice\":\"Fixed L2 gas overhead. Used as part of the L2 fee calculation.\"},\"resourceConfig()\":{\"notice\":\"A getter for the resource config.         Ensures that the struct is returned instead of a tuple.\"},\"scalar()\":{\"notice\":\"Dynamic L2 gas overhead. Used as part of the L2 fee calculation.\"},\"setBatcherHash(bytes32)\":{\"notice\":\"Updates the batcher hash.\"},\"setGasConfig(uint256,uint256)\":{\"notice\":\"Updates gas config.\"},\"setGasLimit(uint64)\":{\"notice\":\"Updates the L2 gas limit.\"},\"setResourceConfig((uint32,uint8,uint8,uint32,uint32,uint128))\":{\"notice\":\"An external setter for the resource config.         In the future, this method may emit an event that the `op-node` picks up         for when the resource config is changed.\"},\"setUnsafeBlockSigner(address)\":{\"notice\":\"Updates the unsafe block signer address.\"},\"unsafeBlockSigner()\":{\"notice\":\"High level getter for the unsafe block signer address.         Unsafe blocks can be propagated across the p2p network if they are signed by the         key corresponding to this address.\"},\"version()\":{\"notice\":\"Returns the full semver contract version.\"}},\"version\":1}},\"settings\":{\"remappings\":[\":@cwia/=node_modules/clones-with-immutable-args/src/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/\",\":@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/\",\":@rari-capital/=node_modules/@rari-capital/\",\":@rari-capital/solmate/=node_modules/@rari-capital/solmate/\",\":clones-with-immutable-args/=node_modules/clones-with-immutable-args/\",\":ds-test/=node_modules/ds-test/src/\",\":forge-std/=node_modules/forge-std/src/\"],\"optimizer\":{\"enabled\":true,\"runs\":999999},\"metadata\":{\"bytecodeHash\":\"none\"},\"compilationTarget\":{\"contracts/L1/SystemConfig.sol\":\"SystemConfig\"},\"libraries\":{}},\"sources\":{\"contracts/L1/ResourceMetering.sol\":{\"keccak256\":\"0x35ca59dee75f40dce00096a4a4648fbb7c10b4a43e9c30c2553b7703a7549743\",\"urls\":[\"bzz-raw://24e8582cb6f9803f66237816e2cbb075b7be4a9933dda83f4683409fac1ce562\",\"dweb:/ipfs/QmewENu8wjnsPZS39L19kjk1hsfpkLKrsomNs711oiwzxP\"],\"license\":\"MIT\"},\"contracts/L1/SystemConfig.sol\":{\"keccak256\":\"0x4f4b61b2fd702aab4463f7fca36a11dc034ecd3e3c687577fadfb000c6b5f39d\",\"urls\":[\"bzz-raw://13124e4ba5cda4421a6752fb5ff843b5a09a5f2b8ebc60f6fdc34da7cfa6124e\",\"dweb:/ipfs/QmYJ6uyAaPiqw2KQBrPPJXEMcR144CbxNB18pFNbj2VYRV\"],\"license\":\"MIT\"},\"contracts/libraries/Arithmetic.sol\":{\"keccak256\":\"0xd4d2a32c60c02a9b5484ddc19a4c9309b81908968dacc71ba42e97bd8a82efa2\",\"urls\":[\"bzz-raw://2e1411ddf93a89b7a94d4252399ae4a790278d9dc4e0772e040a52b6df7f81d0\",\"dweb:/ipfs/Qmetfi8dN9nyzjnK7PGUBqNp6nXECAbpQkyEJQXYFoP8Cb\"],\"license\":\"MIT\"},\"contracts/libraries/Burn.sol\":{\"keccak256\":\"0x90a795bcea3ef06d6d5011256c4bd63d1a4271f519246dbf1ee3e8f1c0e21010\",\"urls\":[\"bzz-raw://9f60c3aa77cf0c484ddda4754157cff4dc0e2eace4bea67990daff4c0612ab5f\",\"dweb:/ipfs/QmSYGanMFve9uBC17X7hFneSFnwnJxz86Jgh6MX9BRMweb\"],\"license\":\"MIT\"},\"contracts/universal/Semver.sol\":{\"keccak256\":\"0xc455c84bb1f17e994dea0451fd363f81f83965bfa86e81ac6c8b3a327b9a0ff0\",\"urls\":[\"bzz-raw://fab499f3c0d7df8eb763b50621848d5d2147fb9c42a8eb9b65a11093090bb482\",\"dweb:/ipfs/QmUKsG4ztwtUZFjuRYAxgUFTgH5YxWSGF1BFFaB7vdM2K3\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\":{\"keccak256\":\"0x247c62047745915c0af6b955470a72d1696ebad4352d7d3011aef1a2463cd888\",\"urls\":[\"bzz-raw://d7fc8396619de513c96b6e00301b88dd790e83542aab918425633a5f7297a15a\",\"dweb:/ipfs/QmXbP4kiZyp7guuS7xe8KaybnwkRPGrBc2Kbi3vhcTfpxb\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x0203dcadc5737d9ef2c211d6fa15d18ebc3b30dfa51903b64870b01a062b0b4e\",\"urls\":[\"bzz-raw://6eb2fd1e9894dbe778f4b8131adecebe570689e63cf892f4e21257bfe1252497\",\"dweb:/ipfs/QmXgUGNfZvrn6N2miv3nooSs7Jm34A41qz94fu2GtDFcx8\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0x611aa3f23e59cfdd1863c536776407b3e33d695152a266fa7cfb34440a29a8a3\",\"urls\":[\"bzz-raw://9b4b2110b7f2b3eb32951bc08046fa90feccffa594e1176cb91cdfb0e94726b4\",\"dweb:/ipfs/QmSxLwYjicf9zWFuieRc8WQwE4FisA1Um5jp1iSa731TGt\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149\",\"urls\":[\"bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c\",\"dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x2a21b14ff90012878752f230d3ffd5c3405e5938d06c97a7d89c0a64561d0d66\",\"urls\":[\"bzz-raw://3313a8f9bb1f9476857c9050067b31982bf2140b83d84f3bc0cec1f62bbe947f\",\"dweb:/ipfs/Qma17Pk8NRe7aB4UD3jjVxk7nSFaov3eQyv86hcyqkwJRV\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xd6153ce99bcdcce22b124f755e72553295be6abcd63804cfdffceb188b8bef10\",\"urls\":[\"bzz-raw://35c47bece3c03caaa07fab37dd2bb3413bfbca20db7bd9895024390e0a469487\",\"dweb:/ipfs/QmPGWT2x3QHcKxqe6gRmAkdakhbaRgx3DLzcakHz5M4eXG\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"urls\":[\"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638\",\"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xd15c3e400531f00203839159b2b8e7209c5158b35618f570c695b7e47f12e9f0\",\"urls\":[\"bzz-raw://b600b852e0597aa69989cc263111f02097e2827edc1bdc70306303e3af5e9929\",\"dweb:/ipfs/QmU4WfM28A1nDqghuuGeFmN3CnVrk6opWtiF65K4vhFPeC\"],\"license\":\"MIT\"},\"node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol\":{\"keccak256\":\"0xb3ebde1c8d27576db912d87c3560dab14adfb9cd001be95890ec4ba035e652e7\",\"urls\":[\"bzz-raw://a709421c4f5d4677db8216055d2d4dac96a613efdb08178a9f7041f0c5cef689\",\"dweb:/ipfs/QmYs2rStvVLDnSJs8HgaMD1ABwoKKWdiVbQyNfLfFWTjTy\"],\"license\":\"MIT\"},\"node_modules/@rari-capital/solmate/src/utils/FixedPointMathLib.sol\":{\"keccak256\":\"0x622fcd8a49e132df5ec7651cc6ae3aaf0cf59bdcd67a9a804a1b9e2485113b7d\",\"urls\":[\"bzz-raw://af77088eb606427d4c55e578984a615779c86bc30646a20f7bb27299ba390f7c\",\"dweb:/ipfs/QmZGQdhdQDtHc7gZXWrKXgA3govc74X8U63BiWhPQK3mK8\"],\"license\":\"MIT\"}},\"version\":1}",
   "numDeployments": 0,
   "receipt": {
-    "transactionHash": "0x8b234b036d284c55d1dbc0e885fc26950cd586daf16e2ff2ac78f0efcd02b1d9",
-    "transactionIndex": "0x1f",
-    "blockHash": "0xf6222ae6623dde7be48f979c8cd76f18790a871d7e46fec1187768de5b541ca4",
-    "blockNumber": "0x8facb3",
+    "transactionHash": "0xfdfadaad3577d3356d839043de8b8125cd0769eb8c648dc33581dd090f87bbee",
+    "transactionIndex": "0x2e",
+    "blockHash": "0x4e0f0a50d3fc9f9f54fec64dac8402375311cf4d9f5f73ee26e21a82dff20f62",
+    "blockNumber": "0x8fc550",
     "from": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
     "to": null,
-    "cumulativeGasUsed": "0x11cee74",
+    "cumulativeGasUsed": "0x15a5236",
     "gasUsed": "0x1887d0",
-    "contractAddress": "0x00BBe82067e6FAC691089f17FE2a615179A39CeC",
+    "contractAddress": "0xdaB4C2d47E38321191ca6045F140846973F27A08",
     "logs": [
       {
-        "address": "0x00BBe82067e6FAC691089f17FE2a615179A39CeC",
+        "address": "0xdaB4C2d47E38321191ca6045F140846973F27A08",
         "topics": [
           "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
           "0x0000000000000000000000000000000000000000000000000000000000000000",
           "0x000000000000000000000000f10e52c302cd0dbc40acc836021e4c9af967ada7"
         ],
         "data": "0x",
-        "blockHash": "0xf6222ae6623dde7be48f979c8cd76f18790a871d7e46fec1187768de5b541ca4",
-        "blockNumber": "0x8facb3",
-        "transactionHash": "0x8b234b036d284c55d1dbc0e885fc26950cd586daf16e2ff2ac78f0efcd02b1d9",
-        "transactionIndex": "0x1f",
-        "logIndex": "0x18",
+        "blockHash": "0x4e0f0a50d3fc9f9f54fec64dac8402375311cf4d9f5f73ee26e21a82dff20f62",
+        "blockNumber": "0x8fc550",
+        "transactionHash": "0xfdfadaad3577d3356d839043de8b8125cd0769eb8c648dc33581dd090f87bbee",
+        "transactionIndex": "0x2e",
+        "logIndex": "0x412",
         "removed": false
       },
       {
-        "address": "0x00BBe82067e6FAC691089f17FE2a615179A39CeC",
+        "address": "0xdaB4C2d47E38321191ca6045F140846973F27A08",
         "topics": [
           "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
           "0x000000000000000000000000f10e52c302cd0dbc40acc836021e4c9af967ada7",
           "0x000000000000000000000000f10e52c302cd0dbc40acc836021e4c9af967ada7"
         ],
         "data": "0x",
-        "blockHash": "0xf6222ae6623dde7be48f979c8cd76f18790a871d7e46fec1187768de5b541ca4",
-        "blockNumber": "0x8facb3",
-        "transactionHash": "0x8b234b036d284c55d1dbc0e885fc26950cd586daf16e2ff2ac78f0efcd02b1d9",
-        "transactionIndex": "0x1f",
-        "logIndex": "0x19",
+        "blockHash": "0x4e0f0a50d3fc9f9f54fec64dac8402375311cf4d9f5f73ee26e21a82dff20f62",
+        "blockNumber": "0x8fc550",
+        "transactionHash": "0xfdfadaad3577d3356d839043de8b8125cd0769eb8c648dc33581dd090f87bbee",
+        "transactionIndex": "0x2e",
+        "logIndex": "0x413",
         "removed": false
       },
       {
-        "address": "0x00BBe82067e6FAC691089f17FE2a615179A39CeC",
+        "address": "0xdaB4C2d47E38321191ca6045F140846973F27A08",
         "topics": [
           "0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498"
         ],
         "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
-        "blockHash": "0xf6222ae6623dde7be48f979c8cd76f18790a871d7e46fec1187768de5b541ca4",
-        "blockNumber": "0x8facb3",
-        "transactionHash": "0x8b234b036d284c55d1dbc0e885fc26950cd586daf16e2ff2ac78f0efcd02b1d9",
-        "transactionIndex": "0x1f",
-        "logIndex": "0x1a",
+        "blockHash": "0x4e0f0a50d3fc9f9f54fec64dac8402375311cf4d9f5f73ee26e21a82dff20f62",
+        "blockNumber": "0x8fc550",
+        "transactionHash": "0xfdfadaad3577d3356d839043de8b8125cd0769eb8c648dc33581dd090f87bbee",
+        "transactionIndex": "0x2e",
+        "logIndex": "0x414",
         "removed": false
       }
     ],
     "status": "0x1",
-    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000208400000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000008040000000000000400000000000000000020002000000000000000000000000000000000080000000000000000000000000000",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000200400000000000000000000000000000000000000000000080000000000000000000000000002000000000000000000400000000000000000000000000000000000000000000000000000000000000040000004000000400000000000000000020000000000000000000000000000000000000080000000000000000000000000000",
     "type": "0x2",
-    "effectiveGasPrice": "0xc6e92142"
+    "effectiveGasPrice": "0x1ebaa85f9"
   },
   "solcInputHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "storageLayout": {
     "storage": [
       {
-        "astId": 91606,
+        "astId": 42779,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "_initialized",
         "offset": 0,
@@ -682,7 +682,7 @@
         "type": "t_uint8"
       },
       {
-        "astId": 91609,
+        "astId": 42782,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "_initializing",
         "offset": 1,
@@ -690,7 +690,7 @@
         "type": "t_bool"
       },
       {
-        "astId": 101472,
+        "astId": 63735,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "__gap",
         "offset": 0,
@@ -698,7 +698,7 @@
         "type": "t_array(t_uint256)50_storage"
       },
       {
-        "astId": 91478,
+        "astId": 42651,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "_owner",
         "offset": 0,
@@ -706,7 +706,7 @@
         "type": "t_address"
       },
       {
-        "astId": 91598,
+        "astId": 42771,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "__gap",
         "offset": 0,
@@ -714,7 +714,7 @@
         "type": "t_array(t_uint256)49_storage"
       },
       {
-        "astId": 35301,
+        "astId": 30301,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "overhead",
         "offset": 0,
@@ -722,7 +722,7 @@
         "type": "t_uint256"
       },
       {
-        "astId": 35304,
+        "astId": 30304,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "scalar",
         "offset": 0,
@@ -730,7 +730,7 @@
         "type": "t_uint256"
       },
       {
-        "astId": 35307,
+        "astId": 30307,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "batcherHash",
         "offset": 0,
@@ -738,7 +738,7 @@
         "type": "t_bytes32"
       },
       {
-        "astId": 35310,
+        "astId": 30310,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "gasLimit",
         "offset": 0,
@@ -746,12 +746,12 @@
         "type": "t_uint64"
       },
       {
-        "astId": 35314,
+        "astId": 30314,
         "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
         "label": "_resourceConfig",
         "offset": 0,
         "slot": "105",
-        "type": "t_struct(ResourceConfig)34275_storage"
+        "type": "t_struct(ResourceConfig)29275_storage"
       }
     ],
     "types": {
@@ -782,13 +782,13 @@
         "label": "bytes32",
         "numberOfBytes": "32"
       },
-      "t_struct(ResourceConfig)34275_storage": {
+      "t_struct(ResourceConfig)29275_storage": {
         "encoding": "inplace",
         "label": "struct ResourceMetering.ResourceConfig",
         "numberOfBytes": "32",
         "members": [
           {
-            "astId": 34264,
+            "astId": 29264,
             "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
             "label": "maxResourceLimit",
             "offset": 0,
@@ -796,7 +796,7 @@
             "type": "t_uint32"
           },
           {
-            "astId": 34266,
+            "astId": 29266,
             "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
             "label": "elasticityMultiplier",
             "offset": 4,
@@ -804,7 +804,7 @@
             "type": "t_uint8"
           },
           {
-            "astId": 34268,
+            "astId": 29268,
             "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
             "label": "baseFeeMaxChangeDenominator",
             "offset": 5,
@@ -812,7 +812,7 @@
             "type": "t_uint8"
           },
           {
-            "astId": 34270,
+            "astId": 29270,
             "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
             "label": "minimumBaseFee",
             "offset": 6,
@@ -820,7 +820,7 @@
             "type": "t_uint32"
           },
           {
-            "astId": 34272,
+            "astId": 29272,
             "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
             "label": "systemTxMaxGas",
             "offset": 10,
@@ -828,7 +828,7 @@
             "type": "t_uint32"
           },
           {
-            "astId": 34274,
+            "astId": 29274,
             "contract": "contracts/L1/SystemConfig.sol:SystemConfig",
             "label": "maximumBaseFee",
             "offset": 14,
@@ -864,7 +864,7 @@
       }
     }
   },
-  "transactionHash": "0x8b234b036d284c55d1dbc0e885fc26950cd586daf16e2ff2ac78f0efcd02b1d9",
+  "transactionHash": "0xfdfadaad3577d3356d839043de8b8125cd0769eb8c648dc33581dd090f87bbee",
   "userdoc": {
     "version": 1,
     "kind": "user",
