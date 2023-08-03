@@ -5,7 +5,7 @@
   "portalGuardian": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
   "controller": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
 
-  "l1StartingBlockTag": "0x010e156149eedf17dad2c6ed48152ae9edbedce66b6c8085549fe041c272af22",
+  "l1StartingBlockTag": "0xfbc204a6e60ba855073f007b4f024f0857b181d23210a863b92239959241db41",
 
   "l1ChainID": 5,
   "l2ChainID": 8900,
@@ -16,12 +16,12 @@
   "channelTimeout": 300,
 
   "p2pSequencerAddress": "0x9aa90Da73c1a331908ca53D42e4c1399C87E605e",
-  "batchInboxAddress": "0xff00000000000000000000000000000000008900",
+  "batchInboxAddress": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
   "batchSenderAddress": "0x4501285E8FFE2d38828F1E69FB57a6a2fAAC2620",
 
   "l2OutputOracleSubmissionInterval": 120,
   "l2OutputOracleStartingBlockNumber": 0,
-  "l2OutputOracleStartingTimestamp": 1690441440,
+  "l2OutputOracleStartingTimestamp": 1690539744,
 
   "l2OutputOracleProposer": "0x1aea424E9502Cc06f0Fc22516466d73A4317CF6b",
   "l2OutputOracleChallenger": "0xf10E52C302cd0dbc40Acc836021E4c9aF967ADa7",
